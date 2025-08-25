@@ -279,6 +279,14 @@ const QuizResetBarriga = () => {
                 <p className="text-xl text-gray-600">e eliminaram o efeito sanfona</p>
               </div>
 
+              <div className="mb-12 text-center">
+                <img 
+                  src="https://i.postimg.cc/3JcKcQx2/capapg2.jpg" 
+                  alt="Resultados do protocolo" 
+                  className="rounded-xl shadow-2xl w-full mx-auto"
+                />
+              </div>
+
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {[
                   { name: 'Sandra', age: '42 anos', text: 'Perdi 7kg em 3 semanas comendo pão todo dia!' },
