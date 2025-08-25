@@ -1,0 +1,623 @@
+QUIZ DE VENDAS PROTOCOLO RESET DA BARRIGA
+
+Crie um quiz interativo de vendas em TypeScript/React para o produto "Protocolo Reset da Barriga" seguindo exatamente esta estrutura de 14 páginas:
+
+## INFORMAÇÕES DO PRODUTO:
+- **Nome**: Protocolo Reset da Barriga
+- **Mecanismo único**: Sistema de 3 Gatilhos Alimentares + Reset de 7 Dias
+- **Promessa principal**: Emagreça até 5kg em 21 dias sem dietas restritivas
+- **Público-alvo**: Pessoas com metabolismo lento, efeito sanfona e compulsão por doces
+- **Problema principal**: Já tentaram de tudo e continuam engordando/não conseguem emagrecer
+- **Planos**: 
+  - Essencial: R$ 9,90 (só o protocolo)
+  - Premium: R$ 29,90 (protocolo + 5 bônus valendo R$ 595)
+- **Garantia**: 7 dias incondicional
+
+## ESTRUTURA DAS 14 PÁGINAS:
+
+### PÁGINA 1 - CAPTURA INICIAL
+- **Título**: "Descubra o Protocolo que Reativa seu Metabolismo Lento e Elimina até 5kg em 21 Dias"
+- **Subtítulo**: "Mesmo que você já tenha tentado dietas, academia, remédios e shakes sem sucesso"
+- **Mecanismo**: "Sistema de 3 Gatilhos Alimentares + Reset Metabólico de 7 Dias"
+- **Promessas**:
+  1. "Elimine até 5kg em 21 dias sem passar fome"
+  2. "Continue comendo pão e doce (do jeito certo)"
+  3. "Pare o efeito sanfona de uma vez por todas"
+- **CTA**: "Descobrir Meu Protocolo Personalizado"
+- **Visual**: Imagem de transformação corporal/balança
+
+### PÁGINA 2 - PROVA SOCIAL
+- **Número**: "Mais de 12.000 pessoas"
+- **Contexto**: "já reativaram o metabolismo e eliminaram o efeito sanfona"
+- **Depoimentos**:
+  1. "Perdi 7kg em 3 semanas comendo pão todo dia!" - Sandra, 42 anos
+  2. "Finalmente parei de engordar depois da dieta" - Roberto, 35 anos
+  3. "Não tenho mais compulsão por doce, é incrível!" - Mariana, 38 anos
+- **Dados autoridade**: "Método desenvolvido com base em estudos sobre metabolismo e hormônios da saciedade"
+
+### PÁGINA 3 - SEGMENTAÇÃO PRINCIPAL
+**Pergunta**: "Qual dessas situações mais descreve sua luta com o peso?"
+- **Opção 1**: "Já fiz várias dietas mas sempre volto a engordar (efeito sanfona)"
+- **Opção 2**: "Como pouco mas não emagreço (metabolismo lento)"
+- **Opção 3**: "Tenho compulsão por doces e carboidratos"
+- **Opção 4**: "Já tentei de tudo: dietas, academia, remédios, nada funciona"
+
+### PÁGINA 4 - DADOS DEMOGRÁFICOS
+**Pergunta**: "Há quanto tempo você luta para emagrecer?"
+- **Opção 1**: "Menos de 1 ano"
+- **Opção 2**: "Entre 1 e 3 anos"
+- **Opção 3**: "Entre 3 e 5 anos"
+- **Opção 4**: "Mais de 5 anos"
+
+### PÁGINA 5 - DIAGNÓSTICO DO PROBLEMA RAIZ
+**Pergunta**: "Qual é seu maior obstáculo para emagrecer?"
+- **Opção 1**: "Sempre recupero o peso perdido (efeito sanfona)"
+- **Opção 2**: "Não consigo controlar a vontade de comer doce"
+- **Opção 3**: "Como pouco mas não perco peso"
+- **Opção 4**: "Desisto das dietas porque são muito restritivas"
+
+### PÁGINA 6 - QUANTIFICAÇÃO DA DOR
+**Pergunta**: "Quantas vezes você já tentou emagrecer e 'falhou'?"
+- **Opção 1**: "2-3 tentativas"
+- **Opção 2**: "4-6 tentativas"
+- **Opção 3**: "7-10 tentativas"
+- **Opção 4**: "Mais de 10 tentativas (já perdi a conta)"
+
+### PÁGINA 7 - IMPACTO EMOCIONAL
+**Pergunta**: "Como você se sente quando se olha no espelho?"
+- **Opção 1**: "Um pouco insatisfeita comigo mesma"
+- **Opção 2**: "Frustrada por não conseguir emagrecer"
+- **Opção 3**: "Envergonhada do meu corpo"
+- **Opção 4**: "Desesperada e sem esperança"
+
+### PÁGINA 8 - IMPACTO SOCIAL/RELACIONAMENTOS
+**Pergunta**: "Como o peso afeta sua vida social e relacionamentos?"
+- **Opção 1**: "Evito fotos e eventos sociais"
+- **Opção 2**: "Me sinto insegura no relacionamento"
+- **Opção 3**: "Não uso as roupas que gostaria"
+- **Opção 4**: "Afeta minha autoestima e confiança"
+
+### PÁGINA 9 - AMPLIFICAÇÃO CIENTÍFICA
+**Conteúdo**: "Pesquisas mostram que 89% das pessoas com metabolismo lento sofrem de:"
+**Pergunta**: "Quais destes sintomas você reconhece em si?" (múltipla escolha)
+- "Ganho de peso mesmo comendo pouco"
+- "Compulsão por doces após as 18h"
+- "Cansaço constante e falta de energia"
+- "Efeito sanfona (sempre recupera o peso)"
+- "Inchaço abdominal frequente"
+- "Dificuldade para dormir bem"
+
+### PÁGINA 10 - PERGUNTA MÁGICA
+**Setup**: "O Protocolo Reset da Barriga combina 3 gatilhos alimentares científicos que reativam seu metabolismo em 7 dias..."
+**Pergunta**: "Se você pudesse emagrecer 5kg em 21 dias sem passar fome e sem cortar pão ou doce, quanto isso mudaria sua vida?"
+- **Opção 1**: "Mudaria completamente - recuperaria minha confiança e autoestima"
+- **Opção 2**: "Mudaria muito - finalmente me sentiria bem comigo mesma"
+
+### PÁGINA 11 - TELA DE ANÁLISE (Loading)
+**Elementos**:
+- "Analisando seu perfil metabólico..."
+- "Identificando os gatilhos que travam seu emagrecimento..."
+- "Calculando seu potencial de perda de peso..."
+- "Preparando seu protocolo personalizado..."
+**Duração**: 4 segundos
+
+### PÁGINA 12 - RESULTADO PERSONALIZADO
+**Elementos dinâmicos**:
+- Tipo identificado (baseado na segmentação)
+- % de chance de sucesso (88-95%)
+- 4 insights personalizados baseados nas respostas
+- Validação das dores e do histórico de tentativas
+
+**Exemplo de insights**:
+- "Seu perfil de 'efeito sanfona' indica metabolismo adaptativo - precisa de reset hormonal"
+- "Sua compulsão por doces revela desequilíbrio de serotonina - temos o protocolo específico"
+- "Seus X anos de luta mostram que métodos convencionais não funcionam para você"
+- "Seu nível de frustração indica que você está pronta para a transformação definitiva"
+
+### PÁGINA 13 - SEGUNDA TELA DE LOADING
+**Elementos**:
+- "Preparando seu Protocolo Reset personalizado..."
+- "Configurando os 3 gatilhos metabólicos ideais para você..."
+**Duração**: 3 segundos
+
+### PÁGINA 14 - OFERTA FINAL
+**Estrutura completa**:
+
+**Abertura**: "Seu resultado está pronto! Identificamos exatamente o que está travando seu emagrecimento."
+
+**Resumo personalizado** (3 pontos baseados nas respostas):
+- Exemplo: "Você tem perfil de metabolismo adaptativo por conta do efeito sanfona"
+- "Sua compulsão por doces indica desequilíbrio hormonal"
+- "Após X tentativas, você precisa de um método que funcione DE VERDADE"
+
+**Apresentação do método**: 
+"PROTOCOLO RESET DA BARRIGA: O único método que combina 3 gatilhos alimentares para reativar metabolismo lento em 7 dias"
+
+**Como funciona**:
+- "DIA 1-7: Reset metabólico que 'desperta' hormônios dormentes"
+- "DIA 8-21: Ativação dos 3 gatilhos alimentares para queima contínua"
+- "RESULTADO: Até 5kg eliminados sem fome, sem cortar doce, sem academia"
+
+**OFERTA DUPLA**:
+
+**🥉 PLANO ESSENCIAL - R$ 9,90**
+- ✅ Protocolo Reset da Barriga completo
+- ✅ Guia dos 3 gatilhos alimentares
+- ✅ Vídeo explicativo passo a passo
+- ✅ 7 dias de garantia
+
+**🥇 PLANO PREMIUM - R$ 29,90 (RECOMENDADO)**
+- ✅ Tudo do Plano Essencial +
+- ✅ **BÔNUS 1**: Lista das Substituições Inteligentes (Valor: R$ 97)
+- ✅ **BÔNUS 2**: Cardápio Anti-Compulsão de 21 Dias (Valor: R$ 127)  
+- ✅ **BÔNUS 3**: Reset Hormonal da Queima (Valor: R$ 147)
+- ✅ **BÔNUS 4**: Treino de 7 Minutos em Casa (Valor: R$ 97)
+- ✅ **BÔNUS 5**: Guia do Sono Emagrecedor (Valor: R$ 127)
+
+**Cálculo de valor**:
+- Protocolo principal: R$ 97
+- 5 Bônus exclusivos: R$ 595
+- **Valor total**: ~~R$ 692~~
+- **Hoje apenas**: R$ 29,90
+
+**Mensagem psicológica**: 
+"Você pode levar só o protocolo por R$ 9,90... mas por apenas +R$ 20 você recebe bônus que valem R$ 595. A escolha é óbvia!"
+
+**Garantias**:
+- 7 dias de garantia incondicional
+- Se não perder pelo menos 2kg, devolvemos seu dinheiro
+- Acesso imediato e vitalício
+
+**Quebra de objeções**:
+1. "E se não funcionar comigo?" → 7 dias de garantia total
+2. "Já tentei tantas coisas..." → Este método é diferente: reativa o metabolismo ao invés de desacelerar
+3. "E se for muito difícil?" → São apenas 3 gatilhos simples, sem dieta maluca
+4. "E se eu não conseguir parar os doces?" → O protocolo reduz naturalmente a compulsão
+5. "E se for caro demais?" → R$ 29,90 é menos que um dia de delivery
+
+**Urgência**: "Oferta especial válida apenas hoje - amanhã volta ao preço normal de R$ 97"
+
+**Escassez**: "Vagas limitadas para acompanhamento personalizado"
+
+**CTA final**: 
+- **Botão 1**: "SIM! Quero o PLANO PREMIUM por R$ 29,90"
+- **Botão 2**: "Prefiro apenas o Essencial por R$ 9,90"
+
+## ESPECIFICAÇÕES TÉCNICAS OBRIGATÓRIAS:
+
+### TECNOLOGIAS:
+- TypeScript com tipagem rigorosa
+- React com hooks (useState, useEffect)
+- CSS Modules para estilização
+- Animações CSS com transitions
+- Local storage simulado com useState
+
+### TIPAGEM TYPESCRIPT:
+```typescript
+interface UserResponse {
+  questionId: string;
+  answer: string | string[];
+  timestamp: number;
+}
+
+interface QuizState {
+  currentPage: number;
+  responses: UserResponse[];
+  userProfile: UserProfile | null;
+  finalResult: QuizResult | null;
+}
+
+interface UserProfile {
+  userType: 'efeito_sanfona' | 'metabolismo_lento' | 'compulsao_doce' | 'tentou_tudo';
+  struggleTime: string;
+  attempts: string;
+  urgencyLevel: 'low' | 'medium' | 'high' | 'critical';
+  painLevel: number;
+  readinessLevel: number;
+}
+
+interface QuizResult {
+  successChance: number;
+  userType: string;
+  personalizedInsights: string[];
+  urgencyLevel: 'low' | 'medium' | 'high' | 'critical';
+  recommendedPlan: 'essencial' | 'premium';
+}
+```
+
+### SISTEMA DE PONTUAÇÃO:
+```typescript
+const calculateUserScore = (responses: UserResponse[]) => {
+  let urgencyScore = 0;
+  let painLevel = 0;
+  let readinessLevel = 0;
+  
+  responses.forEach(response => {
+    switch(response.questionId) {
+      case 'main_struggle':
+        painLevel += response.answer === 'tentou_tudo' ? 35 : 
+                    response.answer === 'efeito_sanfona' ? 30 :
+                    response.answer === 'metabolismo_lento' ? 25 : 30;
+        break;
+      case 'struggle_time':
+        painLevel += response.answer === 'mais_5_anos' ? 30 : 
+                    response.answer === '3_5_anos' ? 25 : 20;
+        break;
+      case 'attempts_failed':
+        urgencyScore += response.answer === 'mais_10' ? 35 :
+                       response.answer === '7_10' ? 30 : 
+                       response.answer === '4_6' ? 25 : 20;
+        break;
+      case 'emotional_feeling':
+        urgencyScore += response.answer === 'desesperada' ? 35 :
+                       response.answer === 'envergonhada' ? 30 :
+                       response.answer === 'frustrada' ? 25 : 15;
+        break;
+      case 'magic_question':
+        readinessLevel += 40;
+        break;
+    }
+  });
+  
+  return { urgencyScore, painLevel, readinessLevel };
+};
+```
+
+### RANDOMIZAÇÃO INTELIGENTE:
+- Chance de sucesso base: 90%
+- Variação aleatória: ±3%
+- Bônus por nível de dor: até +5%
+- Bônus por número de tentativas: até +2%
+- Resultado final: entre 88% e 97%
+
+### INSIGHTS PERSONALIZADOS:
+```typescript
+const generateInsights = (responses: UserResponse[], userType: string): string[] => {
+  const insights = [];
+  
+  const typeInsights = {
+    efeito_sanfona: "Seu perfil de 'efeito sanfona' indica metabolismo adaptativo - você precisa do reset hormonal para quebrar esse ciclo.",
+    metabolismo_lento: "Seu metabolismo lento é resultado de dietas restritivas anteriores - o protocolo vai reativar sua queima natural.",
+    compulsao_doce: "Sua compulsão por doces revela desequilíbrio de serotonina - temos estratégias específicas para isso.",
+    tentou_tudo: "Após tantas tentativas, você precisa de um método que funcione DE VERDADE - e nós temos."
+  };
+  
+  insights.push(typeInsights[userType] || typeInsights.efeito_sanfona);
+  
+  const attemptResponse = responses.find(r => r.questionId === 'attempts_failed');
+  if (attemptResponse?.answer === 'mais_10') {
+    insights.push("Suas +10 tentativas mostram que métodos convencionais não funcionam para seu perfil - você precisa do protocolo científico.");
+  } else {
+    insights.push("Suas tentativas anteriores falharam porque atacaram sintomas, não a causa raiz do problema.");
+  }
+  
+  const timeResponse = responses.find(r => r.questionId === 'struggle_time');
+  if (timeResponse?.answer === 'mais_5_anos') {
+    insights.push("Após 5+ anos de luta, seu corpo desenvolveu resistência - o reset vai quebrar essa barreira.");
+  } else {
+    insights.push("Você ainda tem tempo para reverter os danos metabólicos - quanto antes começar, melhor.");
+  }
+  
+  insights.push("Sua determinação em chegar até aqui mostra que você está pronta para a transformação definitiva.");
+  
+  return insights;
+};
+```
+
+### DESIGN OBRIGATÓRIO:
+
+#### CSS PRINCIPAL:
+```css
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+}
+
+.quiz-content {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff6b6b 0%, #ffa500 100%);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.option-card {
+  border: 3px solid #e1e5e9;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 15px 0;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.option-card:hover {
+  border-color: #ff6b6b;
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.2);
+  transform: translateY(-3px);
+}
+
+.option-card.selected {
+  border-color: #ff6b6b;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+  color: white;
+  transform: scale(1.02);
+}
+
+.option-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: left 0.6s;
+}
+
+.option-card:hover::before {
+  left: 100%;
+}
+
+.page-container {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading-container {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.loading-spinner {
+  width: 80px;
+  height: 80px;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #ff6b6b;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+  margin: 0 auto 30px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+  color: white;
+  border: none;
+  padding: 20px 50px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+}
+
+.cta-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-button:hover::after {
+  left: 100%;
+}
+
+.plans-container {
+  display: flex;
+  gap: 30px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.plan-card {
+  flex: 1;
+  border: 3px solid #e1e5e9;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  transition: all 0.4s ease;
+  min-width: 300px;
+}
+
+.plan-card.recommended {
+  border-color: #ff6b6b;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+  transform: scale(1.05);
+}
+
+.plan-card.recommended::before {
+  content: 'RECOMENDADO';
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff6b6b;
+  color: white;
+  padding: 8px 25px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.plan-price {
+  font-size: 48px;
+  font-weight: 900;
+  color: #ff6b6b;
+  margin: 20px 0;
+}
+
+.plan-description {
+  font-size: 16px;
+  color: #666;
+  margin: 15px 0;
+}
+
+.bonus-list {
+  text-align: left;
+  margin: 25px 0;
+}
+
+.bonus-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  padding-left: 25px;
+}
+
+.bonus-item::before {
+  content: '✅';
+  position: absolute;
+  left: 0;
+}
+
+.value-strike {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 18px;
+}
+
+.urgency-banner {
+  background: linear-gradient(135deg, #ff4757 0%, #ff3838 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 30px 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.testimonial {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 15px 0;
+  border-left: 5px solid #ff6b6b;
+}
+
+.guarantee-box {
+  background: linear-gradient(135deg, #00c851 0%, #00a82d 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+  .quiz-content {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .plans-container {
+    flex-direction: column;
+  }
+  
+  .plan-card {
+    min-width: unset;
+  }
+  
+  .cta-button {
+    padding: 15px 30px;
+    font-size: 16px;
+  }
+}
+```
+
+### FUNCIONALIDADES OBRIGATÓRIAS:
+
+1. **Navegação fluida** entre páginas com validação
+2. **Barra de progresso** animada e responsiva
+3. **Sistema de pontuação** baseado em respostas
+4. **Personalização inteligente** do resultado
+5. **Loading screens** com animação
+6. **Oferta dupla** (Essencial vs Premium)
+7. **Design responsivo** para todos os dispositivos
+8. **Persistência de dados** (simulada)
+9. **Validação de respostas** obrigatórias
+10. **Animações suaves** e profissionais
+
+### ESTRUTURA DE ARQUIVOS:
+```
+src/
+  components/
+    QuizResetBarriga.tsx (componente principal)
+  types/
+    quiz.types.ts
+  utils/
+    scoring.utils.ts
+  styles/
+    quiz.module.css
+```
+
+### VALIDAÇÕES FINAIS:
+✅ Todas as 14 páginas implementadas  
+✅ TypeScript com tipagem rigorosa completa
+✅ Sistema de pontuação funcionando perfeitamente  
+✅ Randomização inteligente ativa
+✅ Design moderno e responsivo
+✅ Animações profissionais implementadas
+✅ Persistência de dados funcionando
+✅ Validação de respostas ativa
+✅ Personalização dinâmica funcionando
+✅ Oferta dupla (Essencial + Premium)
+✅ Performance otimizada
+✅ Psicologia de vendas aplicada
+
+**IMPORTANTE**: O quiz deve ter alta conversão, focando na dor do efeito sanfona e metabolismo lento. A oferta dupla deve deixar óbvia a vantagem do plano Premium. Cada página deve aumentar progressivamente a urgência e o desejo de compra.
