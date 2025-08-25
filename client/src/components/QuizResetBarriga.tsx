@@ -1104,15 +1104,24 @@ const QuizResetBarriga = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
-        <div className="h-1 bg-gray-200">
-          <div 
-            id="progress-bar" 
-            className="h-full bg-gradient-to-r from-primary to-success transition-all duration-500 ease-out" 
-            style={{ width: `${(quizState.currentPage / 14) * 100}%` }}
-          ></div>
+        {/* Logo */}
+        <div className="text-center py-3">
+          <img 
+            src="https://i.postimg.cc/sxCjKYjq/Chat-GPT-Image-25-de-ago-de-2025-19-45-35.png" 
+            alt="Logo" 
+            className="h-8 mx-auto"
+          />
         </div>
-        <div className="px-4 py-2 text-sm text-gray-600 text-center">
-          <span data-testid="text-progress">Página {quizState.currentPage} de 14</span>
+        
+        {/* Progress Bar */}
+        <div className="px-6 pb-4">
+          <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+            <div 
+              id="progress-bar" 
+              className="h-full bg-gradient-to-r from-primary to-success transition-all duration-500 ease-out rounded-full" 
+              style={{ width: `${(quizState.currentPage / 14) * 100}%` }}
+            ></div>
+          </div>
         </div>
       </div>
 
