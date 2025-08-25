@@ -1107,9 +1107,9 @@ const QuizResetBarriga = () => {
         {/* Logo */}
         <div className="text-center py-4">
           <img 
-            src="https://i.postimg.cc/sxCjKYjq/Chat-GPT-Image-25-de-ago-de-2025-19-45-35.png" 
-            alt="Logo" 
-            className="h-20 mx-auto"
+            src="https://i.postimg.cc/6QhfB0SL/LOGO-RESET-DA-BARRIGA.png" 
+            alt="Logo Reset da Barriga" 
+            className="h-[100px] mx-auto"
           />
         </div>
         
