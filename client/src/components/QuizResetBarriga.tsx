@@ -330,10 +330,10 @@ const QuizResetBarriga = () => {
 
               <div className="space-y-4">
                 {[
-                  { id: 'efeito_sanfona', text: 'Já fiz várias dietas mas sempre volto a engordar', desc: '(efeito sanfona)', icon: 'fas fa-sync-alt', bgColor: 'bg-red-100', iconColor: 'text-red-500' },
-                  { id: 'metabolismo_lento', text: 'Como pouco mas não emagreço', desc: '(metabolismo lento)', icon: 'fas fa-tachometer-alt', bgColor: 'bg-blue-100', iconColor: 'text-blue-500' },
-                  { id: 'compulsao_doce', text: 'Tenho compulsão por doces e carboidratos', desc: 'Não consigo resistir', icon: 'fas fa-cookie-bite', bgColor: 'bg-amber-100', iconColor: 'text-amber-500' },
-                  { id: 'tentou_tudo', text: 'Já tentei de tudo', desc: 'Dietas, academia, remédios, nada funciona', icon: 'fas fa-exclamation-triangle', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' }
+                  { id: 'efeito_sanfona', text: 'Já fiz várias dietas mas sempre volto a engordar', desc: '(efeito sanfona)', emoji: '🔄', bgColor: 'bg-red-100' },
+                  { id: 'metabolismo_lento', text: 'Como pouco mas não emagreço', desc: '(metabolismo lento)', emoji: '⚡', bgColor: 'bg-blue-100' },
+                  { id: 'compulsao_doce', text: 'Tenho compulsão por doces e carboidratos', desc: 'Não consigo resistir', emoji: '🍪', bgColor: 'bg-amber-100' },
+                  { id: 'tentou_tudo', text: 'Já tentei de tudo', desc: 'Dietas, academia, remédios, nada funciona', emoji: '⚠️', bgColor: 'bg-purple-100' }
                 ].map((option) => (
                   <button 
                     key={option.id}
@@ -344,7 +344,7 @@ const QuizResetBarriga = () => {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
                         <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
-                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                          <span className="text-xl">{option.emoji}</span>
                         </div>
                         <div>
                           <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
@@ -352,7 +352,7 @@ const QuizResetBarriga = () => {
                         </div>
                       </div>
                       <div className="text-gray-400">
-                        <i className="fas fa-chevron-right text-lg"></i>
+                        <span className="text-lg">▶️</span>
                       </div>
                     </div>
                   </button>
@@ -375,10 +375,10 @@ const QuizResetBarriga = () => {
 
               <div className="space-y-4">
                 {[
-                  { id: 'menos_1_ano', text: 'Menos de 1 ano', bgColor: 'bg-green-100', iconColor: 'text-green-500' },
-                  { id: '1_3_anos', text: 'Entre 1 e 3 anos', bgColor: 'bg-yellow-100', iconColor: 'text-yellow-500' },
-                  { id: '3_5_anos', text: 'Entre 3 e 5 anos', bgColor: 'bg-orange-100', iconColor: 'text-orange-500' },
-                  { id: 'mais_5_anos', text: 'Mais de 5 anos', bgColor: 'bg-red-100', iconColor: 'text-red-500' }
+                  { id: 'menos_1_ano', text: 'Menos de 1 ano', emoji: '⏰', bgColor: 'bg-green-100' },
+                  { id: '1_3_anos', text: 'Entre 1 e 3 anos', emoji: '⏰', bgColor: 'bg-yellow-100' },
+                  { id: '3_5_anos', text: 'Entre 3 e 5 anos', emoji: '⏰', bgColor: 'bg-orange-100' },
+                  { id: 'mais_5_anos', text: 'Mais de 5 anos', emoji: '⏰', bgColor: 'bg-red-100' }
                 ].map((option) => (
                   <button 
                     key={option.id}
