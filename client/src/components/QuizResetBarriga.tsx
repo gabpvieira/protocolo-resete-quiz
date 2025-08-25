@@ -339,7 +339,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('main_struggle', option.id)}
                     data-testid={`button-option-${option.id}`}
-                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
                       <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
@@ -379,7 +379,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('struggle_time', option.id)}
                     data-testid={`button-time-${option.id}`}
-                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
                       <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
@@ -416,7 +416,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('main_obstacle', option.id)}
                     data-testid={`button-obstacle-${option.id}`}
-                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
                       <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
@@ -453,7 +453,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('attempts_failed', option.id)}
                     data-testid={`button-attempts-${option.id}`}
-                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
                       <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
@@ -493,7 +493,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('emotional_feeling', option.id)}
                     data-testid={`button-feeling-${option.id}`}
-                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
                       <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
@@ -530,7 +530,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('social_impact', option.id)}
                     data-testid={`button-social-${option.id}`}
-                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
                       <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
@@ -642,7 +642,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('magic_question', option.id)}
                     data-testid={`button-magic-${option.id}`}
-                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
                       <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>

@@ -166,3 +166,12 @@
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
   animation: shimmer 0.6s;
 }
+
+/* Relevo suave para opções de seleção */
+.quiz-option {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 2px 0 4px -1px rgba(0, 0, 0, 0.05);
+}
+
+.quiz-option:hover {
+  box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.15), 3px 0 6px -1px rgba(0, 0, 0, 0.08);
+}
