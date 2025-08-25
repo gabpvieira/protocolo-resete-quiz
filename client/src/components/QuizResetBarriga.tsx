@@ -22,8 +22,16 @@ const QuizResetBarriga = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   useEffect(() => {
     updateProgress();
+    scrollToTop();
   }, [quizState.currentPage]);
 
   const selectAnswer = (questionId: string, answer: string) => {
