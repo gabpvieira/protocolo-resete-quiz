@@ -90,8 +90,15 @@ const QuizResetBarriga = () => {
     if (quizState.currentPage === 10) {
       showLoadingAnalysis();
     } else if (quizState.currentPage === 11) {
-      generatePersonalizedResult();
-      setQuizState(prev => ({ ...prev, currentPage: 12 }));
+      // Generate result first, then navigate after a short delay
+      const result = generateQuizResult(quizState.responses);
+      setQuizState(prev => ({
+        ...prev,
+        finalResult: result
+      }));
+      setTimeout(() => {
+        setQuizState(prev => ({ ...prev, currentPage: 12 }));
+      }, 100);
     } else if (quizState.currentPage === 12) {
       showProtocolLoading();
     } else if (quizState.currentPage === 13) {
@@ -149,13 +156,6 @@ const QuizResetBarriga = () => {
     }, 1500);
   };
 
-  const generatePersonalizedResult = () => {
-    const result = generateQuizResult(quizState.responses);
-    setQuizState(prev => ({
-      ...prev,
-      finalResult: result
-    }));
-  };
 
   const selectPlan = (plan: 'essencial' | 'premium') => {
     console.log(`Selected plan: ${plan}`);
