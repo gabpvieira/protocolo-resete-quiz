@@ -219,7 +219,7 @@ const QuizResetBarriga = () => {
 
               <div className="mb-12 text-center">
                 <img 
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600" 
+                  src="https://i.postimg.cc/63g2K49f/thumb-1.png" 
                   alt="Transformação de perda de peso" 
                   className="rounded-xl shadow-2xl w-full max-w-3xl mx-auto"
                 />
