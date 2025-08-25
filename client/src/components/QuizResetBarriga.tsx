@@ -169,7 +169,22 @@ const QuizResetBarriga = () => {
 
   const selectPlan = (plan: 'essencial' | 'premium') => {
     console.log(`Selected plan: ${plan}`);
-    alert(`Você selecionou o plano ${plan.toUpperCase()}!\n\nEm um ambiente real, aqui seria redirecionado para o checkout.`);
+    
+    // Preserve all existing URL parameters
+    const currentParams = window.location.search;
+    
+    // Add plan parameter to the URL
+    const separator = currentParams ? '&' : '?';
+    const planParam = `${separator}plan=${plan}`;
+    
+    // Define checkout URLs for each plan
+    const checkoutUrls = {
+      essencial: `/checkout/essencial${currentParams}${planParam}`,
+      premium: `/checkout/premium${currentParams}${planParam}`
+    };
+    
+    // Redirect to the appropriate checkout page
+    window.location.href = checkoutUrls[plan];
   };
 
   const plans: Plan[] = [
