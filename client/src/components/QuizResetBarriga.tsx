@@ -875,7 +875,7 @@ const QuizResetBarriga = () => {
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-5xl">
               <div className="text-center mb-12">
-                <div className="w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-24 h-24 min-w-[96px] bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6 flex-shrink-0 aspect-square">
                   <i className="fas fa-check-circle text-success text-4xl"></i>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -898,7 +898,7 @@ const QuizResetBarriga = () => {
                   ].map((point, index) => (
                     <div key={index} className="bg-white rounded-lg p-4 shadow-md">
                       <div className="flex items-center">
-                        <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                        <div className="w-8 h-8 min-w-[32px] bg-primary rounded-full flex items-center justify-center mr-3 flex-shrink-0 aspect-square">
                           <i className="fas fa-check text-white text-sm"></i>
                         </div>
                         <p className="text-gray-700 text-sm" data-testid={`text-summary-${index}`}>{point}</p>
