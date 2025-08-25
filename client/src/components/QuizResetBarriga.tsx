@@ -89,16 +89,6 @@ const QuizResetBarriga = () => {
   const nextPage = () => {
     if (quizState.currentPage === 10) {
       showLoadingAnalysis();
-    } else if (quizState.currentPage === 11) {
-      // Generate result first, then navigate after a short delay
-      const result = generateQuizResult(quizState.responses);
-      setQuizState(prev => ({
-        ...prev,
-        finalResult: result
-      }));
-      setTimeout(() => {
-        setQuizState(prev => ({ ...prev, currentPage: 12 }));
-      }, 100);
     } else if (quizState.currentPage === 12) {
       showProtocolLoading();
     } else if (quizState.currentPage === 13) {
@@ -122,13 +112,20 @@ const QuizResetBarriga = () => {
 
     let step = 0;
     const interval = setInterval(() => {
-      if (step < steps.length) {
-        setLoadingProgress(((step + 1) / steps.length) * 100);
-        step++;
-      } else {
+      step++;
+      setLoadingProgress((step / steps.length) * 100);
+      
+      if (step >= steps.length) {
         clearInterval(interval);
         setIsLoading(false);
-        setTimeout(() => nextPage(), 500);
+        
+        // Generate result and navigate to page 12
+        const result = generateQuizResult(quizState.responses);
+        setQuizState(prev => ({
+          ...prev,
+          finalResult: result,
+          currentPage: 12
+        }));
       }
     }, 1000);
   };
