@@ -142,13 +142,18 @@ const QuizResetBarriga = () => {
 
     let step = 0;
     const interval = setInterval(() => {
-      if (step < steps.length) {
-        setLoadingProgress(((step + 1) / steps.length) * 100);
-        step++;
-      } else {
+      step++;
+      setLoadingProgress((step / steps.length) * 100);
+      
+      if (step >= steps.length) {
         clearInterval(interval);
         setIsLoading(false);
-        setTimeout(() => nextPage(), 500);
+        
+        // Navigate directly to page 14 (final offer)
+        setQuizState(prev => ({
+          ...prev,
+          currentPage: 14
+        }));
       }
     }, 1500);
   };
