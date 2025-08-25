@@ -1,0 +1,1095 @@
+import { useState, useEffect } from 'react';
+import { QuizState, UserResponse, QuizResult, LoadingStep, Plan } from '../types/quiz.types';
+import { generateQuizResult } from '../utils/scoring.utils';
+
+const QuizResetBarriga = () => {
+  const [quizState, setQuizState] = useState<QuizState>({
+    currentPage: 1,
+    responses: [],
+    userProfile: null,
+    finalResult: null,
+    multipleAnswers: {}
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [loadingProgress, setLoadingProgress] = useState(0);
+
+  const updateProgress = () => {
+    const progress = (quizState.currentPage / 14) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+      progressBar.style.width = `${progress}%`;
+    }
+  };
+
+  useEffect(() => {
+    updateProgress();
+  }, [quizState.currentPage]);
+
+  const selectAnswer = (questionId: string, answer: string) => {
+    const newResponses = quizState.responses.filter(r => r.questionId !== questionId);
+    newResponses.push({
+      questionId,
+      answer,
+      timestamp: Date.now()
+    });
+
+    setQuizState(prev => ({
+      ...prev,
+      responses: newResponses
+    }));
+
+    setTimeout(() => {
+      nextPage();
+    }, 800);
+  };
+
+  const toggleMultipleAnswer = (questionId: string, answer: string) => {
+    const currentAnswers = quizState.multipleAnswers[questionId] || [];
+    const index = currentAnswers.indexOf(answer);
+    
+    let newAnswers;
+    if (index > -1) {
+      newAnswers = currentAnswers.filter(a => a !== answer);
+    } else {
+      newAnswers = [...currentAnswers, answer];
+    }
+
+    setQuizState(prev => ({
+      ...prev,
+      multipleAnswers: {
+        ...prev.multipleAnswers,
+        [questionId]: newAnswers
+      }
+    }));
+  };
+
+  const nextPageMultiple = () => {
+    const questionId = 'symptoms';
+    const answers = quizState.multipleAnswers[questionId] || [];
+    
+    if (answers.length > 0) {
+      const newResponses = quizState.responses.filter(r => r.questionId !== questionId);
+      newResponses.push({
+        questionId,
+        answer: answers,
+        timestamp: Date.now()
+      });
+
+      setQuizState(prev => ({
+        ...prev,
+        responses: newResponses
+      }));
+      nextPage();
+    } else {
+      alert('Selecione pelo menos uma opção para continuar.');
+    }
+  };
+
+  const nextPage = () => {
+    if (quizState.currentPage === 10) {
+      showLoadingAnalysis();
+    } else if (quizState.currentPage === 11) {
+      generatePersonalizedResult();
+      setQuizState(prev => ({ ...prev, currentPage: 12 }));
+    } else if (quizState.currentPage === 12) {
+      showProtocolLoading();
+    } else if (quizState.currentPage === 13) {
+      setQuizState(prev => ({ ...prev, currentPage: 14 }));
+    } else {
+      setQuizState(prev => ({ ...prev, currentPage: prev.currentPage + 1 }));
+    }
+  };
+
+  const showLoadingAnalysis = () => {
+    setQuizState(prev => ({ ...prev, currentPage: 11 }));
+    setIsLoading(true);
+    setLoadingProgress(0);
+
+    const steps = [
+      'Analisando seu perfil metabólico...',
+      'Identificando os gatilhos que travam seu emagrecimento...',
+      'Calculando seu potencial de perda de peso...',
+      'Preparando seu protocolo personalizado...'
+    ];
+
+    let step = 0;
+    const interval = setInterval(() => {
+      if (step < steps.length) {
+        setLoadingProgress(((step + 1) / steps.length) * 100);
+        step++;
+      } else {
+        clearInterval(interval);
+        setIsLoading(false);
+        setTimeout(() => nextPage(), 500);
+      }
+    }, 1000);
+  };
+
+  const showProtocolLoading = () => {
+    setQuizState(prev => ({ ...prev, currentPage: 13 }));
+    setIsLoading(true);
+    setLoadingProgress(0);
+
+    const steps = [
+      'Configurando os 3 gatilhos metabólicos ideais para você...',
+      'Personalizando estratégias para seu perfil...'
+    ];
+
+    let step = 0;
+    const interval = setInterval(() => {
+      if (step < steps.length) {
+        setLoadingProgress(((step + 1) / steps.length) * 100);
+        step++;
+      } else {
+        clearInterval(interval);
+        setIsLoading(false);
+        setTimeout(() => nextPage(), 500);
+      }
+    }, 1500);
+  };
+
+  const generatePersonalizedResult = () => {
+    const result = generateQuizResult(quizState.responses);
+    setQuizState(prev => ({
+      ...prev,
+      finalResult: result
+    }));
+  };
+
+  const selectPlan = (plan: 'essencial' | 'premium') => {
+    console.log(`Selected plan: ${plan}`);
+    alert(`Você selecionou o plano ${plan.toUpperCase()}!\n\nEm um ambiente real, aqui seria redirecionado para o checkout.`);
+  };
+
+  const plans: Plan[] = [
+    {
+      id: 'essencial',
+      name: 'PLANO ESSENCIAL',
+      price: 'R$ 9,90',
+      features: [
+        'Protocolo Reset da Barriga completo',
+        'Guia dos 3 gatilhos alimentares',
+        'Vídeo explicativo passo a passo',
+        '7 dias de garantia'
+      ],
+      icon: 'fas fa-medal'
+    },
+    {
+      id: 'premium',
+      name: 'PLANO PREMIUM',
+      price: 'R$ 29,90',
+      originalPrice: 'R$ 692',
+      features: [
+        'Tudo do Plano Essencial +',
+        'BÔNUS 1: Lista das Substituições Inteligentes (R$ 97)',
+        'BÔNUS 2: Cardápio Anti-Compulsão de 21 Dias (R$ 127)',
+        'BÔNUS 3: Reset Hormonal da Queima (R$ 147)',
+        'BÔNUS 4: Treino de 7 Minutos em Casa (R$ 97)',
+        'BÔNUS 5: Guia do Sono Emagrecedor (R$ 127)'
+      ],
+      recommended: true,
+      icon: 'fas fa-crown'
+    }
+  ];
+
+  const renderPage = () => {
+    switch (quizState.currentPage) {
+      case 1:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <div className="text-center mb-8">
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                  Descubra o Protocolo que 
+                  <span className="text-primary"> Reativa seu Metabolismo Lento</span> 
+                  e Elimina até <span className="text-accent">5kg em 21 Dias</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                  Mesmo que você já tenha tentado dietas, academia, remédios e shakes sem sucesso
+                </p>
+                
+                <div className="inline-flex items-center bg-primary/10 rounded-full px-6 py-3 mb-8">
+                  <i className="fas fa-flask text-primary mr-3"></i>
+                  <span className="text-primary font-semibold">Sistema de 3 Gatilhos Alimentares + Reset Metabólico de 7 Dias</span>
+                </div>
+              </div>
+
+              <div className="mb-12 text-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600" 
+                  alt="Transformação de perda de peso" 
+                  className="rounded-xl shadow-2xl w-full max-w-3xl mx-auto"
+                />
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-12">
+                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i className="fas fa-weight text-primary text-2xl"></i>
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2">Elimine até 5kg em 21 dias</h3>
+                  <p className="text-gray-600">Sem passar fome ou dietas malucas</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i className="fas fa-cookie-bite text-accent text-2xl"></i>
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2">Continue comendo pão e doce</h3>
+                  <p className="text-gray-600">Do jeito certo, sem culpa</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                  <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i className="fas fa-chart-line text-success text-2xl"></i>
+                  </div>
+                  <h3 className="font-bold text-gray-900 mb-2">Pare o efeito sanfona</h3>
+                  <p className="text-gray-600">De uma vez por todas</p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <button 
+                  onClick={nextPage}
+                  data-testid="button-start-quiz"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <i className="fas fa-play mr-3"></i>
+                  Descobrir Meu Protocolo Personalizado
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 2:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <div className="text-center mb-12">
+                <div className="text-6xl font-bold text-primary mb-4">+12.000</div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">pessoas já reativaram o metabolismo</h2>
+                <p className="text-xl text-gray-600">e eliminaram o efeito sanfona</p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-6 mb-12">
+                {[
+                  { name: 'Sandra', age: '42 anos', text: 'Perdi 7kg em 3 semanas comendo pão todo dia!' },
+                  { name: 'Roberto', age: '35 anos', text: 'Finalmente parei de engordar depois da dieta' },
+                  { name: 'Mariana', age: '38 anos', text: 'Não tenho mais compulsão por doce, é incrível!' }
+                ].map((testimonial, index) => (
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
+                    <div className="flex items-center mb-4">
+                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                        <i className="fas fa-user text-primary"></i>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                        <p className="text-gray-600 text-sm">{testimonial.age}</p>
+                      </div>
+                    </div>
+                    <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
+                    <div className="flex text-accent">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star"></i>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="bg-blue-50 rounded-xl p-6 text-center mb-8">
+                <i className="fas fa-microscope text-secondary text-3xl mb-4"></i>
+                <p className="text-gray-700 font-medium">Método desenvolvido com base em estudos sobre metabolismo e hormônios da saciedade</p>
+              </div>
+
+              <div className="text-center">
+                <button 
+                  onClick={nextPage}
+                  data-testid="button-continue"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  Continuar <i className="fas fa-arrow-right ml-2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 3:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Qual dessas situações mais descreve sua luta com o peso?
+                </h2>
+                <p className="text-lg text-gray-600">Selecione a opção que mais se identifica com você</p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { id: 'efeito_sanfona', text: 'Já fiz várias dietas mas sempre volto a engordar', desc: '(efeito sanfona)', icon: 'fas fa-sync-alt', color: 'red' },
+                  { id: 'metabolismo_lento', text: 'Como pouco mas não emagreço', desc: '(metabolismo lento)', icon: 'fas fa-tachometer-alt', color: 'blue' },
+                  { id: 'compulsao_doce', text: 'Tenho compulsão por doces e carboidratos', desc: 'Não consigo resistir', icon: 'fas fa-cookie-bite', color: 'amber' },
+                  { id: 'tentou_tudo', text: 'Já tentei de tudo', desc: 'Dietas, academia, remédios, nada funciona', icon: 'fas fa-exclamation-triangle', color: 'purple' }
+                ].map((option) => (
+                  <button 
+                    key={option.id}
+                    onClick={() => selectAnswer('main_struggle', option.id)}
+                    data-testid={`button-option-${option.id}`}
+                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                  >
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                        <p className="text-gray-600">{option.desc}</p>
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 4:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Há quanto tempo você luta para emagrecer?
+                </h2>
+                <p className="text-lg text-gray-600">Isso nos ajuda a entender melhor seu perfil</p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { id: 'menos_1_ano', text: 'Menos de 1 ano', color: 'green' },
+                  { id: '1_3_anos', text: 'Entre 1 e 3 anos', color: 'yellow' },
+                  { id: '3_5_anos', text: 'Entre 3 e 5 anos', color: 'orange' },
+                  { id: 'mais_5_anos', text: 'Mais de 5 anos', color: 'red' }
+                ].map((option) => (
+                  <button 
+                    key={option.id}
+                    onClick={() => selectAnswer('struggle_time', option.id)}
+                    data-testid={`button-time-${option.id}`}
+                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                  >
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`fas fa-clock text-${option.color}-500 text-xl`}></i>
+                      </div>
+                      <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 5:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Qual é seu maior obstáculo para emagrecer?
+                </h2>
+                <p className="text-lg text-gray-600">Vamos identificar a raiz do problema</p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { id: 'efeito_sanfona', text: 'Sempre recupero o peso perdido (efeito sanfona)', icon: 'fas fa-sync-alt', color: 'red' },
+                  { id: 'compulsao_doce', text: 'Não consigo controlar a vontade de comer doce', icon: 'fas fa-cookie-bite', color: 'amber' },
+                  { id: 'metabolismo_lento', text: 'Como pouco mas não perco peso', icon: 'fas fa-tachometer-alt', color: 'blue' },
+                  { id: 'dietas_restritivas', text: 'Desisto das dietas porque são muito restritivas', icon: 'fas fa-ban', color: 'purple' }
+                ].map((option) => (
+                  <button 
+                    key={option.id}
+                    onClick={() => selectAnswer('main_obstacle', option.id)}
+                    data-testid={`button-obstacle-${option.id}`}
+                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                  >
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      </div>
+                      <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 6:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Quantas vezes você já tentou emagrecer e "falhou"?
+                </h2>
+                <p className="text-lg text-gray-600">Seja honesta conosco (isso é importante para seu resultado)</p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { id: '2_3_tentativas', text: '2-3 tentativas', icon: 'fas fa-redo', color: 'green' },
+                  { id: '4_6_tentativas', text: '4-6 tentativas', icon: 'fas fa-redo', color: 'yellow' },
+                  { id: '7_10_tentativas', text: '7-10 tentativas', icon: 'fas fa-redo', color: 'orange' },
+                  { id: 'mais_10', text: 'Mais de 10 tentativas', desc: '(já perdi a conta)', icon: 'fas fa-infinity', color: 'red' }
+                ].map((option) => (
+                  <button 
+                    key={option.id}
+                    onClick={() => selectAnswer('attempts_failed', option.id)}
+                    data-testid={`button-attempts-${option.id}`}
+                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                  >
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                        {option.desc && <p className="text-gray-600">{option.desc}</p>}
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 7:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Como você se sente quando se olha no espelho?
+                </h2>
+                <p className="text-lg text-gray-600">Queremos entender o impacto emocional</p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { id: 'pouco_insatisfeita', text: 'Um pouco insatisfeita comigo mesma', icon: 'fas fa-frown', color: 'green' },
+                  { id: 'frustrada', text: 'Frustrada por não conseguir emagrecer', icon: 'fas fa-frown', color: 'yellow' },
+                  { id: 'envergonhada', text: 'Envergonhada do meu corpo', icon: 'fas fa-sad-tear', color: 'orange' },
+                  { id: 'desesperada', text: 'Desesperada e sem esperança', icon: 'fas fa-sad-cry', color: 'red' }
+                ].map((option) => (
+                  <button 
+                    key={option.id}
+                    onClick={() => selectAnswer('emotional_feeling', option.id)}
+                    data-testid={`button-feeling-${option.id}`}
+                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                  >
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      </div>
+                      <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 8:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Como o peso afeta sua vida social e relacionamentos?
+                </h2>
+                <p className="text-lg text-gray-600">O impacto vai além do físico</p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { id: 'evito_fotos', text: 'Evito fotos e eventos sociais', icon: 'fas fa-camera', color: 'purple' },
+                  { id: 'insegura_relacionamento', text: 'Me sinto insegura no relacionamento', icon: 'fas fa-heart', color: 'pink' },
+                  { id: 'nao_uso_roupas', text: 'Não uso as roupas que gostaria', icon: 'fas fa-tshirt', color: 'indigo' },
+                  { id: 'afeta_autoestima', text: 'Afeta minha autoestima e confiança', icon: 'fas fa-user-times', color: 'red' }
+                ].map((option) => (
+                  <button 
+                    key={option.id}
+                    onClick={() => selectAnswer('social_impact', option.id)}
+                    data-testid={`button-social-${option.id}`}
+                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                  >
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      </div>
+                      <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 9:
+        const selectedSymptoms = quizState.multipleAnswers['symptoms'] || [];
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-8">
+                <div className="bg-blue-50 rounded-xl p-6 mb-8">
+                  <i className="fas fa-microscope text-secondary text-3xl mb-4"></i>
+                  <p className="text-lg text-gray-700 font-medium">
+                    Pesquisas mostram que <span className="text-secondary font-bold">89% das pessoas</span> com metabolismo lento sofrem de:
+                  </p>
+                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Quais destes sintomas você reconhece em si?
+                </h2>
+                <p className="text-lg text-gray-600">Pode marcar mais de uma opção</p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { id: 'ganho_peso_pouco', text: 'Ganho de peso mesmo comendo pouco', icon: 'fas fa-weight', color: 'red' },
+                  { id: 'compulsao_doces', text: 'Compulsão por doces após as 18h', icon: 'fas fa-cookie-bite', color: 'amber' },
+                  { id: 'cansaco_constante', text: 'Cansaço constante e falta de energia', icon: 'fas fa-tired', color: 'orange' },
+                  { id: 'efeito_sanfona', text: 'Efeito sanfona (sempre recupera o peso)', icon: 'fas fa-sync-alt', color: 'purple' },
+                  { id: 'inchaco_abdominal', text: 'Inchaço abdominal frequente', icon: 'fas fa-expand-arrows-alt', color: 'green' },
+                  { id: 'dificuldade_dormir', text: 'Dificuldade para dormir bem', icon: 'fas fa-bed', color: 'blue' }
+                ].map((option) => {
+                  const isSelected = selectedSymptoms.includes(option.id);
+                  return (
+                    <button 
+                      key={option.id}
+                      onClick={() => toggleMultipleAnswer('symptoms', option.id)}
+                      data-testid={`button-symptom-${option.id}`}
+                      className={`w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 ${
+                        isSelected ? 'border-primary bg-primary/5' : 'border-transparent hover:border-primary'
+                      }`}
+                    >
+                      <div className="flex items-center">
+                        <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                          <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                        </div>
+                        <h3 className="font-bold text-gray-900 text-lg flex-grow">{option.text}</h3>
+                        <div className="ml-auto">
+                          <div className={`w-6 h-6 border-2 rounded ${
+                            isSelected 
+                              ? 'bg-primary border-primary text-white flex items-center justify-center' 
+                              : 'border-gray-300'
+                          }`}>
+                            {isSelected && <i className="fas fa-check text-white text-xs"></i>}
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+
+              <div className="text-center mt-8">
+                <button 
+                  onClick={nextPageMultiple}
+                  data-testid="button-continue-symptoms"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  Continuar <i className="fas fa-arrow-right ml-2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 10:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center mb-8">
+                <div className="bg-primary/10 rounded-xl p-6 mb-8">
+                  <i className="fas fa-magic text-primary text-3xl mb-4"></i>
+                  <p className="text-lg text-gray-700 font-medium">
+                    O <span className="text-primary font-bold">Protocolo Reset da Barriga</span> combina 3 gatilhos alimentares científicos que reativam seu metabolismo em 7 dias...
+                  </p>
+                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                  Se você pudesse emagrecer 5kg em 21 dias sem passar fome e sem cortar pão ou doce, quanto isso mudaria sua vida?
+                </h2>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  { id: 'mudaria_completamente', text: 'Mudaria completamente', desc: 'Recuperaria minha confiança e autoestima', icon: 'fas fa-star', color: 'green' },
+                  { id: 'mudaria_muito', text: 'Mudaria muito', desc: 'Finalmente me sentiria bem comigo mesma', icon: 'fas fa-heart', color: 'blue' }
+                ].map((option) => (
+                  <button 
+                    key={option.id}
+                    onClick={() => selectAnswer('magic_question', option.id)}
+                    data-testid={`button-magic-${option.id}`}
+                    className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                  >
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                        <p className="text-gray-600">{option.desc}</p>
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+
+      case 11:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center">
+                <div className="mb-8">
+                  <i className="fas fa-chart-pie text-primary text-6xl mb-6 spin-animation"></i>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Analisando seu perfil...
+                  </h2>
+                </div>
+
+                <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
+                  <div className="space-y-6">
+                    {[
+                      'Analisando seu perfil metabólico...',
+                      'Identificando os gatilhos que travam seu emagrecimento...',
+                      'Calculando seu potencial de perda de peso...',
+                      'Preparando seu protocolo personalizado...'
+                    ].map((step, index) => (
+                      <div key={index} className="flex items-center justify-between">
+                        <span className="text-gray-700">{step}</span>
+                        <div className="w-8 h-8">
+                          <i className="fas fa-check-circle text-success"></i>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div 
+                    className="bg-gradient-to-r from-primary to-success h-3 rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: `${loadingProgress}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 12:
+        const result = quizState.finalResult;
+        if (!result) return null;
+
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <div className="text-center mb-8">
+                <div className="w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i className="fas fa-check-circle text-success text-4xl"></i>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                  Seu perfil foi identificado!
+                </h2>
+                <p className="text-lg text-gray-600">Veja os resultados da análise personalizada</p>
+              </div>
+
+              <div className="bg-gradient-to-r from-primary to-success rounded-xl p-8 text-white text-center mb-8">
+                <div className="text-5xl font-bold mb-2" data-testid="text-success-rate">{result.successChance}%</div>
+                <p className="text-xl">de chance de sucesso com o protocolo</p>
+                <p className="text-sm opacity-90 mt-2">Baseado no seu perfil e respostas</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-white rounded-xl p-6 shadow-lg">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                      <i className="fas fa-user-circle text-primary text-xl"></i>
+                    </div>
+                    <h3 className="font-bold text-gray-900">Seu Tipo Identificado</h3>
+                  </div>
+                  <p className="text-gray-700" data-testid="text-user-type">{result.userType}</p>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-lg">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
+                      <i className="fas fa-clock text-accent text-xl"></i>
+                    </div>
+                    <h3 className="font-bold text-gray-900">Tempo de Luta</h3>
+                  </div>
+                  <p className="text-gray-700" data-testid="text-struggle-time">
+                    {(() => {
+                      const timeResponse = quizState.responses.find(r => r.questionId === 'struggle_time');
+                      const timeMap = {
+                        'menos_1_ano': 'Menos de 1 ano tentando emagrecer',
+                        '1_3_anos': '1-3 anos tentando emagrecer',
+                        '3_5_anos': '3-5 anos tentando emagrecer',
+                        'mais_5_anos': 'Mais de 5 anos tentando emagrecer'
+                      };
+                      return timeMap[timeResponse?.answer as keyof typeof timeMap] || 'Tempo não informado';
+                    })()}
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                  <i className="fas fa-lightbulb text-accent mr-3"></i>
+                  Insights Personalizados para Você
+                </h3>
+                <div className="space-y-6" data-testid="container-insights">
+                  {result.personalizedInsights.map((insight, index) => (
+                    <div key={index} className="flex items-start p-4 bg-primary/5 rounded-lg">
+                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                        <span className="text-white font-bold text-sm">{index + 1}</span>
+                      </div>
+                      <p className="text-gray-700" data-testid={`text-insight-${index}`}>{insight}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="text-center">
+                <button 
+                  onClick={nextPage}
+                  data-testid="button-view-protocol"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  Ver Meu Protocolo Personalizado <i className="fas fa-arrow-right ml-2"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 13:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-3xl">
+              <div className="text-center">
+                <div className="mb-8">
+                  <i className="fas fa-cogs text-primary text-6xl mb-6 spin-animation"></i>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Preparando seu Protocolo Reset personalizado...
+                  </h2>
+                </div>
+
+                <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
+                  <div className="space-y-6">
+                    {[
+                      'Configurando os 3 gatilhos metabólicos ideais para você...',
+                      'Personalizando estratégias para seu perfil...'
+                    ].map((step, index) => (
+                      <div key={index} className="flex items-center justify-between">
+                        <span className="text-gray-700">{step}</span>
+                        <div className="w-8 h-8">
+                          <i className="fas fa-check-circle text-success"></i>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div 
+                    className="bg-gradient-to-r from-primary to-success h-3 rounded-full transition-all duration-1000 ease-out"
+                    style={{ width: `${loadingProgress}%` }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+
+      case 14:
+        return (
+          <div className="min-h-screen pt-16 pb-8">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <div className="text-center mb-12">
+                <div className="w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <i className="fas fa-check-circle text-success text-4xl"></i>
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Seu resultado está pronto!
+                </h2>
+                <p className="text-xl text-gray-600 mb-8">Identificamos exatamente o que está travando seu emagrecimento.</p>
+              </div>
+
+              {/* Personalized Summary */}
+              <div className="bg-gradient-to-r from-blue-50 to-primary/5 rounded-xl p-8 mb-12">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                  <i className="fas fa-user-check text-primary mr-3"></i>
+                  Seu Resumo Personalizado
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6" data-testid="container-final-summary">
+                  {[
+                    `Você tem perfil de ${quizState.finalResult?.userType.toLowerCase()}`,
+                    'Sua compulsão por doces indica desequilíbrio hormonal',
+                    'Após tantas tentativas, você precisa de um método que funcione DE VERDADE'
+                  ].map((point, index) => (
+                    <div key={index} className="bg-white rounded-lg p-4 shadow-md">
+                      <div className="flex items-center">
+                        <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                          <i className="fas fa-check text-white text-sm"></i>
+                        </div>
+                        <p className="text-gray-700 text-sm" data-testid={`text-summary-${index}`}>{point}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Method Presentation */}
+              <div className="text-center mb-12">
+                <div className="bg-gradient-to-r from-primary to-success text-white rounded-xl p-8 mb-8">
+                  <h3 className="text-3xl font-bold mb-4">PROTOCOLO RESET DA BARRIGA</h3>
+                  <p className="text-xl">O único método que combina 3 gatilhos alimentares para reativar metabolismo lento em 7 dias</p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-12">
+                  <div className="bg-white rounded-xl p-6 shadow-lg">
+                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-red-600 font-bold text-xl">1-7</span>
+                    </div>
+                    <h4 className="font-bold text-gray-900 mb-2">DIAS 1-7</h4>
+                    <p className="text-gray-600">Reset metabólico que 'desperta' hormônios dormentes</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 shadow-lg">
+                    <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-amber-600 font-bold text-xl">8-21</span>
+                    </div>
+                    <h4 className="font-bold text-gray-900 mb-2">DIAS 8-21</h4>
+                    <p className="text-gray-600">Ativação dos 3 gatilhos alimentares para queima contínua</p>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 shadow-lg">
+                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <i className="fas fa-trophy text-green-600 text-2xl"></i>
+                    </div>
+                    <h4 className="font-bold text-gray-900 mb-2">RESULTADO</h4>
+                    <p className="text-gray-600">Até 5kg eliminados sem fome, sem cortar doce, sem academia</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pricing Plans */}
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                {plans.map((plan) => (
+                  <div 
+                    key={plan.id}
+                    className={`bg-white rounded-xl p-8 shadow-lg ${
+                      plan.recommended 
+                        ? 'border-4 border-accent relative' 
+                        : 'border-2 border-gray-200'
+                    }`}
+                  >
+                    {plan.recommended && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span className="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold">RECOMENDADO</span>
+                      </div>
+                    )}
+                    
+                    <div className="text-center mb-6">
+                      <div className={`w-16 h-16 ${plan.recommended ? 'bg-accent/10' : 'bg-gray-100'} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <i className={`${plan.icon} ${plan.recommended ? 'text-accent' : 'text-gray-600'} text-2xl`}></i>
+                      </div>
+                      <h4 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h4>
+                      {plan.originalPrice && (
+                        <div className="mb-2">
+                          <span className="text-2xl text-gray-500 line-through">{plan.originalPrice}</span>
+                        </div>
+                      )}
+                      <div className={`${plan.recommended ? 'text-4xl font-bold text-accent' : 'text-3xl font-bold text-gray-900'}`}>
+                        {plan.price}
+                      </div>
+                    </div>
+                    
+                    <ul className="space-y-3 mb-8">
+                      {plan.features.map((feature, index) => (
+                        <li key={index} className="flex items-center">
+                          <i className={`fas ${feature.includes('BÔNUS') ? 'fa-gift text-accent' : 'fa-check text-success'} mr-3`}></i>
+                          <span className={feature.includes('BÔNUS') ? 'font-medium' : ''}>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <button 
+                      onClick={() => selectPlan(plan.id)}
+                      data-testid={`button-plan-${plan.id}`}
+                      className={`w-full font-bold py-4 px-6 rounded-full transition-all duration-300 ${
+                        plan.recommended
+                          ? 'bg-gradient-to-r from-accent to-orange-500 text-white hover:shadow-xl transform hover:scale-105'
+                          : 'bg-gray-600 text-white hover:bg-gray-700'
+                      }`}
+                    >
+                      {plan.recommended ? (
+                        <>
+                          <i className="fas fa-crown mr-2"></i>
+                          QUERO O PREMIUM
+                        </>
+                      ) : (
+                        'Escolher Essencial'
+                      )}
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              {/* Value Message */}
+              <div className="bg-amber-50 rounded-xl p-6 text-center mb-8">
+                <i className="fas fa-lightbulb text-amber-500 text-2xl mb-3"></i>
+                <p className="text-lg font-medium text-gray-800">
+                  Você pode levar só o protocolo por R$ 9,90... mas por apenas <span className="text-accent font-bold">+R$ 20</span> você recebe bônus que valem <span className="text-accent font-bold">R$ 595</span>. A escolha é óbvia!
+                </p>
+              </div>
+
+              {/* Guarantees */}
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                  <i className="fas fa-shield-alt text-success text-3xl mb-3"></i>
+                  <h4 className="font-bold text-gray-900 mb-2">7 Dias de Garantia</h4>
+                  <p className="text-gray-600">Incondicional e total</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                  <i className="fas fa-weight text-primary text-3xl mb-3"></i>
+                  <h4 className="font-bold text-gray-900 mb-2">Garantia de Resultado</h4>
+                  <p className="text-gray-600">Se não perder 2kg, devolvemos seu dinheiro</p>
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+                  <i className="fas fa-infinity text-accent text-3xl mb-3"></i>
+                  <h4 className="font-bold text-gray-900 mb-2">Acesso Vitalício</h4>
+                  <p className="text-gray-600">Imediato e para sempre</p>
+                </div>
+              </div>
+
+              {/* Objection Handling */}
+              <div className="bg-gray-50 rounded-xl p-8 mb-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Quebra de Objeções</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    {[
+                      { q: '"E se não funcionar comigo?"', a: '→ 7 dias de garantia total' },
+                      { q: '"Já tentei tantas coisas..."', a: '→ Este método é diferente: reativa o metabolismo ao invés de desacelerar' },
+                      { q: '"E se for muito difícil?"', a: '→ São apenas 3 gatilhos simples, sem dieta maluca' }
+                    ].map((objection, index) => (
+                      <div key={index} className="flex items-start">
+                        <i className="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
+                        <div>
+                          <p className="font-bold text-gray-900">{objection.q}</p>
+                          <p className="text-gray-600">{objection.a}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      { q: '"E se eu não conseguir parar os doces?"', a: '→ O protocolo reduz naturalmente a compulsão' },
+                      { q: '"E se for caro demais?"', a: '→ R$ 29,90 é menos que um dia de delivery' }
+                    ].map((objection, index) => (
+                      <div key={index} className="flex items-start">
+                        <i className="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
+                        <div>
+                          <p className="font-bold text-gray-900">{objection.q}</p>
+                          <p className="text-gray-600">{objection.a}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Urgency and Scarcity */}
+              <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
+                <div className="flex items-center">
+                  <i className="fas fa-exclamation-triangle text-red-500 text-2xl mr-4"></i>
+                  <div>
+                    <p className="font-bold text-red-800">Oferta especial válida apenas hoje</p>
+                    <p className="text-red-700">Amanhã volta ao preço normal de R$ 97</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-orange-50 border-l-4 border-orange-500 p-6 mb-8">
+                <div className="flex items-center">
+                  <i className="fas fa-users text-orange-500 text-2xl mr-4"></i>
+                  <div>
+                    <p className="font-bold text-orange-800">Vagas limitadas</p>
+                    <p className="text-orange-700">Para acompanhamento personalizado</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Final CTAs */}
+              <div className="text-center space-y-4">
+                <button 
+                  onClick={() => selectPlan('premium')}
+                  data-testid="button-premium-final"
+                  className="w-full max-w-md bg-gradient-to-r from-accent to-orange-500 text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <i className="fas fa-crown mr-3"></i>
+                  SIM! Quero o PLANO PREMIUM por R$ 29,90
+                </button>
+                <button 
+                  onClick={() => selectPlan('essencial')}
+                  data-testid="button-essencial-final"
+                  className="w-full max-w-md bg-gray-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-700 transition-colors"
+                >
+                  Prefiro apenas o Essencial por R$ 9,90
+                </button>
+              </div>
+            </div>
+          </div>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      {/* Progress Bar */}
+      <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+        <div className="h-1 bg-gray-200">
+          <div 
+            id="progress-bar" 
+            className="h-full bg-gradient-to-r from-primary to-success transition-all duration-500 ease-out" 
+            style={{ width: `${(quizState.currentPage / 14) * 100}%` }}
+          ></div>
+        </div>
+        <div className="px-4 py-2 text-sm text-gray-600 text-center">
+          <span data-testid="text-progress">Página {quizState.currentPage} de 14</span>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className="fade-in-up">
+        {renderPage()}
+      </div>
+    </div>
+  );
+};
+
+export default QuizResetBarriga;
