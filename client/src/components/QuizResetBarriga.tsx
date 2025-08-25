@@ -1105,11 +1105,11 @@ const QuizResetBarriga = () => {
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
         {/* Logo */}
-        <div className="text-center py-3">
+        <div className="text-center py-4">
           <img 
             src="https://i.postimg.cc/sxCjKYjq/Chat-GPT-Image-25-de-ago-de-2025-19-45-35.png" 
             alt="Logo" 
-            className="h-8 mx-auto"
+            className="h-20 mx-auto"
           />
         </div>
         
