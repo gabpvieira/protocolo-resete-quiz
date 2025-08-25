@@ -328,7 +328,7 @@ const QuizResetBarriga = () => {
                         <p className="text-gray-600 text-sm">{testimonial.age}</p>
                       </div>
                     </div>
-                    <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
+                    <p className="text-gray-700 mb-4">{testimonial.text}</p>
                     <div className="flex text-accent">
                       {[...Array(5)].map((_, i) => (
                         <i key={i} className="fas fa-star"></i>
