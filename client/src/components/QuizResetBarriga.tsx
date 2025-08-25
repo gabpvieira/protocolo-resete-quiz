@@ -1109,7 +1109,7 @@ const QuizResetBarriga = () => {
           <img 
             src="https://i.postimg.cc/6QhfB0SL/LOGO-RESET-DA-BARRIGA.png" 
             alt="Logo Reset da Barriga" 
-            className="h-20 mx-auto"
+            className="h-[70px] mx-auto"
           />
         </div>
         
