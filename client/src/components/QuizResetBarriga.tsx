@@ -297,15 +297,32 @@ const QuizResetBarriga = () => {
 
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 {[
-                  { name: 'Sandra', age: '42 anos', text: 'Perdi 7kg em 3 semanas comendo pão todo dia!' },
-                  { name: 'Roberto', age: '35 anos', text: 'Finalmente parei de engordar depois da dieta' },
-                  { name: 'Mariana', age: '38 anos', text: 'Não tenho mais compulsão por doce, é incrível!' }
+                  { 
+                    name: 'Sandra', 
+                    age: '42 anos', 
+                    text: 'Eu já tinha tentado várias dietas, mas sempre desistia na primeira semana. Com o Reset, em 21 dias perdi 5kg sem abrir mão do meu café com pão francês. A maior diferença foi na disposição, parece que meu corpo acordou de novo.',
+                    image: 'https://i.postimg.cc/rmHDC03t/01.png'
+                  },
+                  { 
+                    name: 'Roberto', 
+                    age: '35 anos', 
+                    text: 'Meu problema não era só o peso, era o efeito sanfona. Emagrecia 3kg e ganhava 4 depois. Com o Reset consegui estabilizar, já faz 2 meses que não vejo a balança subir. Finalmente sinto que achei algo que funciona de verdade.',
+                    image: 'https://i.postimg.cc/xCXv22SM/02.png'
+                  },
+                  { 
+                    name: 'Mariana', 
+                    age: '38 anos', 
+                    text: 'Eu tinha compulsão por doce à noite, era automático abrir a geladeira. Depois do Reset, essa vontade diminuiu muito. Perdi 3,8kg no primeiro mês e pela primeira vez não me sinto em guerra com a comida.',
+                    image: 'https://i.postimg.cc/Njx78D49/03.png'
+                  }
                 ].map((testimonial, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 min-w-[48px] bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square">
-                        <i className="fas fa-user text-primary"></i>
-                      </div>
+                      <img 
+                        src={testimonial.image} 
+                        alt={`Depoimento de ${testimonial.name}`}
+                        className="w-12 h-12 min-w-[48px] rounded-full object-cover mr-4 flex-shrink-0"
+                      />
                       <div>
                         <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
                         <p className="text-gray-600 text-sm">{testimonial.age}</p>
