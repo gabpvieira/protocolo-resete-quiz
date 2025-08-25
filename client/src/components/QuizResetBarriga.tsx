@@ -341,13 +341,18 @@ const QuizResetBarriga = () => {
                     data-testid={`button-option-${option.id}`}
                     className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
-                    <div className="flex items-center">
-                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                          <p className="text-gray-600">{option.desc}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
-                        <p className="text-gray-600">{option.desc}</p>
+                      <div className="text-gray-400">
+                        <i className="fas fa-chevron-right text-lg"></i>
                       </div>
                     </div>
                   </button>
@@ -381,11 +386,16 @@ const QuizResetBarriga = () => {
                     data-testid={`button-time-${option.id}`}
                     className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
-                    <div className="flex items-center">
-                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`fas fa-clock ${option.iconColor} text-xl`}></i>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                          <i className={`fas fa-clock ${option.iconColor} text-xl`}></i>
+                        </div>
+                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
                       </div>
-                      <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                      <div className="text-gray-400">
+                        <i className="fas fa-chevron-right text-lg"></i>
+                      </div>
                     </div>
                   </button>
                 ))}
@@ -418,11 +428,16 @@ const QuizResetBarriga = () => {
                     data-testid={`button-obstacle-${option.id}`}
                     className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
-                    <div className="flex items-center">
-                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        </div>
+                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
                       </div>
-                      <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                      <div className="text-gray-400">
+                        <i className="fas fa-chevron-right text-lg"></i>
+                      </div>
                     </div>
                   </button>
                 ))}
@@ -455,13 +470,18 @@ const QuizResetBarriga = () => {
                     data-testid={`button-attempts-${option.id}`}
                     className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
-                    <div className="flex items-center">
-                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        </div>
+                        <div>
+                          <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                          {option.desc && <p className="text-gray-600">{option.desc}</p>}
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
-                        {option.desc && <p className="text-gray-600">{option.desc}</p>}
+                      <div className="text-gray-400">
+                        <i className="fas fa-chevron-right text-lg"></i>
                       </div>
                     </div>
                   </button>
@@ -495,11 +515,16 @@ const QuizResetBarriga = () => {
                     data-testid={`button-feeling-${option.id}`}
                     className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
-                    <div className="flex items-center">
-                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        </div>
+                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
                       </div>
-                      <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                      <div className="text-gray-400">
+                        <i className="fas fa-chevron-right text-lg"></i>
+                      </div>
                     </div>
                   </button>
                 ))}
@@ -532,11 +557,16 @@ const QuizResetBarriga = () => {
                     data-testid={`button-social-${option.id}`}
                     className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
-                    <div className="flex items-center">
-                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        </div>
+                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
                       </div>
-                      <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                      <div className="text-gray-400">
+                        <i className="fas fa-chevron-right text-lg"></i>
+                      </div>
                     </div>
                   </button>
                 ))}
