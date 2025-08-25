@@ -227,7 +227,7 @@ const QuizResetBarriga = () => {
 
               <div className="grid md:grid-cols-3 gap-4 mb-12">
                 <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <div className="w-12 h-12 min-w-[48px] bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square">
                     <i className="fas fa-weight text-primary text-lg"></i>
                   </div>
                   <div>
@@ -236,7 +236,7 @@ const QuizResetBarriga = () => {
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
-                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <div className="w-12 h-12 min-w-[48px] bg-accent/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square">
                     <i className="fas fa-cookie-bite text-accent text-lg"></i>
                   </div>
                   <div>
@@ -245,7 +245,7 @@ const QuizResetBarriga = () => {
                   </div>
                 </div>
                 <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
-                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  <div className="w-12 h-12 min-w-[48px] bg-success/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square">
                     <i className="fas fa-chart-line text-success text-lg"></i>
                   </div>
                   <div>
@@ -295,7 +295,7 @@ const QuizResetBarriga = () => {
                 ].map((testimonial, index) => (
                   <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
                     <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                      <div className="w-12 h-12 min-w-[48px] bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square">
                         <i className="fas fa-user text-primary"></i>
                       </div>
                       <div>
@@ -357,7 +357,7 @@ const QuizResetBarriga = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
                         <div>
@@ -402,7 +402,7 @@ const QuizResetBarriga = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`fas fa-clock ${option.iconColor} text-xl`}></i>
                         </div>
                         <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
@@ -444,7 +444,7 @@ const QuizResetBarriga = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
                         <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
@@ -486,7 +486,7 @@ const QuizResetBarriga = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
                         <div>
@@ -531,7 +531,7 @@ const QuizResetBarriga = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
                         <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
@@ -573,7 +573,7 @@ const QuizResetBarriga = () => {
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
                         <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
@@ -628,7 +628,7 @@ const QuizResetBarriga = () => {
                       }`}
                     >
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                        <div className={`w-12 h-12 min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
                         </div>
                         <h3 className="font-bold text-gray-900 text-lg flex-grow">{option.text}</h3>
@@ -689,7 +689,7 @@ const QuizResetBarriga = () => {
                     className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
-                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
+                      <div className={`w-12 h-12 min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                         <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
                       </div>
                       <div>
@@ -917,21 +917,21 @@ const QuizResetBarriga = () => {
 
                 <div className="grid md:grid-cols-3 gap-6 mb-12">
                   <div className="bg-white rounded-xl p-6 shadow-lg">
-                    <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 min-w-[64px] bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0 aspect-square">
                       <span className="text-red-600 font-bold text-xl">1-7</span>
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">DIAS 1-7</h4>
                     <p className="text-gray-600">Reset metabólico que 'desperta' hormônios dormentes</p>
                   </div>
                   <div className="bg-white rounded-xl p-6 shadow-lg">
-                    <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 min-w-[64px] bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0 aspect-square">
                       <span className="text-amber-600 font-bold text-xl">8-21</span>
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">DIAS 8-21</h4>
                     <p className="text-gray-600">Ativação dos 3 gatilhos alimentares para queima contínua</p>
                   </div>
                   <div className="bg-white rounded-xl p-6 shadow-lg">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 min-w-[64px] bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0 aspect-square">
                       <i className="fas fa-trophy text-green-600 text-2xl"></i>
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">RESULTADO</h4>
@@ -958,7 +958,7 @@ const QuizResetBarriga = () => {
                     )}
                     
                     <div className="text-center mb-6">
-                      <div className={`w-16 h-16 ${plan.recommended ? 'bg-accent/10' : 'bg-gray-100'} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                      <div className={`w-16 h-16 min-w-[64px] ${plan.recommended ? 'bg-accent/10' : 'bg-gray-100'} rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0 aspect-square`}>
                         <i className={`${plan.icon} ${plan.recommended ? 'text-accent' : 'text-gray-600'} text-2xl`}></i>
                       </div>
                       <h4 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h4>
