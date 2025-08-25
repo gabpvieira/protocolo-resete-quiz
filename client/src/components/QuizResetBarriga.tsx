@@ -227,7 +227,7 @@ const QuizResetBarriga = () => {
 
               <div className="mb-12 text-center">
                 <img 
-                  src="https://i.postimg.cc/63g2K49f/thumb-1.png" 
+                  src="https://i.postimg.cc/XNZGNLBK/capa.jpg" 
                   alt="Transformação de perda de peso" 
                   className="rounded-xl shadow-2xl w-full max-w-3xl mx-auto"
                 />
@@ -270,7 +270,7 @@ const QuizResetBarriga = () => {
                   className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   <i className="fas fa-play mr-3"></i>
-                  Descobrir Meu Protocolo Personalizado
+                  INICIAR MEU PROTOCOLO
                 </button>
               </div>
             </div>
