@@ -325,10 +325,10 @@ const QuizResetBarriga = () => {
 
               <div className="space-y-4">
                 {[
-                  { id: 'efeito_sanfona', text: 'Já fiz várias dietas mas sempre volto a engordar', desc: '(efeito sanfona)', icon: 'fas fa-sync-alt', color: 'red' },
-                  { id: 'metabolismo_lento', text: 'Como pouco mas não emagreço', desc: '(metabolismo lento)', icon: 'fas fa-tachometer-alt', color: 'blue' },
-                  { id: 'compulsao_doce', text: 'Tenho compulsão por doces e carboidratos', desc: 'Não consigo resistir', icon: 'fas fa-cookie-bite', color: 'amber' },
-                  { id: 'tentou_tudo', text: 'Já tentei de tudo', desc: 'Dietas, academia, remédios, nada funciona', icon: 'fas fa-exclamation-triangle', color: 'purple' }
+                  { id: 'efeito_sanfona', text: 'Já fiz várias dietas mas sempre volto a engordar', desc: '(efeito sanfona)', icon: 'fas fa-sync-alt', bgColor: 'bg-red-100', iconColor: 'text-red-500' },
+                  { id: 'metabolismo_lento', text: 'Como pouco mas não emagreço', desc: '(metabolismo lento)', icon: 'fas fa-tachometer-alt', bgColor: 'bg-blue-100', iconColor: 'text-blue-500' },
+                  { id: 'compulsao_doce', text: 'Tenho compulsão por doces e carboidratos', desc: 'Não consigo resistir', icon: 'fas fa-cookie-bite', bgColor: 'bg-amber-100', iconColor: 'text-amber-500' },
+                  { id: 'tentou_tudo', text: 'Já tentei de tudo', desc: 'Dietas, academia, remédios, nada funciona', icon: 'fas fa-exclamation-triangle', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' }
                 ].map((option) => (
                   <button 
                     key={option.id}
@@ -337,8 +337,8 @@ const QuizResetBarriga = () => {
                     className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
-                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                       </div>
                       <div>
                         <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
@@ -365,10 +365,10 @@ const QuizResetBarriga = () => {
 
               <div className="space-y-4">
                 {[
-                  { id: 'menos_1_ano', text: 'Menos de 1 ano', color: 'green' },
-                  { id: '1_3_anos', text: 'Entre 1 e 3 anos', color: 'yellow' },
-                  { id: '3_5_anos', text: 'Entre 3 e 5 anos', color: 'orange' },
-                  { id: 'mais_5_anos', text: 'Mais de 5 anos', color: 'red' }
+                  { id: 'menos_1_ano', text: 'Menos de 1 ano', bgColor: 'bg-green-100', iconColor: 'text-green-500' },
+                  { id: '1_3_anos', text: 'Entre 1 e 3 anos', bgColor: 'bg-yellow-100', iconColor: 'text-yellow-500' },
+                  { id: '3_5_anos', text: 'Entre 3 e 5 anos', bgColor: 'bg-orange-100', iconColor: 'text-orange-500' },
+                  { id: 'mais_5_anos', text: 'Mais de 5 anos', bgColor: 'bg-red-100', iconColor: 'text-red-500' }
                 ].map((option) => (
                   <button 
                     key={option.id}
@@ -377,8 +377,8 @@ const QuizResetBarriga = () => {
                     className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
-                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`fas fa-clock text-${option.color}-500 text-xl`}></i>
+                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`fas fa-clock ${option.iconColor} text-xl`}></i>
                       </div>
                       <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
                     </div>
@@ -402,10 +402,10 @@ const QuizResetBarriga = () => {
 
               <div className="space-y-4">
                 {[
-                  { id: 'efeito_sanfona', text: 'Sempre recupero o peso perdido (efeito sanfona)', icon: 'fas fa-sync-alt', color: 'red' },
-                  { id: 'compulsao_doce', text: 'Não consigo controlar a vontade de comer doce', icon: 'fas fa-cookie-bite', color: 'amber' },
-                  { id: 'metabolismo_lento', text: 'Como pouco mas não perco peso', icon: 'fas fa-tachometer-alt', color: 'blue' },
-                  { id: 'dietas_restritivas', text: 'Desisto das dietas porque são muito restritivas', icon: 'fas fa-ban', color: 'purple' }
+                  { id: 'efeito_sanfona', text: 'Sempre recupero o peso perdido (efeito sanfona)', icon: 'fas fa-sync-alt', bgColor: 'bg-red-100', iconColor: 'text-red-500' },
+                  { id: 'compulsao_doce', text: 'Não consigo controlar a vontade de comer doce', icon: 'fas fa-cookie-bite', bgColor: 'bg-amber-100', iconColor: 'text-amber-500' },
+                  { id: 'metabolismo_lento', text: 'Como pouco mas não perco peso', icon: 'fas fa-tachometer-alt', bgColor: 'bg-blue-100', iconColor: 'text-blue-500' },
+                  { id: 'dietas_restritivas', text: 'Desisto das dietas porque são muito restritivas', icon: 'fas fa-ban', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' }
                 ].map((option) => (
                   <button 
                     key={option.id}
@@ -414,8 +414,8 @@ const QuizResetBarriga = () => {
                     className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
-                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                       </div>
                       <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
                     </div>
@@ -439,10 +439,10 @@ const QuizResetBarriga = () => {
 
               <div className="space-y-4">
                 {[
-                  { id: '2_3_tentativas', text: '2-3 tentativas', icon: 'fas fa-redo', color: 'green' },
-                  { id: '4_6_tentativas', text: '4-6 tentativas', icon: 'fas fa-redo', color: 'yellow' },
-                  { id: '7_10_tentativas', text: '7-10 tentativas', icon: 'fas fa-redo', color: 'orange' },
-                  { id: 'mais_10', text: 'Mais de 10 tentativas', desc: '(já perdi a conta)', icon: 'fas fa-infinity', color: 'red' }
+                  { id: '2_3_tentativas', text: '2-3 tentativas', icon: 'fas fa-redo', bgColor: 'bg-green-100', iconColor: 'text-green-500' },
+                  { id: '4_6_tentativas', text: '4-6 tentativas', icon: 'fas fa-redo', bgColor: 'bg-yellow-100', iconColor: 'text-yellow-500' },
+                  { id: '7_10_tentativas', text: '7-10 tentativas', icon: 'fas fa-redo', bgColor: 'bg-orange-100', iconColor: 'text-orange-500' },
+                  { id: 'mais_10', text: 'Mais de 10 tentativas', desc: '(já perdi a conta)', icon: 'fas fa-infinity', bgColor: 'bg-red-100', iconColor: 'text-red-500' }
                 ].map((option) => (
                   <button 
                     key={option.id}
@@ -451,8 +451,8 @@ const QuizResetBarriga = () => {
                     className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
-                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                       </div>
                       <div>
                         <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
@@ -479,10 +479,10 @@ const QuizResetBarriga = () => {
 
               <div className="space-y-4">
                 {[
-                  { id: 'pouco_insatisfeita', text: 'Um pouco insatisfeita comigo mesma', icon: 'fas fa-frown', color: 'green' },
-                  { id: 'frustrada', text: 'Frustrada por não conseguir emagrecer', icon: 'fas fa-frown', color: 'yellow' },
-                  { id: 'envergonhada', text: 'Envergonhada do meu corpo', icon: 'fas fa-sad-tear', color: 'orange' },
-                  { id: 'desesperada', text: 'Desesperada e sem esperança', icon: 'fas fa-sad-cry', color: 'red' }
+                  { id: 'pouco_insatisfeita', text: 'Um pouco insatisfeita comigo mesma', icon: 'fas fa-frown', bgColor: 'bg-green-100', iconColor: 'text-green-500' },
+                  { id: 'frustrada', text: 'Frustrada por não conseguir emagrecer', icon: 'fas fa-frown', bgColor: 'bg-yellow-100', iconColor: 'text-yellow-500' },
+                  { id: 'envergonhada', text: 'Envergonhada do meu corpo', icon: 'fas fa-sad-tear', bgColor: 'bg-orange-100', iconColor: 'text-orange-500' },
+                  { id: 'desesperada', text: 'Desesperada e sem esperança', icon: 'fas fa-sad-cry', bgColor: 'bg-red-100', iconColor: 'text-red-500' }
                 ].map((option) => (
                   <button 
                     key={option.id}
@@ -491,8 +491,8 @@ const QuizResetBarriga = () => {
                     className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
-                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                       </div>
                       <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
                     </div>
@@ -516,10 +516,10 @@ const QuizResetBarriga = () => {
 
               <div className="space-y-4">
                 {[
-                  { id: 'evito_fotos', text: 'Evito fotos e eventos sociais', icon: 'fas fa-camera', color: 'purple' },
-                  { id: 'insegura_relacionamento', text: 'Me sinto insegura no relacionamento', icon: 'fas fa-heart', color: 'pink' },
-                  { id: 'nao_uso_roupas', text: 'Não uso as roupas que gostaria', icon: 'fas fa-tshirt', color: 'indigo' },
-                  { id: 'afeta_autoestima', text: 'Afeta minha autoestima e confiança', icon: 'fas fa-user-times', color: 'red' }
+                  { id: 'evito_fotos', text: 'Evito fotos e eventos sociais', icon: 'fas fa-camera', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' },
+                  { id: 'insegura_relacionamento', text: 'Me sinto insegura no relacionamento', icon: 'fas fa-heart', bgColor: 'bg-pink-100', iconColor: 'text-pink-500' },
+                  { id: 'nao_uso_roupas', text: 'Não uso as roupas que gostaria', icon: 'fas fa-tshirt', bgColor: 'bg-indigo-100', iconColor: 'text-indigo-500' },
+                  { id: 'afeta_autoestima', text: 'Afeta minha autoestima e confiança', icon: 'fas fa-user-times', bgColor: 'bg-red-100', iconColor: 'text-red-500' }
                 ].map((option) => (
                   <button 
                     key={option.id}
@@ -528,8 +528,8 @@ const QuizResetBarriga = () => {
                     className="w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
-                      <div className={`w-12 h-12 bg-${option.color}-100 rounded-full flex items-center justify-center mr-4`}>
-                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      <div className={`w-12 h-12 ${option.bgColor} rounded-full flex items-center justify-center mr-4`}>
+                        <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                       </div>
                       <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
                     </div>
