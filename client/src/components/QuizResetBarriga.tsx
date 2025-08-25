@@ -369,7 +369,7 @@ const QuizResetBarriga = () => {
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
                         <div>
-                          <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                          <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
                           <p className="text-gray-600">{option.desc}</p>
                         </div>
                       </div>
@@ -413,7 +413,7 @@ const QuizResetBarriga = () => {
                         <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`fas fa-clock ${option.iconColor} text-xl`}></i>
                         </div>
-                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
                       </div>
                       <div className="text-gray-400">
                         <i className="fas fa-chevron-right text-lg"></i>
@@ -455,7 +455,7 @@ const QuizResetBarriga = () => {
                         <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
-                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
                       </div>
                       <div className="text-gray-400">
                         <i className="fas fa-chevron-right text-lg"></i>
@@ -498,7 +498,7 @@ const QuizResetBarriga = () => {
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
                         <div>
-                          <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                          <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
                           {option.desc && <p className="text-gray-600">{option.desc}</p>}
                         </div>
                       </div>
@@ -542,7 +542,7 @@ const QuizResetBarriga = () => {
                         <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
-                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
                       </div>
                       <div className="text-gray-400">
                         <i className="fas fa-chevron-right text-lg"></i>
@@ -584,7 +584,7 @@ const QuizResetBarriga = () => {
                         <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
                         </div>
-                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
                       </div>
                       <div className="text-gray-400">
                         <i className="fas fa-chevron-right text-lg"></i>
@@ -639,7 +639,7 @@ const QuizResetBarriga = () => {
                         <div className={`w-12 h-12 min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
                           <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
                         </div>
-                        <h3 className="font-bold text-gray-900 text-lg flex-grow">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-lg flex-grow">{option.text}</h3>
                         <div className="ml-auto">
                           <div className={`w-6 h-6 border-2 rounded ${
                             isSelected 
@@ -701,7 +701,7 @@ const QuizResetBarriga = () => {
                         <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
                       </div>
                       <div>
-                        <h3 className="font-bold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
                         <p className="text-gray-600">{option.desc}</p>
                       </div>
                     </div>
