@@ -167,15 +167,20 @@
   animation: shimmer 0.6s;
 }
 
-/* Efeito de entalhe para opções de seleção */
+/* Efeito de relevo na borda inferior para opções de seleção */
 .quiz-option {
   box-shadow: 
-    inset 2px 2px 4px rgba(0, 0, 0, 0.06),
-    inset -1px -1px 2px rgba(255, 255, 255, 0.8);
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 3px 0 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
 }
 
 .quiz-option:hover {
   box-shadow: 
-    inset 3px 3px 6px rgba(0, 0, 0, 0.08),
-    inset -2px -2px 4px rgba(255, 255, 255, 0.9);
+    0 3px 6px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.08),
+    0 4px 0 0 rgba(0, 0, 0, 0.15);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
 }
