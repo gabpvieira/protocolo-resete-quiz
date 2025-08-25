@@ -167,11 +167,15 @@
   animation: shimmer 0.6s;
 }
 
-/* Relevo suave para opções de seleção */
+/* Efeito de entalhe para opções de seleção */
 .quiz-option {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 2px 0 4px -1px rgba(0, 0, 0, 0.05);
+  box-shadow: 
+    inset 2px 2px 4px rgba(0, 0, 0, 0.06),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .quiz-option:hover {
-  box-shadow: 0 6px 10px -1px rgba(0, 0, 0, 0.15), 3px 0 6px -1px rgba(0, 0, 0, 0.08);
+  box-shadow: 
+    inset 3px 3px 6px rgba(0, 0, 0, 0.08),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.9);
 }
