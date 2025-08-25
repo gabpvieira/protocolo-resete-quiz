@@ -112,10 +112,10 @@ const QuizResetBarriga = () => {
     setLoadingProgress(0);
 
     const steps = [
-      'Analisando seu perfil metabólico...',
+      'Analisando seu perfil metabólico único...',
       'Identificando os gatilhos que travam seu emagrecimento...',
       'Calculando seu potencial de perda de peso...',
-      'Preparando seu protocolo personalizado...'
+      'Preparando seu protocolo personalizado exclusivo...'
     ];
 
     let step = 0;
@@ -135,7 +135,7 @@ const QuizResetBarriga = () => {
           currentPage: 12
         }));
       }
-    }, 1000);
+    }, 2000);
   };
 
   const showProtocolLoading = () => {
@@ -730,40 +730,107 @@ const QuizResetBarriga = () => {
         );
 
       case 11:
+        const analysisSteps = [
+          { text: 'Analisando seu perfil metabólico único...', completed: loadingProgress >= 25 },
+          { text: 'Identificando os gatilhos que travam seu emagrecimento...', completed: loadingProgress >= 50 },
+          { text: 'Calculando seu potencial de perda de peso...', completed: loadingProgress >= 75 },
+          { text: 'Preparando seu protocolo personalizado exclusivo...', completed: loadingProgress >= 100 }
+        ];
+
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
-            <div className="container mx-auto px-4 max-w-3xl">
+          <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary/5 pt-[159px] pb-8">
+            <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center">
-                <div className="mb-8">
-                  <i className="fas fa-chart-pie text-primary text-6xl mb-6 spin-animation"></i>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    Analisando seu perfil...
-                  </h2>
+                {/* Loading Icon */}
+                <div className="mb-12">
+                  <div className="relative inline-block">
+                    <div className="w-24 h-24 rounded-full border-4 border-primary/20 border-t-primary animate-spin mx-auto mb-6"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <i className="fas fa-brain text-primary text-2xl"></i>
+                    </div>
+                  </div>
+                  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Analisando seu <span className="text-primary">perfil</span>...
+                  </h1>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Nossa IA exclusiva está processando suas respostas para criar um protocolo 100% personalizado
+                  </p>
                 </div>
 
-                <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
+                {/* Analysis Steps */}
+                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 mb-8 max-w-3xl mx-auto">
                   <div className="space-y-6">
-                    {[
-                      'Analisando seu perfil metabólico...',
-                      'Identificando os gatilhos que travam seu emagrecimento...',
-                      'Calculando seu potencial de perda de peso...',
-                      'Preparando seu protocolo personalizado...'
-                    ].map((step, index) => (
-                      <div key={index} className="flex items-center justify-between">
-                        <span className="text-gray-700">{step}</span>
-                        <div className="w-8 h-8">
-                          <i className="fas fa-check-circle text-success"></i>
+                    {analysisSteps.map((step, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+                        <div className="flex items-center flex-1">
+                          <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 transition-all duration-500 ${
+                            step.completed 
+                              ? 'bg-success text-white' 
+                              : loadingProgress > (index * 25) 
+                                ? 'bg-primary/20 text-primary animate-pulse'
+                                : 'bg-gray-200 text-gray-400'
+                          }`}>
+                            {step.completed ? (
+                              <i className="fas fa-check text-sm"></i>
+                            ) : (
+                              <i className="fas fa-cog animate-spin text-sm"></i>
+                            )}
+                          </div>
+                          <span className={`text-lg font-medium transition-colors duration-300 ${
+                            step.completed ? 'text-gray-900' : 'text-gray-600'
+                          }`}>
+                            {step.text}
+                          </span>
                         </div>
+                        {step.completed && (
+                          <div className="text-success font-semibold text-sm">
+                            Concluído
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div 
-                    className="bg-gradient-to-r from-primary to-success h-3 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${loadingProgress}%` }}
-                  ></div>
+                {/* Progress Bar */}
+                <div className="mb-8">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-sm font-medium text-gray-600">Progresso da Análise</span>
+                    <span className="text-sm font-bold text-primary">{Math.round(loadingProgress)}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                    <div 
+                      className="bg-gradient-to-r from-primary via-success to-accent h-4 rounded-full transition-all duration-1000 ease-out shadow-lg"
+                      style={{ width: `${loadingProgress}%` }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Exclusive Features */}
+                <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-4 border border-primary/20">
+                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i className="fas fa-dna text-primary text-xl"></i>
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-sm mb-2">Análise Metabólica Avançada</h3>
+                    <p className="text-gray-600 text-xs">Tecnologia exclusiva de mapeamento hormonal</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-xl p-4 border border-success/20">
+                    <div className="w-12 h-12 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i className="fas fa-target text-success text-xl"></i>
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-sm mb-2">Protocolo Personalizado</h3>
+                    <p className="text-gray-600 text-xs">Criado especificamente para seu biotipo</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-4 border border-accent/20">
+                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i className="fas fa-shield-alt text-accent text-xl"></i>
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-sm mb-2">Resultado Garantido</h3>
+                    <p className="text-gray-600 text-xs">Baseado em mais de 12.000 casos de sucesso</p>
+                  </div>
                 </div>
               </div>
             </div>
