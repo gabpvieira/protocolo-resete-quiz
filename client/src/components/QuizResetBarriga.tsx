@@ -199,7 +199,7 @@ const QuizResetBarriga = () => {
     switch (quizState.currentPage) {
       case 1:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center mb-8">
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
@@ -265,7 +265,7 @@ const QuizResetBarriga = () => {
 
       case 2:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center mb-12">
                 <div className="text-6xl font-bold text-primary mb-4">+12.000</div>
@@ -319,7 +319,7 @@ const QuizResetBarriga = () => {
 
       case 3:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -364,7 +364,7 @@ const QuizResetBarriga = () => {
 
       case 4:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -406,7 +406,7 @@ const QuizResetBarriga = () => {
 
       case 5:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -448,7 +448,7 @@ const QuizResetBarriga = () => {
 
       case 6:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -493,7 +493,7 @@ const QuizResetBarriga = () => {
 
       case 7:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -535,7 +535,7 @@ const QuizResetBarriga = () => {
 
       case 8:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
@@ -578,7 +578,7 @@ const QuizResetBarriga = () => {
       case 9:
         const selectedSymptoms = quizState.multipleAnswers['symptoms'] || [];
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-8">
                 <div className="bg-blue-50 rounded-xl p-6 mb-8">
@@ -648,7 +648,7 @@ const QuizResetBarriga = () => {
 
       case 10:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-8">
                 <div className="bg-primary/10 rounded-xl p-6 mb-8">
@@ -692,7 +692,7 @@ const QuizResetBarriga = () => {
 
       case 11:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center">
                 <div className="mb-8">
@@ -736,7 +736,7 @@ const QuizResetBarriga = () => {
         if (!result) return null;
 
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center mb-8">
                 <div className="w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -819,7 +819,7 @@ const QuizResetBarriga = () => {
 
       case 13:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center">
                 <div className="mb-8">
@@ -858,7 +858,7 @@ const QuizResetBarriga = () => {
 
       case 14:
         return (
-          <div className="min-h-screen pt-36 pb-8">
+          <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-5xl">
               <div className="text-center mb-12">
                 <div className="w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
