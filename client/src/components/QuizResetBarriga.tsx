@@ -225,27 +225,33 @@ const QuizResetBarriga = () => {
                 />
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
-                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i className="fas fa-weight text-primary text-2xl"></i>
+              <div className="grid md:grid-cols-3 gap-4 mb-12">
+                <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <i className="fas fa-weight text-primary text-lg"></i>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">Elimine até 5kg em 21 dias</h3>
-                  <p className="text-gray-600">Sem passar fome ou dietas malucas</p>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1 text-sm">Elimine até 5kg em 21 dias</h3>
+                    <p className="text-gray-600 text-xs">Sem passar fome ou dietas malucas</p>
+                  </div>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                  <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i className="fas fa-cookie-bite text-accent text-2xl"></i>
+                <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
+                  <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <i className="fas fa-cookie-bite text-accent text-lg"></i>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">Continue comendo pão e doce</h3>
-                  <p className="text-gray-600">Do jeito certo, sem culpa</p>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1 text-sm">Continue comendo pão e doce</h3>
+                    <p className="text-gray-600 text-xs">Do jeito certo, sem culpa</p>
+                  </div>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                  <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i className="fas fa-chart-line text-success text-2xl"></i>
+                <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
+                  <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <i className="fas fa-chart-line text-success text-lg"></i>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2">Pare o efeito sanfona</h3>
-                  <p className="text-gray-600">De uma vez por todas</p>
+                  <div>
+                    <h3 className="font-bold text-gray-900 mb-1 text-sm">Pare o efeito sanfona</h3>
+                    <p className="text-gray-600 text-xs">De uma vez por todas</p>
+                  </div>
                 </div>
               </div>
 
