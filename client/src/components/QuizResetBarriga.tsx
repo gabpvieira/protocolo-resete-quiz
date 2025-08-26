@@ -1128,6 +1128,15 @@ const QuizResetBarriga = () => {
                 <p className="text-xl text-gray-600 mb-8">Identificamos exatamente o que está travando seu emagrecimento.</p>
               </div>
 
+              {/* Final Image */}
+              <div className="mb-12 text-center">
+                <img 
+                  src="https://i.postimg.cc/VNKqpFdS/FINALIMAGE.jpg" 
+                  alt="Protocolo Reset da Barriga - Resultado Final" 
+                  className="rounded-2xl shadow-2xl max-w-full mx-auto transform hover:scale-105 transition-all duration-300"
+                />
+              </div>
+
               {/* Personalized Summary */}
               <div className="bg-gradient-to-r from-blue-50 to-primary/5 rounded-xl p-8 mb-12">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
