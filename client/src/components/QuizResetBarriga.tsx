@@ -13,6 +13,7 @@ const QuizResetBarriga = () => {
 
   const [isLoading, setIsLoading] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const [countdown, setCountdown] = useState(420); // 7 minutos em segundos
 
   const updateProgress = () => {
     const progress = (quizState.currentPage / 14) * 100;
@@ -33,6 +34,23 @@ const QuizResetBarriga = () => {
     updateProgress();
     scrollToTop();
   }, [quizState.currentPage]);
+
+  // Countdown timer effect
+  useEffect(() => {
+    if (quizState.currentPage === 14 && countdown > 0) {
+      const timer = setInterval(() => {
+        setCountdown(prev => prev - 1);
+      }, 1000);
+      return () => clearInterval(timer);
+    }
+  }, [quizState.currentPage, countdown]);
+
+  // Format countdown time
+  const formatTime = (seconds: number) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+  };
 
   const selectAnswer = (questionId: string, answer: string) => {
     const newResponses = quizState.responses.filter(r => r.questionId !== questionId);
@@ -1162,6 +1180,60 @@ const QuizResetBarriga = () => {
                     </div>
                     <h4 className="font-bold text-gray-900 mb-2">RESULTADO</h4>
                     <p className="text-gray-600">Até 5kg eliminados sem fome, sem cortar doce, sem academia</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Countdown Timer */}
+              <div className="mb-12">
+                <div className="relative max-w-4xl mx-auto">
+                  {/* Background Effects */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl blur-xl opacity-30 transform scale-105"></div>
+                  
+                  <div className="relative bg-gradient-to-r from-red-500 via-red-600 to-red-700 rounded-2xl p-8 text-white text-center shadow-2xl border-4 border-red-300">
+                    {/* Warning Icon */}
+                    <div className="mb-6">
+                      <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+                        <i className="fas fa-exclamation-triangle text-white text-3xl"></i>
+                      </div>
+                      <h3 className="text-2xl md:text-4xl font-black mb-2 drop-shadow-lg">
+                        ⚠️ OFERTA ESPECIAL EXPIRA EM:
+                      </h3>
+                    </div>
+
+                    {/* Countdown Display */}
+                    <div className="mb-6">
+                      <div className="bg-black/30 rounded-xl p-6 mb-4 inline-block">
+                        <div className="text-6xl md:text-8xl font-black text-yellow-300 drop-shadow-2xl animate-pulse">
+                          {formatTime(countdown)}
+                        </div>
+                      </div>
+                      <p className="text-xl md:text-2xl font-bold opacity-95">
+                        MINUTOS : SEGUNDOS
+                      </p>
+                    </div>
+
+                    {/* Urgency Message */}
+                    <div className="bg-black/20 rounded-xl p-6">
+                      <h4 className="text-xl md:text-2xl font-bold mb-3">
+                        🚨 ATENÇÃO: Esta é sua ÚNICA chance!
+                      </h4>
+                      <p className="text-lg mb-2">
+                        Se você sair desta página ou esperar o tempo acabar,
+                      </p>
+                      <p className="text-xl font-bold text-yellow-300">
+                        PERDERÁ esta oferta especial PARA SEMPRE!
+                      </p>
+                      <p className="text-sm mt-3 opacity-90">
+                        Não haverá segunda chance. Esta promoção nunca mais voltará.
+                      </p>
+                    </div>
+
+                    {/* Decorative Elements */}
+                    <div className="absolute top-4 left-4 w-8 h-8 bg-yellow-300 rounded-full animate-ping"></div>
+                    <div className="absolute top-4 right-4 w-6 h-6 bg-white/30 rounded-full animate-bounce"></div>
+                    <div className="absolute bottom-4 left-8 w-4 h-4 bg-yellow-300 rounded-full animate-pulse"></div>
+                    <div className="absolute bottom-4 right-8 w-5 h-5 bg-white/30 rounded-full animate-ping"></div>
                   </div>
                 </div>
               </div>
