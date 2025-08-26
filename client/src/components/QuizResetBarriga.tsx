@@ -859,43 +859,76 @@ const QuizResetBarriga = () => {
         if (!result) return null;
 
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
-            <div className="container mx-auto px-4 max-w-4xl">
-              <div className="text-center mb-8">
-                <div className="w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <i className="fas fa-check-circle text-success text-4xl"></i>
+          <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-success/10 pt-[159px] pb-8">
+            <div className="container mx-auto px-4 max-w-5xl">
+              
+              {/* Header Section with Animation */}
+              <div className="text-center mb-12">
+                <div className="relative inline-block mb-8">
+                  <div className="w-32 h-32 bg-gradient-to-r from-success to-green-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <i className="fas fa-check-circle text-white text-5xl"></i>
+                  </div>
+                  {/* Animated rings */}
+                  <div className="absolute inset-0 w-32 h-32 border-4 border-success/30 rounded-full animate-ping"></div>
+                  <div className="absolute inset-2 w-28 h-28 border-2 border-success/20 rounded-full animate-ping animation-delay-200"></div>
                 </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-gray-900 via-primary to-success bg-clip-text text-transparent">
                   Seu perfil foi identificado!
-                </h2>
-                <p className="text-lg text-gray-600">Veja os resultados da análise personalizada</p>
+                </h1>
+                <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                  Veja os resultados da sua análise personalizada completa
+                </p>
               </div>
 
-              <div className="bg-gradient-to-r from-primary to-success rounded-xl p-8 text-white text-center mb-8">
-                <div className="text-5xl font-bold mb-2" data-testid="text-success-rate">{result.successChance}%</div>
-                <p className="text-xl">de chance de sucesso com o protocolo</p>
-                <p className="text-sm opacity-90 mt-2">Baseado no seu perfil e respostas</p>
+              {/* Analysis Image */}
+              <div className="mb-12 text-center">
+                <img 
+                  src="https://i.postimg.cc/h4b5ZLpn/analise1.jpg" 
+                  alt="Análise Personalizada Completa" 
+                  className="rounded-2xl shadow-2xl max-w-full mx-auto transform hover:scale-105 transition-all duration-300"
+                />
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                      <i className="fas fa-user-circle text-primary text-xl"></i>
+              {/* Success Rate Container - Enhanced */}
+              <div className="relative mb-12">
+                <div className="absolute inset-0 bg-gradient-to-r from-success to-green-400 rounded-2xl blur-xl opacity-30 transform scale-105"></div>
+                <div className="relative bg-gradient-to-r from-success via-green-500 to-emerald-500 rounded-2xl p-10 text-white text-center shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="mb-4">
+                    <div className="text-7xl md:text-8xl font-black mb-4 drop-shadow-lg" data-testid="text-success-rate">
+                      {result.successChance}%
                     </div>
-                    <h3 className="font-bold text-gray-900">Seu Tipo Identificado</h3>
+                    <p className="text-2xl md:text-3xl font-semibold mb-2">de chance de sucesso com o protocolo</p>
+                    <p className="text-lg opacity-95">Baseado no seu perfil e respostas</p>
                   </div>
-                  <p className="text-gray-700" data-testid="text-user-type">{result.userType}</p>
+                  
+                  {/* Decorative elements */}
+                  <div className="absolute top-4 left-4 w-16 h-16 bg-white/10 rounded-full"></div>
+                  <div className="absolute bottom-4 right-4 w-12 h-12 bg-white/10 rounded-full"></div>
+                  <div className="absolute top-1/2 right-8 w-8 h-8 bg-white/10 rounded-full"></div>
+                </div>
+              </div>
+
+              {/* Enhanced Info Cards */}
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-primary to-blue-500 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                      <i className="fas fa-user-circle text-white text-2xl"></i>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900">Seu Tipo Identificado</h3>
+                  </div>
+                  <p className="text-gray-700 text-lg leading-relaxed" data-testid="text-user-type">{result.userType}</p>
                 </div>
 
-                <div className="bg-white rounded-xl p-6 shadow-lg">
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
-                      <i className="fas fa-clock text-accent text-xl"></i>
+                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-gradient-to-r from-accent to-orange-500 rounded-full flex items-center justify-center mr-6 shadow-lg">
+                      <i className="fas fa-clock text-white text-2xl"></i>
                     </div>
-                    <h3 className="font-bold text-gray-900">Tempo de Luta</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">Tempo de Luta</h3>
                   </div>
-                  <p className="text-gray-700" data-testid="text-struggle-time">
+                  <p className="text-gray-700 text-lg leading-relaxed" data-testid="text-struggle-time">
                     {(() => {
                       const timeResponse = quizState.responses.find(r => r.questionId === 'struggle_time');
                       const timeMap = {
@@ -910,31 +943,43 @@ const QuizResetBarriga = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                  <i className="fas fa-lightbulb text-accent mr-3"></i>
+              {/* Enhanced Insights Section */}
+              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-10 shadow-xl border border-gray-100 mb-12">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
+                  <i className="fas fa-lightbulb text-accent mr-4 text-4xl"></i>
                   Insights Personalizados para Você
                 </h3>
                 <div className="space-y-6" data-testid="container-insights">
                   {result.personalizedInsights.map((insight, index) => (
-                    <div key={index} className="flex items-start p-4 bg-primary/5 rounded-lg">
-                      <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
-                        <span className="text-white font-bold text-sm">{index + 1}</span>
+                    <div key={index} className="flex items-start p-6 bg-gradient-to-r from-primary/5 to-success/5 rounded-xl border-l-4 border-primary shadow-md transform hover:scale-105 transition-all duration-300">
+                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-success rounded-full flex items-center justify-center mr-6 flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-lg">{index + 1}</span>
                       </div>
-                      <p className="text-gray-700" data-testid={`text-insight-${index}`}>{insight}</p>
+                      <p className="text-gray-700 text-lg leading-relaxed" data-testid={`text-insight-${index}`}>{insight}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
+              {/* Enhanced CTA Button */}
               <div className="text-center">
-                <button 
-                  onClick={nextPage}
-                  data-testid="button-view-protocol"
-                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                >
-                  Ver Meu Protocolo Personalizado <i className="fas fa-arrow-right ml-2"></i>
-                </button>
+                <div className="relative inline-block">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-success rounded-full blur-xl opacity-50 transform scale-110"></div>
+                  <button 
+                    onClick={nextPage}
+                    data-testid="button-view-protocol"
+                    className="relative bg-gradient-to-r from-primary via-success to-emerald-500 text-white font-bold py-6 px-12 rounded-full text-2xl shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 border-2 border-white/20"
+                  >
+                    <i className="fas fa-rocket mr-4 text-2xl"></i>
+                    Ver Meu Protocolo Personalizado
+                    <i className="fas fa-arrow-right ml-4 text-2xl"></i>
+                  </button>
+                </div>
+                
+                {/* Pulsing indicator */}
+                <div className="mt-6">
+                  <div className="w-4 h-4 bg-success rounded-full mx-auto animate-pulse"></div>
+                </div>
               </div>
             </div>
           </div>
