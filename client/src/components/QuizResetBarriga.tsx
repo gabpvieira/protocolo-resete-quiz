@@ -336,10 +336,10 @@ const QuizResetBarriga = () => {
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center mb-8">
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                  Descubra o Protocolo que 
-                  <span className="text-primary"> Reativa seu Metabolismo Lento</span> 
-                  e Elimina até <span className="text-accent">5kg em 21 Dias</span>
+                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-relaxed">
+                  Descubra o Protocolo que<br />
+                  <span className="text-primary">Reativa seu Metabolismo<br />Lento</span>{' '}
+                  e Elimina até <span className="text-accent">5kg em<br />21 Dias</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
                   Mesmo que você já tenha tentado dietas, academia, remédios e shakes sem sucesso
