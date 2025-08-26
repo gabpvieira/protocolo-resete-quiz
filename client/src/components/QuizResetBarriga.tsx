@@ -339,13 +339,13 @@ const QuizResetBarriga = () => {
                 <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight px-2 max-w-4xl mx-auto">
                   Descubra o Protocolo que <span className="text-primary">Reativa seu Metabolismo Lento</span> e Elimina até <span className="text-accent">5kg em 21 Dias</span>
                 </h1>
-                <p className="text-base md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto px-2">
+                <p className="text-lg md:text-2xl lg:text-3xl text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto px-2">
                   Mesmo que você já tenha tentado dietas, academia, remédios e shakes sem sucesso
                 </p>
                 
                 <div className="inline-flex items-center bg-primary/10 rounded-full px-3 md:px-6 py-2 md:py-3 mb-6 md:mb-8 mx-2">
                   <i className="fas fa-flask text-primary mr-2 md:mr-3 text-sm md:text-base"></i>
-                  <span className="text-primary font-semibold text-xs md:text-sm lg:text-base">Sistema de 3 Gatilhos Alimentares + Reset Metabólico de 7 Dias</span>
+                  <span className="text-primary font-semibold text-sm md:text-lg lg:text-xl">Sistema de 3 Gatilhos Alimentares + Reset Metabólico de 7 Dias</span>
                 </div>
               </div>
 
@@ -936,24 +936,24 @@ const QuizResetBarriga = () => {
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                       <i className="fas fa-dna text-primary text-lg md:text-xl"></i>
                     </div>
-                    <h3 className="font-bold text-gray-900 text-xs md:text-sm mb-1 md:mb-2 text-center">Análise Metabólica Avançada</h3>
-                    <p className="text-gray-600 text-xs text-center">Tecnologia exclusiva de mapeamento hormonal</p>
+                    <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2 text-center">Análise Metabólica Avançada</h3>
+                    <p className="text-gray-600 text-sm text-center">Tecnologia exclusiva de mapeamento hormonal</p>
                   </div>
                   
                   <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-xl p-3 md:p-4 border border-success/20">
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                       <i className="fas fa-target text-success text-lg md:text-xl"></i>
                     </div>
-                    <h3 className="font-bold text-gray-900 text-xs md:text-sm mb-1 md:mb-2 text-center">Protocolo Personalizado</h3>
-                    <p className="text-gray-600 text-xs text-center">Criado especificamente para seu biotipo</p>
+                    <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2 text-center">Protocolo Personalizado</h3>
+                    <p className="text-gray-600 text-sm text-center">Criado especificamente para seu biotipo</p>
                   </div>
                   
                   <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-3 md:p-4 border border-accent/20">
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
                       <i className="fas fa-shield-alt text-accent text-lg md:text-xl"></i>
                     </div>
-                    <h3 className="font-bold text-gray-900 text-xs md:text-sm mb-1 md:mb-2 text-center">Resultado Garantido</h3>
-                    <p className="text-gray-600 text-xs text-center">Baseado em mais de 12.000 casos de sucesso</p>
+                    <h3 className="font-bold text-gray-900 text-sm md:text-base mb-1 md:mb-2 text-center">Resultado Garantido</h3>
+                    <p className="text-gray-600 text-sm text-center">Baseado em mais de 12.000 casos de sucesso</p>
                   </div>
                 </div>
               </div>
@@ -1262,22 +1262,22 @@ const QuizResetBarriga = () => {
                     <div className="w-12 h-12 md:w-16 md:h-16 min-w-[48px] md:min-w-[64px] bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 flex-shrink-0 aspect-square">
                       <span className="text-red-600 font-bold text-lg md:text-xl">1-7</span>
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">DIAS 1-7</h4>
-                    <p className="text-gray-600 text-xs md:text-base">Reset metabólico que 'desperta' hormônios dormentes</p>
+                    <h4 className="font-bold text-gray-900 mb-2 text-base md:text-lg">DIAS 1-7</h4>
+                    <p className="text-gray-600 text-sm md:text-lg">Reset metabólico que 'desperta' hormônios dormentes</p>
                   </div>
                   <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
                     <div className="w-12 h-12 md:w-16 md:h-16 min-w-[48px] md:min-w-[64px] bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 flex-shrink-0 aspect-square">
                       <span className="text-amber-600 font-bold text-lg md:text-xl">8-21</span>
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">DIAS 8-21</h4>
-                    <p className="text-gray-600 text-xs md:text-base">Ativação dos 3 gatilhos alimentares para queima contínua</p>
+                    <h4 className="font-bold text-gray-900 mb-2 text-base md:text-lg">DIAS 8-21</h4>
+                    <p className="text-gray-600 text-sm md:text-lg">Ativação dos 3 gatilhos alimentares para queima contínua</p>
                   </div>
                   <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
                     <div className="w-12 h-12 md:w-16 md:h-16 min-w-[48px] md:min-w-[64px] bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 flex-shrink-0 aspect-square">
                       <i className="fas fa-trophy text-green-600 text-xl md:text-2xl"></i>
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">RESULTADO</h4>
-                    <p className="text-gray-600 text-xs md:text-base">Até 5kg eliminados sem fome, sem cortar doce, sem academia</p>
+                    <h4 className="font-bold text-gray-900 mb-2 text-base md:text-lg">RESULTADO</h4>
+                    <p className="text-gray-600 text-sm md:text-lg">Até 5kg eliminados sem fome, sem cortar doce, sem academia</p>
                   </div>
                 </div>
               </div>
