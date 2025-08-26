@@ -1,0 +1,1481 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo Reset da Barriga - Quiz Personalizado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10B981',
+                        secondary: '#3B82F6',
+                        accent: '#F59E0B',
+                        success: '#059669',
+                        danger: '#DC2626'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 font-sans">
+
+<!-- @COMPONENT: QuizApp [main application component] -->
+<div id="quiz-app" class="min-h-screen">
+    
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
+        <div class="h-1 bg-gray-200">
+            <div id="progress-bar" class="h-full bg-gradient-to-r from-primary to-success transition-all duration-500 ease-out" style="width: 7.14%"></div>
+        </div>
+        <div class="px-4 py-2 text-sm text-gray-600 text-center">
+            <span id="progress-text">Página 1 de 14</span>
+        </div>
+    </div>
+
+    <!-- Page 1 - Captura Inicial -->
+    <div id="page-1" class="quiz-page active min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                    Descubra o Protocolo que 
+                    <span class="text-primary">Reativa seu Metabolismo Lento</span> 
+                    e Elimina até <span class="text-accent">5kg em 21 Dias</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                    Mesmo que você já tenha tentado dietas, academia, remédios e shakes sem sucesso
+                </p>
+                
+                <!-- Mechanism Badge -->
+                <div class="inline-flex items-center bg-primary/10 rounded-full px-6 py-3 mb-8">
+                    <i class="fas fa-flask text-primary mr-3"></i>
+                    <span class="text-primary font-semibold">Sistema de 3 Gatilhos Alimentares + Reset Metabólico de 7 Dias</span>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <!-- Weight loss transformation showing before and after results -->
+            <div class="mb-12 text-center">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&h=600" 
+                     alt="Transformação de perda de peso" 
+                     class="rounded-xl shadow-2xl w-full max-w-3xl mx-auto">
+            </div>
+
+            <!-- Promises -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-weight text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Elimine até 5kg em 21 dias</h3>
+                    <p class="text-gray-600">Sem passar fome ou dietas malucas</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cookie-bite text-accent text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Continue comendo pão e doce</h3>
+                    <p class="text-gray-600">Do jeito certo, sem culpa</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-success text-2xl"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Pare o efeito sanfona</h3>
+                    <p class="text-gray-600">De uma vez por todas</p>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center">
+                <button onclick="nextPage()" class="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-play mr-3"></i>
+                    Descobrir Meu Protocolo Personalizado
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 2 - Prova Social -->
+    <div id="page-2" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <div class="text-6xl font-bold text-primary mb-4">+12.000</div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">pessoas já reativaram o metabolismo</h2>
+                <p class="text-xl text-gray-600">e eliminaram o efeito sanfona</p>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Sandra</h4>
+                            <p class="text-gray-600 text-sm">42 anos</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Perdi 7kg em 3 semanas comendo pão todo dia!"</p>
+                    <div class="flex text-accent">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Roberto</h4>
+                            <p class="text-gray-600 text-sm">35 anos</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Finalmente parei de engordar depois da dieta"</p>
+                    <div class="flex text-accent">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-primary"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Mariana</h4>
+                            <p class="text-gray-600 text-sm">38 anos</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">"Não tenho mais compulsão por doce, é incrível!"</p>
+                    <div class="flex text-accent">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Authority -->
+            <div class="bg-blue-50 rounded-xl p-6 text-center mb-8">
+                <i class="fas fa-microscope text-secondary text-3xl mb-4"></i>
+                <p class="text-gray-700 font-medium">Método desenvolvido com base em estudos sobre metabolismo e hormônios da saciedade</p>
+            </div>
+
+            <div class="text-center">
+                <button onclick="nextPage()" class="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    Continuar <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 3 - Segmentação Principal -->
+    <div id="page-3" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Qual dessas situações mais descreve sua luta com o peso?
+                </h2>
+                <p class="text-lg text-gray-600">Selecione a opção que mais se identifica com você</p>
+            </div>
+
+            <div class="space-y-4">
+                <button onclick="selectAnswer('main_struggle', 'efeito_sanfona')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-sync-alt text-red-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg">Já fiz várias dietas mas sempre volto a engordar</h3>
+                            <p class="text-gray-600">(efeito sanfona)</p>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('main_struggle', 'metabolismo_lento')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-tachometer-alt text-blue-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg">Como pouco mas não emagreço</h3>
+                            <p class="text-gray-600">(metabolismo lento)</p>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('main_struggle', 'compulsao_doce')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-cookie-bite text-amber-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg">Tenho compulsão por doces e carboidratos</h3>
+                            <p class="text-gray-600">Não consigo resistir</p>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('main_struggle', 'tentou_tudo')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-exclamation-triangle text-purple-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg">Já tentei de tudo</h3>
+                            <p class="text-gray-600">Dietas, academia, remédios, nada funciona</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 4 - Dados Demográficos -->
+    <div id="page-4" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Há quanto tempo você luta para emagrecer?
+                </h2>
+                <p class="text-lg text-gray-600">Isso nos ajuda a entender melhor seu perfil</p>
+            </div>
+
+            <div class="space-y-4">
+                <button onclick="selectAnswer('struggle_time', 'menos_1_ano')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-clock text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Menos de 1 ano</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('struggle_time', '1_3_anos')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-clock text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Entre 1 e 3 anos</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('struggle_time', '3_5_anos')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-clock text-orange-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Entre 3 e 5 anos</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('struggle_time', 'mais_5_anos')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-clock text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Mais de 5 anos</h3>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 5 - Diagnóstico do Problema Raiz -->
+    <div id="page-5" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Qual é seu maior obstáculo para emagrecer?
+                </h2>
+                <p class="text-lg text-gray-600">Vamos identificar a raiz do problema</p>
+            </div>
+
+            <div class="space-y-4">
+                <button onclick="selectAnswer('main_obstacle', 'efeito_sanfona')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-sync-alt text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Sempre recupero o peso perdido (efeito sanfona)</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('main_obstacle', 'compulsao_doce')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-cookie-bite text-amber-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Não consigo controlar a vontade de comer doce</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('main_obstacle', 'metabolismo_lento')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-tachometer-alt text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Como pouco mas não perco peso</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('main_obstacle', 'dietas_restritivas')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-ban text-purple-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Desisto das dietas porque são muito restritivas</h3>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 6 - Quantificação da Dor -->
+    <div id="page-6" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Quantas vezes você já tentou emagrecer e "falhou"?
+                </h2>
+                <p class="text-lg text-gray-600">Seja honesta conosco (isso é importante para seu resultado)</p>
+            </div>
+
+            <div class="space-y-4">
+                <button onclick="selectAnswer('attempts_failed', '2_3_tentativas')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-redo text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">2-3 tentativas</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('attempts_failed', '4_6_tentativas')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-redo text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">4-6 tentativas</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('attempts_failed', '7_10_tentativas')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-redo text-orange-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">7-10 tentativas</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('attempts_failed', 'mais_10')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-infinity text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Mais de 10 tentativas</h3>
+                        <p class="text-gray-600">(já perdi a conta)</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 7 - Impacto Emocional -->
+    <div id="page-7" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Como você se sente quando se olha no espelho?
+                </h2>
+                <p class="text-lg text-gray-600">Queremos entender o impacto emocional</p>
+            </div>
+
+            <div class="space-y-4">
+                <button onclick="selectAnswer('emotional_feeling', 'pouco_insatisfeita')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-frown text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Um pouco insatisfeita comigo mesma</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('emotional_feeling', 'frustrada')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-frown text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Frustrada por não conseguir emagrecer</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('emotional_feeling', 'envergonhada')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-sad-tear text-orange-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Envergonhada do meu corpo</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('emotional_feeling', 'desesperada')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-sad-cry text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Desesperada e sem esperança</h3>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 8 - Impacto Social/Relacionamentos -->
+    <div id="page-8" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Como o peso afeta sua vida social e relacionamentos?
+                </h2>
+                <p class="text-lg text-gray-600">O impacto vai além do físico</p>
+            </div>
+
+            <div class="space-y-4">
+                <button onclick="selectAnswer('social_impact', 'evito_fotos')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-camera text-purple-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Evito fotos e eventos sociais</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('social_impact', 'insegura_relacionamento')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-heart text-pink-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Me sinto insegura no relacionamento</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('social_impact', 'nao_uso_roupas')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-tshirt text-indigo-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Não uso as roupas que gostaria</h3>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('social_impact', 'afeta_autoestima')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user-times text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Afeta minha autoestima e confiança</h3>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 9 - Amplificação Científica -->
+    <div id="page-9" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-8">
+                <div class="bg-blue-50 rounded-xl p-6 mb-8">
+                    <i class="fas fa-microscope text-secondary text-3xl mb-4"></i>
+                    <p class="text-lg text-gray-700 font-medium">
+                        Pesquisas mostram que <span class="text-secondary font-bold">89% das pessoas</span> com metabolismo lento sofrem de:
+                    </p>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Quais destes sintomas você reconhece em si?
+                </h2>
+                <p class="text-lg text-gray-600">Pode marcar mais de uma opção</p>
+            </div>
+
+            <div class="space-y-4" data-multiple="true">
+                <button onclick="toggleMultipleAnswer('symptoms', 'ganho_peso_pouco')" class="answer-option multiple w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-weight text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Ganho de peso mesmo comendo pouco</h3>
+                        <div class="ml-auto">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded checkbox"></div>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="toggleMultipleAnswer('symptoms', 'compulsao_doces')" class="answer-option multiple w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-cookie-bite text-amber-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Compulsão por doces após as 18h</h3>
+                        <div class="ml-auto">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded checkbox"></div>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="toggleMultipleAnswer('symptoms', 'cansaco_constante')" class="answer-option multiple w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-tired text-orange-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Cansaço constante e falta de energia</h3>
+                        <div class="ml-auto">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded checkbox"></div>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="toggleMultipleAnswer('symptoms', 'efeito_sanfona')" class="answer-option multiple w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-sync-alt text-purple-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Efeito sanfona (sempre recupera o peso)</h3>
+                        <div class="ml-auto">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded checkbox"></div>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="toggleMultipleAnswer('symptoms', 'inchaco_abdominal')" class="answer-option multiple w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-expand-arrows-alt text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Inchaço abdominal frequente</h3>
+                        <div class="ml-auto">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded checkbox"></div>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="toggleMultipleAnswer('symptoms', 'dificuldade_dormir')" class="answer-option multiple w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-bed text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900 text-lg">Dificuldade para dormir bem</h3>
+                        <div class="ml-auto">
+                            <div class="w-6 h-6 border-2 border-gray-300 rounded checkbox"></div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="text-center mt-8">
+                <button onclick="nextPageMultiple()" class="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    Continuar <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 10 - Pergunta Mágica -->
+    <div id="page-10" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-8">
+                <div class="bg-primary/10 rounded-xl p-6 mb-8">
+                    <i class="fas fa-magic text-primary text-3xl mb-4"></i>
+                    <p class="text-lg text-gray-700 font-medium">
+                        O <span class="text-primary font-bold">Protocolo Reset da Barriga</span> combina 3 gatilhos alimentares científicos que reativam seu metabolismo em 7 dias...
+                    </p>
+                </div>
+                
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    Se você pudesse emagrecer 5kg em 21 dias sem passar fome e sem cortar pão ou doce, quanto isso mudaria sua vida?
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <button onclick="selectAnswer('magic_question', 'mudaria_completamente')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-star text-green-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg">Mudaria completamente</h3>
+                            <p class="text-gray-600">Recuperaria minha confiança e autoestima</p>
+                        </div>
+                    </div>
+                </button>
+
+                <button onclick="selectAnswer('magic_question', 'mudaria_muito')" class="answer-option w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary">
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-heart text-blue-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 text-lg">Mudaria muito</h3>
+                            <p class="text-gray-600">Finalmente me sentiria bem comigo mesma</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 11 - Tela de Análise (Loading) -->
+    <div id="page-11" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center">
+                <div class="mb-8">
+                    <i class="fas fa-chart-pie text-primary text-6xl mb-6 animate-spin"></i>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Analisando seu perfil...
+                    </h2>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg mb-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Analisando seu perfil metabólico...</span>
+                            <div class="w-8 h-8">
+                                <i id="loading-1" class="fas fa-spinner animate-spin text-primary"></i>
+                                <i id="check-1" class="fas fa-check-circle text-success hidden"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Identificando os gatilhos que travam seu emagrecimento...</span>
+                            <div class="w-8 h-8">
+                                <i id="loading-2" class="fas fa-spinner animate-spin text-primary"></i>
+                                <i id="check-2" class="fas fa-check-circle text-success hidden"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Calculando seu potencial de perda de peso...</span>
+                            <div class="w-8 h-8">
+                                <i id="loading-3" class="fas fa-spinner animate-spin text-primary"></i>
+                                <i id="check-3" class="fas fa-check-circle text-success hidden"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Preparando seu protocolo personalizado...</span>
+                            <div class="w-8 h-8">
+                                <i id="loading-4" class="fas fa-spinner animate-spin text-primary"></i>
+                                <i id="check-4" class="fas fa-check-circle text-success hidden"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div id="analysis-progress" class="bg-gradient-to-r from-primary to-success h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 12 - Resultado Personalizado -->
+    <div id="page-12" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-8">
+                <div class="w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check-circle text-success text-4xl"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Seu perfil foi identificado!
+                </h2>
+                <p class="text-lg text-gray-600">Veja os resultados da análise personalizada</p>
+            </div>
+
+            <!-- Success Rate Display -->
+            <div class="bg-gradient-to-r from-primary to-success rounded-xl p-8 text-white text-center mb-8">
+                <div class="text-5xl font-bold mb-2" id="success-rate">92%</div>
+                <p class="text-xl">de chance de sucesso com o protocolo</p>
+                <p class="text-sm opacity-90 mt-2">Baseado no seu perfil e respostas</p>
+            </div>
+
+            <!-- User Profile Results -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user-circle text-primary text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900">Seu Tipo Identificado</h3>
+                    </div>
+                    <p class="text-gray-700" id="user-type-display">Metabolismo Adaptativo com Efeito Sanfona</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-clock text-accent text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-900">Tempo de Luta</h3>
+                    </div>
+                    <p class="text-gray-700" id="struggle-time-display">Mais de 3 anos tentando emagrecer</p>
+                </div>
+            </div>
+
+            <!-- Personalized Insights -->
+            <div class="bg-white rounded-xl p-8 shadow-lg mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                    <i class="fas fa-lightbulb text-accent mr-3"></i>
+                    Insights Personalizados para Você
+                </h3>
+                <div class="space-y-6" id="personalized-insights">
+                    <!-- Dynamic insights will be inserted here -->
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button onclick="nextPage()" class="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    Ver Meu Protocolo Personalizado <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 13 - Segunda Tela de Loading -->
+    <div id="page-13" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center">
+                <div class="mb-8">
+                    <i class="fas fa-cogs text-primary text-6xl mb-6 animate-spin"></i>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Preparando seu Protocolo Reset personalizado...
+                    </h2>
+                </div>
+
+                <div class="bg-white rounded-xl p-8 shadow-lg mb-8">
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Configurando os 3 gatilhos metabólicos ideais para você...</span>
+                            <div class="w-8 h-8">
+                                <i id="protocol-loading-1" class="fas fa-spinner animate-spin text-primary"></i>
+                                <i id="protocol-check-1" class="fas fa-check-circle text-success hidden"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-700">Personalizando estratégias para seu perfil...</span>
+                            <div class="w-8 h-8">
+                                <i id="protocol-loading-2" class="fas fa-spinner animate-spin text-primary"></i>
+                                <i id="protocol-check-2" class="fas fa-check-circle text-success hidden"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full bg-gray-200 rounded-full h-3">
+                    <div id="protocol-progress" class="bg-gradient-to-r from-primary to-success h-3 rounded-full transition-all duration-1000 ease-out" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page 14 - Oferta Final -->
+    <div id="page-14" class="quiz-page min-h-screen pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-12">
+                <div class="w-24 h-24 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check-circle text-success text-4xl"></i>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Seu resultado está pronto!
+                </h2>
+                <p class="text-xl text-gray-600 mb-8">Identificamos exatamente o que está travando seu emagrecimento.</p>
+            </div>
+
+            <!-- Personalized Summary -->
+            <div class="bg-gradient-to-r from-blue-50 to-primary/5 rounded-xl p-8 mb-12">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+                    <i class="fas fa-user-check text-primary mr-3"></i>
+                    Seu Resumo Personalizado
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6" id="final-summary">
+                    <!-- Dynamic summary content -->
+                </div>
+            </div>
+
+            <!-- Method Presentation -->
+            <div class="text-center mb-12">
+                <div class="bg-gradient-to-r from-primary to-success text-white rounded-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold mb-4">PROTOCOLO RESET DA BARRIGA</h3>
+                    <p class="text-xl">O único método que combina 3 gatilhos alimentares para reativar metabolismo lento em 7 dias</p>
+                </div>
+
+                <!-- How it works -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-red-600 font-bold text-xl">1-7</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">DIAS 1-7</h4>
+                        <p class="text-gray-600">Reset metabólico que 'desperta' hormônios dormentes</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <span class="text-amber-600 font-bold text-xl">8-21</span>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">DIAS 8-21</h4>
+                        <p class="text-gray-600">Ativação dos 3 gatilhos alimentares para queima contínua</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-lg">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-trophy text-green-600 text-2xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">RESULTADO</h4>
+                        <p class="text-gray-600">Até 5kg eliminados sem fome, sem cortar doce, sem academia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Plans -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- Essential Plan -->
+                <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-gray-200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-bronze text-gray-600 text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-2">PLANO ESSENCIAL</h4>
+                        <div class="text-3xl font-bold text-gray-900">R$ 9,90</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span>Protocolo Reset da Barriga completo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span>Guia dos 3 gatilhos alimentares</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span>Vídeo explicativo passo a passo</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span>7 dias de garantia</span>
+                        </li>
+                    </ul>
+                    <button onclick="selectPlan('essencial')" class="w-full bg-gray-600 text-white font-bold py-3 px-6 rounded-full hover:bg-gray-700 transition-colors">
+                        Escolher Essencial
+                    </button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="bg-white rounded-xl p-8 shadow-lg border-4 border-accent relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold">RECOMENDADO</span>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-crown text-accent text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-gray-900 mb-2">PLANO PREMIUM</h4>
+                        <div class="mb-2">
+                            <span class="text-2xl text-gray-500 line-through">R$ 692</span>
+                        </div>
+                        <div class="text-4xl font-bold text-accent">R$ 29,90</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-success mr-3"></i>
+                            <span>Tudo do Plano Essencial +</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-gift text-accent mr-3"></i>
+                            <span><strong>BÔNUS 1:</strong> Lista das Substituições Inteligentes (R$ 97)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-gift text-accent mr-3"></i>
+                            <span><strong>BÔNUS 2:</strong> Cardápio Anti-Compulsão de 21 Dias (R$ 127)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-gift text-accent mr-3"></i>
+                            <span><strong>BÔNUS 3:</strong> Reset Hormonal da Queima (R$ 147)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-gift text-accent mr-3"></i>
+                            <span><strong>BÔNUS 4:</strong> Treino de 7 Minutos em Casa (R$ 97)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-gift text-accent mr-3"></i>
+                            <span><strong>BÔNUS 5:</strong> Guia do Sono Emagrecedor (R$ 127)</span>
+                        </li>
+                    </ul>
+                    <button onclick="selectPlan('premium')" class="w-full bg-gradient-to-r from-accent to-orange-500 text-white font-bold py-4 px-6 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                        <i class="fas fa-crown mr-2"></i>
+                        QUERO O PREMIUM
+                    </button>
+                </div>
+            </div>
+
+            <!-- Value Message -->
+            <div class="bg-amber-50 rounded-xl p-6 text-center mb-8">
+                <i class="fas fa-lightbulb text-amber-500 text-2xl mb-3"></i>
+                <p class="text-lg font-medium text-gray-800">
+                    Você pode levar só o protocolo por R$ 9,90... mas por apenas <span class="text-accent font-bold">+R$ 20</span> você recebe bônus que valem <span class="text-accent font-bold">R$ 595</span>. A escolha é óbvia!
+                </p>
+            </div>
+
+            <!-- Guarantees -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <i class="fas fa-shield-alt text-success text-3xl mb-3"></i>
+                    <h4 class="font-bold text-gray-900 mb-2">7 Dias de Garantia</h4>
+                    <p class="text-gray-600">Incondicional e total</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <i class="fas fa-weight text-primary text-3xl mb-3"></i>
+                    <h4 class="font-bold text-gray-900 mb-2">Garantia de Resultado</h4>
+                    <p class="text-gray-600">Se não perder 2kg, devolvemos seu dinheiro</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <i class="fas fa-infinity text-accent text-3xl mb-3"></i>
+                    <h4 class="font-bold text-gray-900 mb-2">Acesso Vitalício</h4>
+                    <p class="text-gray-600">Imediato e para sempre</p>
+                </div>
+            </div>
+
+            <!-- Objection Handling -->
+            <div class="bg-gray-50 rounded-xl p-8 mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Quebra de Objeções</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">"E se não funcionar comigo?"</p>
+                                <p class="text-gray-600">→ 7 dias de garantia total</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">"Já tentei tantas coisas..."</p>
+                                <p class="text-gray-600">→ Este método é diferente: reativa o metabolismo ao invés de desacelerar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">"E se for muito difícil?"</p>
+                                <p class="text-gray-600">→ São apenas 3 gatilhos simples, sem dieta maluca</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">"E se eu não conseguir parar os doces?"</p>
+                                <p class="text-gray-600">→ O protocolo reduz naturalmente a compulsão</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-bold text-gray-900">"E se for caro demais?"</p>
+                                <p class="text-gray-600">→ R$ 29,90 é menos que um dia de delivery</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Urgency and Scarcity -->
+            <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-triangle text-red-500 text-2xl mr-4"></i>
+                    <div>
+                        <p class="font-bold text-red-800">Oferta especial válida apenas hoje</p>
+                        <p class="text-red-700">Amanhã volta ao preço normal de R$ 97</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-orange-50 border-l-4 border-orange-500 p-6 mb-8">
+                <div class="flex items-center">
+                    <i class="fas fa-users text-orange-500 text-2xl mr-4"></i>
+                    <div>
+                        <p class="font-bold text-orange-800">Vagas limitadas</p>
+                        <p class="text-orange-700">Para acompanhamento personalizado</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final CTAs -->
+            <div class="text-center space-y-4">
+                <button onclick="selectPlan('premium')" class="w-full max-w-md bg-gradient-to-r from-accent to-orange-500 text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-crown mr-3"></i>
+                    SIM! Quero o PLANO PREMIUM por R$ 29,90
+                </button>
+                <button onclick="selectPlan('essencial')" class="w-full max-w-md bg-gray-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-700 transition-colors">
+                    Prefiro apenas o Essencial por R$ 9,90
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- @END_COMPONENT: QuizApp -->
+
+<script>
+(function() {
+    // TypeScript-like interfaces (commented for documentation)
+    /*
+    interface UserResponse {
+        questionId: string;
+        answer: string | string[];
+        timestamp: number;
+    }
+
+    interface QuizState {
+        currentPage: number;
+        responses: UserResponse[];
+        userProfile: UserProfile | null;
+        finalResult: QuizResult | null;
+    }
+
+    interface UserProfile {
+        userType: 'efeito_sanfona' | 'metabolismo_lento' | 'compulsao_doce' | 'tentou_tudo';
+        struggleTime: string;
+        attempts: string;
+        urgencyLevel: 'low' | 'medium' | 'high' | 'critical';
+        painLevel: number;
+        readinessLevel: number;
+    }
+
+    interface QuizResult {
+        successChance: number;
+        userType: string;
+        personalizedInsights: string[];
+        urgencyLevel: 'low' | 'medium' | 'high' | 'critical';
+        recommendedPlan: 'essencial' | 'premium';
+    }
+    */
+
+    // Quiz State Management
+    let quizState = {
+        currentPage: 1,
+        responses: [],
+        userProfile: null,
+        finalResult: null,
+        multipleAnswers: {}
+    };
+
+    // DOM Elements
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const pages = document.querySelectorAll('.quiz-page');
+
+    // Initialize quiz
+    function initQuiz() {
+        showPage(1);
+        updateProgress();
+    }
+
+    // Page navigation
+    function showPage(pageNumber) {
+        pages.forEach(page => {
+            page.classList.remove('active');
+            page.style.display = 'none';
+        });
+        
+        const currentPage = document.getElementById(`page-${pageNumber}`);
+        if (currentPage) {
+            currentPage.classList.add('active');
+            currentPage.style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+        
+        quizState.currentPage = pageNumber;
+        updateProgress();
+    }
+
+    // Progress update
+    function updateProgress() {
+        const progress = (quizState.currentPage / 14) * 100;
+        progressBar.style.width = `${progress}%`;
+        progressText.textContent = `Página ${quizState.currentPage} de 14`;
+    }
+
+    // Answer selection
+    function selectAnswer(questionId, answer) {
+        // Store response
+        quizState.responses = quizState.responses.filter(r => r.questionId !== questionId);
+        quizState.responses.push({
+            questionId: questionId,
+            answer: answer,
+            timestamp: Date.now()
+        });
+
+        // Visual feedback
+        const currentPage = document.getElementById(`page-${quizState.currentPage}`);
+        const options = currentPage.querySelectorAll('.answer-option');
+        options.forEach(option => {
+            option.classList.remove('border-primary', 'bg-primary/5');
+            option.classList.add('border-transparent');
+        });
+
+        event.target.closest('.answer-option').classList.add('border-primary', 'bg-primary/5');
+
+        // Auto-advance after short delay
+        setTimeout(() => {
+            nextPage();
+        }, 800);
+    }
+
+    // Multiple choice handling
+    function toggleMultipleAnswer(questionId, answer) {
+        if (!quizState.multipleAnswers[questionId]) {
+            quizState.multipleAnswers[questionId] = [];
+        }
+
+        const answers = quizState.multipleAnswers[questionId];
+        const index = answers.indexOf(answer);
+        
+        if (index > -1) {
+            answers.splice(index, 1);
+        } else {
+            answers.push(answer);
+        }
+
+        // Update visual
+        const option = event.target.closest('.answer-option');
+        const checkbox = option.querySelector('.checkbox');
+        
+        if (index > -1) {
+            option.classList.remove('border-primary', 'bg-primary/5');
+            checkbox.innerHTML = '';
+            checkbox.classList.remove('bg-primary', 'border-primary');
+            checkbox.classList.add('border-gray-300');
+        } else {
+            option.classList.add('border-primary', 'bg-primary/5');
+            checkbox.innerHTML = '<i class="fas fa-check text-white text-xs"></i>';
+            checkbox.classList.add('bg-primary', 'border-primary');
+            checkbox.classList.remove('border-gray-300');
+        }
+    }
+
+    // Multiple choice page advance
+    function nextPageMultiple() {
+        const questionId = 'symptoms';
+        const answers = quizState.multipleAnswers[questionId] || [];
+        
+        if (answers.length > 0) {
+            quizState.responses = quizState.responses.filter(r => r.questionId !== questionId);
+            quizState.responses.push({
+                questionId: questionId,
+                answer: answers,
+                timestamp: Date.now()
+            });
+            nextPage();
+        } else {
+            alert('Selecione pelo menos uma opção para continuar.');
+        }
+    }
+
+    // Next page logic
+    function nextPage() {
+        if (quizState.currentPage === 10) {
+            // Before analysis screen
+            showLoadingAnalysis();
+        } else if (quizState.currentPage === 11) {
+            // After analysis, show results
+            generatePersonalizedResult();
+            showPage(12);
+        } else if (quizState.currentPage === 12) {
+            // Before final protocol loading
+            showProtocolLoading();
+        } else if (quizState.currentPage === 13) {
+            // Show final offer
+            generateFinalOffer();
+            showPage(14);
+        } else {
+            showPage(quizState.currentPage + 1);
+        }
+    }
+
+    // Loading analysis animation
+    function showLoadingAnalysis() {
+        showPage(11);
+        
+        const checks = ['check-1', 'check-2', 'check-3', 'check-4'];
+        const loadings = ['loading-1', 'loading-2', 'loading-3', 'loading-4'];
+        const progressBar = document.getElementById('analysis-progress');
+        
+        let step = 0;
+        const interval = setInterval(() => {
+            if (step < checks.length) {
+                document.getElementById(loadings[step]).classList.add('hidden');
+                document.getElementById(checks[step]).classList.remove('hidden');
+                progressBar.style.width = `${((step + 1) / checks.length) * 100}%`;
+                step++;
+            } else {
+                clearInterval(interval);
+                setTimeout(() => nextPage(), 500);
+            }
+        }, 1000);
+    }
+
+    // Protocol loading animation
+    function showProtocolLoading() {
+        showPage(13);
+        
+        const checks = ['protocol-check-1', 'protocol-check-2'];
+        const loadings = ['protocol-loading-1', 'protocol-loading-2'];
+        const progressBar = document.getElementById('protocol-progress');
+        
+        let step = 0;
+        const interval = setInterval(() => {
+            if (step < checks.length) {
+                document.getElementById(loadings[step]).classList.add('hidden');
+                document.getElementById(checks[step]).classList.remove('hidden');
+                progressBar.style.width = `${((step + 1) / checks.length) * 100}%`;
+                step++;
+            } else {
+                clearInterval(interval);
+                setTimeout(() => nextPage(), 500);
+            }
+        }, 1500);
+    }
+
+    // Score calculation
+    function calculateUserScore(responses) {
+        let urgencyScore = 0;
+        let painLevel = 0;
+        let readinessLevel = 0;
+        
+        responses.forEach(response => {
+            switch(response.questionId) {
+                case 'main_struggle':
+                    painLevel += response.answer === 'tentou_tudo' ? 35 : 
+                                response.answer === 'efeito_sanfona' ? 30 :
+                                response.answer === 'metabolismo_lento' ? 25 : 30;
+                    break;
+                case 'struggle_time':
+                    painLevel += response.answer === 'mais_5_anos' ? 30 : 
+                                response.answer === '3_5_anos' ? 25 : 20;
+                    break;
+                case 'attempts_failed':
+                    urgencyScore += response.answer === 'mais_10' ? 35 :
+                                   response.answer === '7_10_tentativas' ? 30 : 
+                                   response.answer === '4_6_tentativas' ? 25 : 20;
+                    break;
+                case 'emotional_feeling':
+                    urgencyScore += response.answer === 'desesperada' ? 35 :
+                                   response.answer === 'envergonhada' ? 30 :
+                                   response.answer === 'frustrada' ? 25 : 15;
+                    break;
+                case 'magic_question':
+                    readinessLevel += 40;
+                    break;
+            }
+        });
+        
+        return { urgencyScore, painLevel, readinessLevel };
+    }
+
+    // Generate insights
+    function generateInsights(responses, userType) {
+        const insights = [];
+        
+        const typeInsights = {
+            efeito_sanfona: "Seu perfil de 'efeito sanfona' indica metabolismo adaptativo - você precisa do reset hormonal para quebrar esse ciclo.",
+            metabolismo_lento: "Seu metabolismo lento é resultado de dietas restritivas anteriores - o protocolo vai reativar sua queima natural.",
+            compulsao_doce: "Sua compulsão por doces revela desequilíbrio de serotonina - temos estratégias específicas para isso.",
+            tentou_tudo: "Após tantas tentativas, você precisa de um método que funcione DE VERDADE - e nós temos."
+        };
+        
+        insights.push(typeInsights[userType] || typeInsights.efeito_sanfona);
+        
+        const attemptResponse = responses.find(r => r.questionId === 'attempts_failed');
+        if (attemptResponse?.answer === 'mais_10') {
+            insights.push("Suas +10 tentativas mostram que métodos convencionais não funcionam para seu perfil - você precisa do protocolo científico.");
+        } else {
+            insights.push("Suas tentativas anteriores falharam porque atacaram sintomas, não a causa raiz do problema.");
+        }
+        
+        const timeResponse = responses.find(r => r.questionId === 'struggle_time');
+        if (timeResponse?.answer === 'mais_5_anos') {
+            insights.push("Após 5+ anos de luta, seu corpo desenvolveu resistência - o reset vai quebrar essa barreira.");
+        } else {
+            insights.push("Sua frustração acumulada mostra que você está pronta para uma mudança radical de abordagem.");
+        }
+        
+        const emotionalResponse = responses.find(r => r.questionId === 'emotional_feeling');
+        if (emotionalResponse?.answer === 'desesperada') {
+            insights.push("Seu nível de urgência emocional indica que você vai seguir o protocolo até o fim - isso é fundamental para o sucesso.");
+        }
+        
+        return insights.slice(0, 4);
+    }
+
+    // Generate personalized result
+    function generatePersonalizedResult() {
+        const mainStruggle = quizState.responses.find(r => r.questionId === 'main_struggle');
+        const userType = mainStruggle ? mainStruggle.answer : 'efeito_sanfona';
+        
+        const scores = calculateUserScore(quizState.responses);
+        const baseChance = 90;
+        const random = Math.floor(Math.random() * 6) - 3; // -3 to +3
+        const painBonus = Math.min(scores.painLevel / 20, 5);
+        const attemptBonus = Math.min(scores.urgencyScore / 30, 2);
+        
+        const successChance = Math.min(Math.max(baseChance + random + painBonus + attemptBonus, 88), 97);
+        
+        const insights = generateInsights(quizState.responses, userType);
+        
+        const typeDisplayNames = {
+            efeito_sanfona: 'Metabolismo Adaptativo com Efeito Sanfona',
+            metabolismo_lento: 'Metabolismo Naturalmente Lento',
+            compulsao_doce: 'Desequilíbrio Hormonal com Compulsão',
+            tentou_tudo: 'Resistência Metabólica Múltipla'
+        };
+        
+        const timeDisplayNames = {
+            'menos_1_ano': 'Menos de 1 ano tentando emagrecer',
+            '1_3_anos': '1-3 anos tentando emagrecer',
+            '3_5_anos': '3-5 anos tentando emagrecer',
+            'mais_5_anos': 'Mais de 5 anos tentando emagrecer'
+        };
+        
+        quizState.finalResult = {
+            successChance: Math.round(successChance),
+            userType: typeDisplayNames[userType] || typeDisplayNames.efeito_sanfona,
+            personalizedInsights: insights,
+            urgencyLevel: scores.urgencyScore > 60 ? 'critical' : scores.urgencyScore > 40 ? 'high' : 'medium',
+            recommendedPlan: scores.urgencyScore > 50 ? 'premium' : 'essencial'
+        };
+        
+        // Update display
+        document.getElementById('success-rate').textContent = `${quizState.finalResult.successChance}%`;
+        document.getElementById('user-type-display').textContent = quizState.finalResult.userType;
+        
+        const struggleTime = quizState.responses.find(r => r.questionId === 'struggle_time');
+        const timeDisplay = timeDisplayNames[struggleTime?.answer] || 'Tempo não informado';
+        document.getElementById('struggle-time-display').textContent = timeDisplay;
+        
+        // Render insights
+        const insightsContainer = document.getElementById('personalized-insights');
+        insightsContainer.innerHTML = '';
+        
+        quizState.finalResult.personalizedInsights.forEach((insight, index) => {
+            const insightElement = document.createElement('div');
+            insightElement.className = 'flex items-start p-4 bg-primary/5 rounded-lg';
+            insightElement.innerHTML = `
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <span class="text-white font-bold text-sm">${index + 1}</span>
+                </div>
+                <p class="text-gray-700">${insight}</p>
+            `;
+            insightsContainer.appendChild(insightElement);
+        });
+    }
+
+    // Generate final offer
+    function generateFinalOffer() {
+        const summaryContainer = document.getElementById('final-summary');
+        summaryContainer.innerHTML = '';
+        
+        const summaryPoints = [
+            `Você tem perfil de ${quizState.finalResult.userType.toLowerCase()}`,
+            `Sua compulsão por doces indica desequilíbrio hormonal`,
+            `Após tantas tentativas, você precisa de um método que funcione DE VERDADE`
+        ];
+        
+        summaryPoints.forEach((point, index) => {
+            const pointElement = document.createElement('div');
+            pointElement.className = 'bg-white rounded-lg p-4 shadow-md';
+            pointElement.innerHTML = `
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-check text-white text-sm"></i>
+                    </div>
+                    <p class="text-gray-700 text-sm">${point}</p>
+                </div>
+            `;
+            summaryContainer.appendChild(pointElement);
+        });
+    }
+
+    // Plan selection
+    function selectPlan(plan) {
+        // TODO: Implement payment integration
+        console.log(`Selected plan: ${plan}`);
+        alert(`Você selecionou o plano ${plan.toUpperCase()}!\n\nEm um ambiente real, aqui seria redirecionado para o checkout.`);
+    }
+
+    // Global functions
+    window.nextPage = nextPage;
+    window.selectAnswer = selectAnswer;
+    window.toggleMultipleAnswer = toggleMultipleAnswer;
+    window.nextPageMultiple = nextPageMultiple;
+    window.selectPlan = selectPlan;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', initQuiz);
+})();
+</script>
+
+<style>
+.quiz-page {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.quiz-page.active {
+    display: block;
+    opacity: 1;
+}
+
+.answer-option {
+    transition: all 0.3s ease;
+}
+
+.answer-option:hover {
+    transform: translateY(-2px);
+}
+
+.checkbox {
+    transition: all 0.3s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .text-4xl {
+        font-size: 2rem;
+    }
+    
+    .text-6xl {
+        font-size: 3rem;
+    }
+}
+</style>
+
+</body>
+</html>

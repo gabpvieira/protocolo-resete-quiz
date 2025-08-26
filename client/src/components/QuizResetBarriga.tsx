@@ -315,14 +315,14 @@ const QuizResetBarriga = () => {
       id: 'premium',
       name: 'PLANO COMPLETO',
       price: 'R$ 29,90',
-      originalPrice: 'R$ 692',
+      originalPrice: 'R$ 412',
       features: [
-        'Tudo do Plano Básico +',
-        'BÔNUS 1: Lista das Substituições Inteligentes (R$ 97)',
-        'BÔNUS 2: Cardápio Anti-Compulsão de 21 Dias (R$ 127)',
-        'BÔNUS 3: Reset Hormonal da Queima (R$ 147)',
-        'BÔNUS 4: Treino de 7 Minutos em Casa (R$ 97)',
-        'BÔNUS 5: Guia do Sono Emagrecedor (R$ 127)'
+        '**Tudo do Plano Básico +**',
+        '**BÔNUS 1:** Lista das Substituições Inteligentes (R$ 47)',
+        '**BÔNUS 2:** Cardápio Anti-Compulsão de 21 Dias (R$ 67)',
+        '**BÔNUS 3:** Reset Hormonal da Queima (R$ 77)',
+        '**BÔNUS 4:** Treino de 7 Minutos em Casa (R$ 57)',
+        '**BÔNUS 5:** Guia do Sono Emagrecedor (R$ 67)'
       ],
       recommended: true,
       icon: 'fas fa-crown'
@@ -335,19 +335,17 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
-              <div className="text-center mb-8">
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-relaxed">
-                  Descubra o Protocolo que<br />
-                  <span className="text-primary">Reativa seu Metabolismo<br />Lento</span>{' '}
-                  e Elimina até <span className="text-accent">5kg em<br />21 Dias</span>
+              <div className="text-center mb-6 md:mb-8">
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight px-2 max-w-4xl mx-auto">
+                  Descubra o Protocolo que <span className="text-primary">Reativa seu Metabolismo Lento</span> e Elimina até <span className="text-accent">5kg em 21 Dias</span>
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                <p className="text-base md:text-xl lg:text-2xl text-gray-600 mb-6 md:mb-8 max-w-3xl mx-auto px-2">
                   Mesmo que você já tenha tentado dietas, academia, remédios e shakes sem sucesso
                 </p>
                 
-                <div className="inline-flex items-center bg-primary/10 rounded-full px-6 py-3 mb-8">
-                  <i className="fas fa-flask text-primary mr-3"></i>
-                  <span className="text-primary font-semibold">Sistema de 3 Gatilhos Alimentares + Reset Metabólico de 7 Dias</span>
+                <div className="inline-flex items-center bg-primary/10 rounded-full px-3 md:px-6 py-2 md:py-3 mb-6 md:mb-8 mx-2">
+                  <i className="fas fa-flask text-primary mr-2 md:mr-3 text-sm md:text-base"></i>
+                  <span className="text-primary font-semibold text-xs md:text-sm lg:text-base">Sistema de 3 Gatilhos Alimentares + Reset Metabólico de 7 Dias</span>
                 </div>
               </div>
 
@@ -359,31 +357,31 @@ const QuizResetBarriga = () => {
                 />
               </div>
 
-              <div className="grid md:grid-cols-3 gap-4 mb-12">
-                <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
-                  <div className="w-12 h-12 min-w-[48px] bg-primary/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square">
-                    <i className="fas fa-weight text-primary text-lg"></i>
+              <div className="grid md:grid-cols-3 gap-3 md:gap-4 mb-8 md:mb-12">
+                <div className="bg-white rounded-xl p-3 md:p-4 shadow-lg flex items-center">
+                  <div className="w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] bg-primary/10 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square">
+                    <i className="fas fa-weight text-primary text-sm md:text-lg"></i>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1 text-sm">Elimine até 5kg em 21 dias</h3>
+                    <h3 className="font-bold text-gray-900 mb-1 text-xs md:text-sm">Elimine até 5kg em 21 dias</h3>
                     <p className="text-gray-600 text-xs">Sem passar fome ou dietas malucas</p>
                   </div>
                 </div>
-                <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
-                  <div className="w-12 h-12 min-w-[48px] bg-accent/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square">
-                    <i className="fas fa-cookie-bite text-accent text-lg"></i>
+                <div className="bg-white rounded-xl p-3 md:p-4 shadow-lg flex items-center">
+                  <div className="w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] bg-accent/10 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square">
+                    <i className="fas fa-cookie-bite text-accent text-sm md:text-lg"></i>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1 text-sm">Continue comendo pão e doce</h3>
+                    <h3 className="font-bold text-gray-900 mb-1 text-xs md:text-sm">Continue comendo pão e doce</h3>
                     <p className="text-gray-600 text-xs">Do jeito certo, sem culpa</p>
                   </div>
                 </div>
-                <div className="bg-white rounded-xl p-4 shadow-lg flex items-center">
-                  <div className="w-12 h-12 min-w-[48px] bg-success/10 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square">
-                    <i className="fas fa-chart-line text-success text-lg"></i>
+                <div className="bg-white rounded-xl p-3 md:p-4 shadow-lg flex items-center">
+                  <div className="w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] bg-success/10 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square">
+                    <i className="fas fa-chart-line text-success text-sm md:text-lg"></i>
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1 text-sm">Pare o efeito sanfona</h3>
+                    <h3 className="font-bold text-gray-900 mb-1 text-xs md:text-sm">Pare o efeito sanfona</h3>
                     <p className="text-gray-600 text-xs">De uma vez por todas</p>
                   </div>
                 </div>
@@ -393,9 +391,9 @@ const QuizResetBarriga = () => {
                 <button 
                   onClick={nextPage}
                   data-testid="button-start-quiz"
-                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full max-w-sm md:max-w-none md:w-auto"
                 >
-                  <i className="fas fa-play mr-3"></i>
+                  <i className="fas fa-play mr-2 md:mr-3 text-sm md:text-base"></i>
                   INICIAR MEU PROTOCOLO
                 </button>
               </div>
@@ -407,10 +405,10 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
-              <div className="text-center mb-12">
-                <div className="text-6xl font-bold text-primary mb-4">+12.000</div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">pessoas já reativaram o metabolismo</h2>
-                <p className="text-xl text-gray-600">e eliminaram o efeito sanfona</p>
+              <div className="text-center mb-8 md:mb-12">
+                <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-3 md:mb-4">+12.000</div>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4 px-2">pessoas já reativaram o metabolismo</h2>
+                <p className="text-base md:text-lg lg:text-xl text-gray-600 px-2">e eliminaram o efeito sanfona</p>
               </div>
 
               <div className="mb-12 text-center">
@@ -421,7 +419,7 @@ const QuizResetBarriga = () => {
                 />
               </div>
 
-              <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
                 {[
                   { 
                     name: 'Sandra', 
@@ -442,40 +440,40 @@ const QuizResetBarriga = () => {
                     image: 'https://i.postimg.cc/Njx78D49/03.png'
                   }
                 ].map((testimonial, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
-                    <div className="flex items-center mb-4">
+                  <div key={index} className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
+                    <div className="flex items-center mb-3 md:mb-4">
                       <img 
                         src={testimonial.image} 
                         alt={`Depoimento de ${testimonial.name}`}
-                        className="w-12 h-12 min-w-[48px] rounded-full object-cover mr-4 flex-shrink-0"
+                        className="w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] rounded-full object-cover mr-3 md:mr-4 flex-shrink-0"
                       />
                       <div>
-                        <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                        <p className="text-gray-600 text-sm">{testimonial.age}</p>
+                        <h4 className="font-bold text-gray-900 text-sm md:text-base">{testimonial.name}</h4>
+                        <p className="text-gray-600 text-xs md:text-sm">{testimonial.age}</p>
                       </div>
                     </div>
-                    <p className="text-gray-700 mb-4">{testimonial.text}</p>
+                    <p className="text-gray-700 mb-3 md:mb-4 text-sm md:text-base leading-relaxed">{testimonial.text}</p>
                     <div className="flex text-accent">
                       {[...Array(5)].map((_, i) => (
-                        <i key={i} className="fas fa-star"></i>
+                        <i key={i} className="fas fa-star text-sm md:text-base"></i>
                       ))}
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="bg-blue-50 rounded-xl p-6 text-center mb-8">
-                <i className="fas fa-microscope text-secondary text-3xl mb-4"></i>
-                <p className="text-gray-700 font-medium">Método desenvolvido com base em estudos sobre metabolismo e hormônios da saciedade</p>
+              <div className="bg-blue-50 rounded-xl p-4 md:p-6 text-center mb-6 md:mb-8">
+                <i className="fas fa-microscope text-secondary text-2xl md:text-3xl mb-3 md:mb-4"></i>
+                <p className="text-gray-700 font-medium text-sm md:text-base px-2">Método desenvolvido com base em estudos sobre metabolismo e hormônios da saciedade</p>
               </div>
 
               <div className="text-center">
                 <button 
                   onClick={nextPage}
                   data-testid="button-continue"
-                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full max-w-sm md:max-w-none md:w-auto"
                 >
-                  Continuar <i className="fas fa-arrow-right ml-2"></i>
+                  Continuar <i className="fas fa-arrow-right ml-2 text-sm md:text-base"></i>
                 </button>
               </div>
             </div>
@@ -486,14 +484,14 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
                   Qual dessas situações mais descreve sua luta com o peso?
                 </h2>
-                <p className="text-lg text-gray-600">Selecione a opção que mais se identifica com você</p>
+                <p className="text-base md:text-lg text-gray-600 px-2">Selecione a opção que mais se identifica com você</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   { id: 'efeito_sanfona', text: 'Já fiz várias dietas mas sempre volto a engordar', desc: '(efeito sanfona)', icon: 'fas fa-sync-alt', bgColor: 'bg-red-100', iconColor: 'text-red-500' },
                   { id: 'metabolismo_lento', text: 'Como pouco mas não emagreço', desc: '(metabolismo lento)', icon: 'fas fa-tachometer-alt', bgColor: 'bg-blue-100', iconColor: 'text-blue-500' },
@@ -504,20 +502,20 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('main_struggle', option.id)}
                     data-testid={`button-option-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
-                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
+                          <i className={`${option.icon} ${option.iconColor} text-lg md:text-xl`}></i>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
-                          <p className="text-gray-600">{option.desc}</p>
+                          <h3 className="font-semibold text-gray-900 text-base md:text-lg">{option.text}</h3>
+                          <p className="text-gray-600 text-sm md:text-base">{option.desc}</p>
                         </div>
                       </div>
                       <div className="text-gray-400">
-                        <i className="fas fa-chevron-right text-lg"></i>
+                        <i className="fas fa-chevron-right text-base md:text-lg"></i>
                       </div>
                     </div>
                   </button>
@@ -531,14 +529,14 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
                   Há quanto tempo você luta para emagrecer?
                 </h2>
-                <p className="text-lg text-gray-600">Isso nos ajuda a entender melhor seu perfil</p>
+                <p className="text-base md:text-lg text-gray-600 px-2">Isso nos ajuda a entender melhor seu perfil</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   { id: 'menos_1_ano', text: 'Menos de 1 ano', bgColor: 'bg-green-100', iconColor: 'text-green-500' },
                   { id: '1_3_anos', text: 'Entre 1 e 3 anos', bgColor: 'bg-yellow-100', iconColor: 'text-yellow-500' },
@@ -549,17 +547,17 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('struggle_time', option.id)}
                     data-testid={`button-time-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
-                          <i className={`fas fa-clock ${option.iconColor} text-xl`}></i>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
+                          <i className={`fas fa-clock ${option.iconColor} text-lg md:text-xl`}></i>
                         </div>
-                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-base md:text-lg">{option.text}</h3>
                       </div>
                       <div className="text-gray-400">
-                        <i className="fas fa-chevron-right text-lg"></i>
+                        <i className="fas fa-chevron-right text-base md:text-lg"></i>
                       </div>
                     </div>
                   </button>
@@ -573,14 +571,14 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
                   Qual é seu maior obstáculo para emagrecer?
                 </h2>
-                <p className="text-lg text-gray-600">Vamos identificar a raiz do problema</p>
+                <p className="text-base md:text-lg text-gray-600 px-2">Vamos identificar a raiz do problema</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   { id: 'efeito_sanfona', text: 'Sempre recupero o peso perdido (efeito sanfona)', icon: 'fas fa-sync-alt', bgColor: 'bg-red-100', iconColor: 'text-red-500' },
                   { id: 'compulsao_doce', text: 'Não consigo controlar a vontade de comer doce', icon: 'fas fa-cookie-bite', bgColor: 'bg-amber-100', iconColor: 'text-amber-500' },
@@ -591,17 +589,17 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('main_obstacle', option.id)}
                     data-testid={`button-obstacle-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
-                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
+                          <i className={`${option.icon} ${option.iconColor} text-lg md:text-xl`}></i>
                         </div>
-                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-base md:text-lg">{option.text}</h3>
                       </div>
                       <div className="text-gray-400">
-                        <i className="fas fa-chevron-right text-lg"></i>
+                        <i className="fas fa-chevron-right text-base md:text-lg"></i>
                       </div>
                     </div>
                   </button>
@@ -615,14 +613,14 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
                   Quantas vezes você já tentou emagrecer e "falhou"?
                 </h2>
-                <p className="text-lg text-gray-600">Seja honesta conosco (isso é importante para seu resultado)</p>
+                <p className="text-base md:text-lg text-gray-600 px-2">Seja honesta conosco (isso é importante para seu resultado)</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   { id: '2_3_tentativas', text: '2-3 tentativas', icon: 'fas fa-redo', bgColor: 'bg-green-100', iconColor: 'text-green-500' },
                   { id: '4_6_tentativas', text: '4-6 tentativas', icon: 'fas fa-redo', bgColor: 'bg-yellow-100', iconColor: 'text-yellow-500' },
@@ -633,20 +631,20 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('attempts_failed', option.id)}
                     data-testid={`button-attempts-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
-                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
+                          <i className={`${option.icon} ${option.iconColor} text-lg md:text-xl`}></i>
                         </div>
                         <div>
-                          <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
-                          {option.desc && <p className="text-gray-600">{option.desc}</p>}
+                          <h3 className="font-semibold text-gray-900 text-base md:text-lg">{option.text}</h3>
+                          {option.desc && <p className="text-gray-600 text-sm md:text-base">{option.desc}</p>}
                         </div>
                       </div>
                       <div className="text-gray-400">
-                        <i className="fas fa-chevron-right text-lg"></i>
+                        <i className="fas fa-chevron-right text-base md:text-lg"></i>
                       </div>
                     </div>
                   </button>
@@ -660,14 +658,14 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
                   Como você se sente quando se olha no espelho?
                 </h2>
-                <p className="text-lg text-gray-600">Queremos entender o impacto emocional</p>
+                <p className="text-base md:text-lg text-gray-600 px-2">Queremos entender o impacto emocional</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   { id: 'pouco_insatisfeita', text: 'Um pouco insatisfeita comigo mesma', icon: 'fas fa-frown', bgColor: 'bg-green-100', iconColor: 'text-green-500' },
                   { id: 'frustrada', text: 'Frustrada por não conseguir emagrecer', icon: 'fas fa-frown', bgColor: 'bg-yellow-100', iconColor: 'text-yellow-500' },
@@ -678,17 +676,17 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('emotional_feeling', option.id)}
                     data-testid={`button-feeling-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
-                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
+                          <i className={`${option.icon} ${option.iconColor} text-lg md:text-xl`}></i>
                         </div>
-                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-base md:text-lg">{option.text}</h3>
                       </div>
                       <div className="text-gray-400">
-                        <i className="fas fa-chevron-right text-lg"></i>
+                        <i className="fas fa-chevron-right text-base md:text-lg"></i>
                       </div>
                     </div>
                   </button>
@@ -702,14 +700,14 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <div className="text-center mb-8 md:mb-12">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
                   Como o peso afeta sua vida social e relacionamentos?
                 </h2>
-                <p className="text-lg text-gray-600">O impacto vai além do físico</p>
+                <p className="text-base md:text-lg text-gray-600 px-2">O impacto vai além do físico</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   { id: 'evito_fotos', text: 'Evito fotos e eventos sociais', icon: 'fas fa-camera', bgColor: 'bg-purple-100', iconColor: 'text-purple-500' },
                   { id: 'insegura_relacionamento', text: 'Me sinto insegura no relacionamento', icon: 'fas fa-heart', bgColor: 'bg-pink-100', iconColor: 'text-pink-500' },
@@ -720,17 +718,17 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('social_impact', option.id)}
                     data-testid={`button-social-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
-                          <i className={`${option.icon} ${option.iconColor} text-xl`}></i>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] ${option.bgColor} rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
+                          <i className={`${option.icon} ${option.iconColor} text-lg md:text-xl`}></i>
                         </div>
-                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-base md:text-lg">{option.text}</h3>
                       </div>
                       <div className="text-gray-400">
-                        <i className="fas fa-chevron-right text-lg"></i>
+                        <i className="fas fa-chevron-right text-base md:text-lg"></i>
                       </div>
                     </div>
                   </button>
@@ -745,21 +743,21 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
-              <div className="text-center mb-8">
-                <div className="bg-blue-50 rounded-xl p-6 mb-8">
-                  <i className="fas fa-microscope text-secondary text-3xl mb-4"></i>
-                  <p className="text-lg text-gray-700 font-medium">
+              <div className="text-center mb-6 md:mb-8">
+                <div className="bg-blue-50 rounded-xl p-4 md:p-6 mb-6 md:mb-8">
+                  <i className="fas fa-microscope text-secondary text-2xl md:text-3xl mb-3 md:mb-4"></i>
+                  <p className="text-base md:text-lg text-gray-700 font-medium">
                     Pesquisas mostram que <span className="text-secondary font-bold">89% das pessoas</span> com metabolismo lento sofrem de:
                   </p>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                   Quais destes sintomas você reconhece em si?
                 </h2>
-                <p className="text-lg text-gray-600">Pode marcar mais de uma opção</p>
+                <p className="text-base md:text-lg text-gray-600">Pode marcar mais de uma opção</p>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   { id: 'ganho_peso_pouco', text: 'Ganho de peso mesmo comendo pouco', icon: 'fas fa-weight', color: 'red' },
                   { id: 'compulsao_doces', text: 'Compulsão por doces após as 18h', icon: 'fas fa-cookie-bite', color: 'amber' },
@@ -774,17 +772,17 @@ const QuizResetBarriga = () => {
                       key={option.id}
                       onClick={() => toggleMultipleAnswer('symptoms', option.id)}
                       data-testid={`button-symptom-${option.id}`}
-                      className={`w-full bg-white rounded-xl p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 ${
+                      className={`w-full bg-white rounded-xl p-4 md:p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 ${
                         isSelected ? 'border-primary bg-primary/5' : 'border-transparent hover:border-primary'
                       }`}
                     >
                       <div className="flex items-center">
-                        <div className={`w-12 h-12 min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
-                          <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                        <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
+                          <i className={`${option.icon} text-${option.color}-500 text-lg md:text-xl`}></i>
                         </div>
-                        <h3 className="font-semibold text-gray-900 text-lg flex-grow">{option.text}</h3>
+                        <h3 className="font-semibold text-gray-900 text-base md:text-lg flex-grow">{option.text}</h3>
                         <div className="ml-auto">
-                          <div className={`w-6 h-6 border-2 rounded ${
+                          <div className={`w-5 h-5 md:w-6 md:h-6 border-2 rounded ${
                             isSelected 
                               ? 'bg-primary border-primary text-white flex items-center justify-center' 
                               : 'border-gray-300'
@@ -798,11 +796,11 @@ const QuizResetBarriga = () => {
                 })}
               </div>
 
-              <div className="text-center mt-8">
+              <div className="text-center mt-6 md:mt-8">
                 <button 
                   onClick={nextPageMultiple}
                   data-testid="button-continue-symptoms"
-                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full max-w-xs md:w-auto"
                 >
                   Continuar <i className="fas fa-arrow-right ml-2"></i>
                 </button>
@@ -815,20 +813,20 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
-              <div className="text-center mb-8">
-                <div className="bg-primary/10 rounded-xl p-6 mb-8">
-                  <i className="fas fa-magic text-primary text-3xl mb-4"></i>
-                  <p className="text-lg text-gray-700 font-medium">
+              <div className="text-center mb-6 md:mb-8">
+                <div className="bg-primary/10 rounded-xl p-4 md:p-6 mb-6 md:mb-8">
+                  <i className="fas fa-magic text-primary text-2xl md:text-3xl mb-3 md:mb-4"></i>
+                  <p className="text-base md:text-lg text-gray-700 font-medium">
                     O <span className="text-primary font-bold">Protocolo Reset da Barriga</span> combina 3 gatilhos alimentares científicos que reativam seu metabolismo em 7 dias...
                   </p>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight">
                   Se você pudesse emagrecer 5kg em 21 dias sem passar fome e sem cortar pão ou doce, quanto isso mudaria sua vida?
                 </h2>
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 {[
                   { id: 'mudaria_completamente', text: 'Mudaria completamente', desc: 'Recuperaria minha confiança e autoestima', icon: 'fas fa-star', color: 'green' },
                   { id: 'mudaria_muito', text: 'Mudaria muito', desc: 'Finalmente me sentiria bem comigo mesma', icon: 'fas fa-heart', color: 'blue' }
@@ -837,15 +835,15 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('magic_question', option.id)}
                     data-testid={`button-magic-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
-                      <div className={`w-12 h-12 min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0 aspect-square`}>
-                        <i className={`${option.icon} text-${option.color}-500 text-xl`}></i>
+                      <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
+                        <i className={`${option.icon} text-${option.color}-500 text-lg md:text-xl`}></i>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 text-lg">{option.text}</h3>
-                        <p className="text-gray-600">{option.desc}</p>
+                        <h3 className="font-semibold text-gray-900 text-base md:text-lg">{option.text}</h3>
+                        <p className="text-gray-600 text-sm md:text-base">{option.desc}</p>
                       </div>
                     </div>
                   </button>
@@ -868,28 +866,28 @@ const QuizResetBarriga = () => {
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center">
                 {/* Loading Icon */}
-                <div className="mb-12">
+                <div className="mb-8 md:mb-12">
                   <div className="relative inline-block">
-                    <div className="w-24 h-24 rounded-full border-4 border-primary/20 border-t-primary animate-spin mx-auto mb-6"></div>
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-primary/20 border-t-primary animate-spin mx-auto mb-4 md:mb-6"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <i className="fas fa-brain text-primary text-2xl"></i>
+                      <i className="fas fa-brain text-primary text-xl md:text-2xl"></i>
                     </div>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 px-2">
                     Analisando seu <span className="text-primary">perfil</span>...
                   </h1>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
                     Nossa IA exclusiva está processando suas respostas para criar um protocolo 100% personalizado
                   </p>
                 </div>
 
                 {/* Analysis Steps */}
-                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 mb-8 max-w-3xl mx-auto">
-                  <div className="space-y-6">
+                <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 mb-6 md:mb-8 max-w-3xl mx-auto">
+                  <div className="space-y-4 md:space-y-6">
                     {analysisSteps.map((step, index) => (
-                      <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-                        <div className="flex items-center flex-1">
-                          <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 transition-all duration-500 ${
+                      <div key={index} className="flex items-center justify-between p-3 md:p-4 bg-gray-50 rounded-xl">
+                        <div className="flex items-center flex-1 min-w-0">
+                          <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 transition-all duration-500 ${
                             step.completed 
                               ? 'bg-success text-white' 
                               : loadingProgress > (index * 25) 
@@ -897,19 +895,19 @@ const QuizResetBarriga = () => {
                                 : 'bg-gray-200 text-gray-400'
                           }`}>
                             {step.completed ? (
-                              <i className="fas fa-check text-sm"></i>
+                              <i className="fas fa-check text-xs md:text-sm"></i>
                             ) : (
-                              <i className="fas fa-cog animate-spin text-sm"></i>
+                              <i className="fas fa-cog animate-spin text-xs md:text-sm"></i>
                             )}
                           </div>
-                          <span className={`text-lg font-medium transition-colors duration-300 ${
+                          <span className={`text-sm md:text-lg font-medium transition-colors duration-300 truncate pr-2 ${
                             step.completed ? 'text-gray-900' : 'text-gray-600'
                           }`}>
                             {step.text}
                           </span>
                         </div>
                         {step.completed && (
-                          <div className="text-success font-semibold text-sm">
+                          <div className="text-success font-semibold text-xs md:text-sm flex-shrink-0">
                             Concluído
                           </div>
                         )}
@@ -919,43 +917,43 @@ const QuizResetBarriga = () => {
                 </div>
 
                 {/* Progress Bar */}
-                <div className="mb-8">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-sm font-medium text-gray-600">Progresso da Análise</span>
-                    <span className="text-sm font-bold text-primary">{Math.round(loadingProgress)}%</span>
+                <div className="mb-6 md:mb-8 px-2">
+                  <div className="flex justify-between items-center mb-2 md:mb-3">
+                    <span className="text-xs md:text-sm font-medium text-gray-600">Progresso da Análise</span>
+                    <span className="text-xs md:text-sm font-bold text-primary">{Math.round(loadingProgress)}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                  <div className="w-full bg-gray-200 rounded-full h-3 md:h-4 overflow-hidden">
                     <div 
-                      className="bg-gradient-to-r from-primary via-success to-accent h-4 rounded-full transition-all duration-1000 ease-out shadow-lg"
+                      className="bg-gradient-to-r from-primary via-success to-accent h-3 md:h-4 rounded-full transition-all duration-1000 ease-out shadow-lg"
                       style={{ width: `${loadingProgress}%` }}
                     ></div>
                   </div>
                 </div>
 
                 {/* Exclusive Features */}
-                <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-4 border border-primary/20">
-                    <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <i className="fas fa-dna text-primary text-xl"></i>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-4xl mx-auto">
+                  <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl p-3 md:p-4 border border-primary/20">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                      <i className="fas fa-dna text-primary text-lg md:text-xl"></i>
                     </div>
-                    <h3 className="font-bold text-gray-900 text-sm mb-2">Análise Metabólica Avançada</h3>
-                    <p className="text-gray-600 text-xs">Tecnologia exclusiva de mapeamento hormonal</p>
+                    <h3 className="font-bold text-gray-900 text-xs md:text-sm mb-1 md:mb-2 text-center">Análise Metabólica Avançada</h3>
+                    <p className="text-gray-600 text-xs text-center">Tecnologia exclusiva de mapeamento hormonal</p>
                   </div>
                   
-                  <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-xl p-4 border border-success/20">
-                    <div className="w-12 h-12 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <i className="fas fa-target text-success text-xl"></i>
+                  <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-xl p-3 md:p-4 border border-success/20">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                      <i className="fas fa-target text-success text-lg md:text-xl"></i>
                     </div>
-                    <h3 className="font-bold text-gray-900 text-sm mb-2">Protocolo Personalizado</h3>
-                    <p className="text-gray-600 text-xs">Criado especificamente para seu biotipo</p>
+                    <h3 className="font-bold text-gray-900 text-xs md:text-sm mb-1 md:mb-2 text-center">Protocolo Personalizado</h3>
+                    <p className="text-gray-600 text-xs text-center">Criado especificamente para seu biotipo</p>
                   </div>
                   
-                  <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-4 border border-accent/20">
-                    <div className="w-12 h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <i className="fas fa-shield-alt text-accent text-xl"></i>
+                  <div className="bg-gradient-to-br from-accent/10 to-accent/5 rounded-xl p-3 md:p-4 border border-accent/20">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3">
+                      <i className="fas fa-shield-alt text-accent text-lg md:text-xl"></i>
                     </div>
-                    <h3 className="font-bold text-gray-900 text-sm mb-2">Resultado Garantido</h3>
-                    <p className="text-gray-600 text-xs">Baseado em mais de 12.000 casos de sucesso</p>
+                    <h3 className="font-bold text-gray-900 text-xs md:text-sm mb-1 md:mb-2 text-center">Resultado Garantido</h3>
+                    <p className="text-gray-600 text-xs text-center">Baseado em mais de 12.000 casos de sucesso</p>
                   </div>
                 </div>
               </div>
@@ -972,20 +970,20 @@ const QuizResetBarriga = () => {
             <div className="container mx-auto px-4 max-w-5xl">
               
               {/* Header Section with Animation */}
-              <div className="text-center mb-12">
-                <div className="relative inline-block mb-8">
-                  <div className="w-32 h-32 bg-gradient-to-r from-success to-green-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl transform hover:scale-105 transition-all duration-300">
-                    <i className="fas fa-check-circle text-white text-5xl"></i>
+              <div className="text-center mb-8 md:mb-12">
+                <div className="relative inline-block mb-6 md:mb-8">
+                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-r from-success to-green-400 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                    <i className="fas fa-check-circle text-white text-3xl md:text-5xl"></i>
                   </div>
                   {/* Animated rings */}
-                  <div className="absolute inset-0 w-32 h-32 border-4 border-success/30 rounded-full animate-ping"></div>
-                  <div className="absolute inset-2 w-28 h-28 border-2 border-success/20 rounded-full animate-ping animation-delay-200"></div>
+                  <div className="absolute inset-0 w-24 h-24 md:w-32 md:h-32 border-4 border-success/30 rounded-full animate-ping"></div>
+                  <div className="absolute inset-1 md:inset-2 w-22 h-22 md:w-28 md:h-28 border-2 border-success/20 rounded-full animate-ping animation-delay-200"></div>
                 </div>
                 
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-gray-900 via-primary to-success bg-clip-text text-transparent">
+                <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-3 md:mb-4 bg-gradient-to-r from-gray-900 via-primary to-success bg-clip-text text-transparent px-2">
                   Seu perfil foi identificado!
                 </h1>
-                <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+                <p className="text-base md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto px-4">
                   Veja os resultados da sua análise personalizada completa
                 </p>
               </div>
@@ -1000,15 +998,15 @@ const QuizResetBarriga = () => {
               </div>
 
               {/* Success Rate Container - Enhanced */}
-              <div className="relative mb-12">
+              <div className="relative mb-8 md:mb-12">
                 <div className="absolute inset-0 bg-gradient-to-r from-success to-green-400 rounded-2xl blur-xl opacity-30 transform scale-105"></div>
-                <div className="relative bg-gradient-to-r from-success via-green-500 to-emerald-500 rounded-2xl p-10 text-white text-center shadow-2xl transform hover:scale-105 transition-all duration-300">
-                  <div className="mb-4">
-                    <div className="text-7xl md:text-8xl font-black mb-4 drop-shadow-lg" data-testid="text-success-rate">
+                <div className="relative bg-gradient-to-r from-success via-green-500 to-emerald-500 rounded-2xl p-6 md:p-10 text-white text-center shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="mb-3 md:mb-4">
+                    <div className="text-5xl md:text-7xl lg:text-8xl font-black mb-3 md:mb-4 drop-shadow-lg" data-testid="text-success-rate">
                       {result.successChance}%
                     </div>
-                    <p className="text-2xl md:text-3xl font-semibold mb-2">de chance de sucesso com o protocolo</p>
-                    <p className="text-lg opacity-95">Baseado no seu perfil e respostas</p>
+                    <p className="text-lg md:text-2xl lg:text-3xl font-semibold mb-1 md:mb-2">de chance de sucesso com o protocolo</p>
+                    <p className="text-sm md:text-lg opacity-95">Baseado no seu perfil e respostas</p>
                   </div>
                   
                   {/* Decorative elements */}
@@ -1019,25 +1017,25 @@ const QuizResetBarriga = () => {
               </div>
 
               {/* Enhanced Info Cards */}
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
-                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-primary to-blue-500 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                      <i className="fas fa-user-circle text-white text-2xl"></i>
+              <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
+                <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center mb-4 md:mb-6">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-primary to-blue-500 rounded-full flex items-center justify-center mr-3 md:mr-6 shadow-lg flex-shrink-0">
+                      <i className="fas fa-user-circle text-white text-lg md:text-2xl"></i>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Seu Tipo Identificado</h3>
+                    <h3 className="text-lg md:text-2xl font-bold text-gray-900">Seu Tipo Identificado</h3>
                   </div>
-                  <p className="text-gray-700 text-lg leading-relaxed" data-testid="text-user-type">{result.userType}</p>
+                  <p className="text-gray-700 text-sm md:text-lg leading-relaxed" data-testid="text-user-type">{result.userType}</p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-accent to-orange-500 rounded-full flex items-center justify-center mr-6 shadow-lg">
-                      <i className="fas fa-clock text-white text-2xl"></i>
+                <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-300">
+                  <div className="flex items-center mb-4 md:mb-6">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-accent to-orange-500 rounded-full flex items-center justify-center mr-3 md:mr-6 shadow-lg flex-shrink-0">
+                      <i className="fas fa-clock text-white text-lg md:text-2xl"></i>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900">Tempo de Luta</h3>
+                    <h3 className="text-lg md:text-2xl font-bold text-gray-900">Tempo de Luta</h3>
                   </div>
-                  <p className="text-gray-700 text-lg leading-relaxed" data-testid="text-struggle-time">
+                  <p className="text-gray-700 text-sm md:text-lg leading-relaxed" data-testid="text-struggle-time">
                     {(() => {
                       const timeResponse = quizState.responses.find(r => r.questionId === 'struggle_time');
                       const timeMap = {
@@ -1053,41 +1051,41 @@ const QuizResetBarriga = () => {
               </div>
 
               {/* Enhanced Insights Section */}
-              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-10 shadow-xl border border-gray-100 mb-12">
-                <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">
-                  <i className="fas fa-lightbulb text-accent mr-4 text-4xl"></i>
+              <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-4 md:p-10 shadow-xl border border-gray-100 mb-8 md:mb-12">
+                <h3 className="text-xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-8 text-center">
+                  <i className="fas fa-lightbulb text-accent mr-2 md:mr-4 text-2xl md:text-4xl"></i>
                   Insights Personalizados para Você
                 </h3>
-                <div className="space-y-6" data-testid="container-insights">
+                <div className="space-y-4 md:space-y-6" data-testid="container-insights">
                   {result.personalizedInsights.map((insight, index) => (
-                    <div key={index} className="flex items-start p-6 bg-gradient-to-r from-primary/5 to-success/5 rounded-xl border-l-4 border-primary shadow-md transform hover:scale-105 transition-all duration-300">
-                      <div className="w-12 h-12 bg-gradient-to-r from-primary to-success rounded-full flex items-center justify-center mr-6 flex-shrink-0 shadow-lg">
-                        <span className="text-white font-bold text-lg">{index + 1}</span>
+                    <div key={index} className="flex items-start p-3 md:p-6 bg-gradient-to-r from-primary/5 to-success/5 rounded-xl border-l-4 border-primary shadow-md transform hover:scale-105 transition-all duration-300">
+                      <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-r from-primary to-success rounded-full flex items-center justify-center mr-3 md:mr-6 flex-shrink-0 shadow-lg">
+                        <span className="text-white font-bold text-sm md:text-lg">{index + 1}</span>
                       </div>
-                      <p className="text-gray-700 text-lg leading-relaxed" data-testid={`text-insight-${index}`}>{insight}</p>
+                      <p className="text-gray-700 text-sm md:text-lg leading-relaxed" data-testid={`text-insight-${index}`}>{insight}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Enhanced CTA Button */}
-              <div className="text-center">
+              <div className="text-center px-4">
                 <div className="relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary to-success rounded-full blur-xl opacity-50 transform scale-110"></div>
                   <button 
                     onClick={nextPage}
                     data-testid="button-view-protocol"
-                    className="relative bg-gradient-to-r from-primary via-success to-emerald-500 text-white font-bold py-6 px-12 rounded-full text-2xl shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 border-2 border-white/20"
+                    className="relative bg-gradient-to-r from-primary via-success to-emerald-500 text-white font-bold py-3 md:py-4 px-6 md:px-10 rounded-full text-base md:text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20 w-full max-w-md md:w-auto"
                   >
-                    <i className="fas fa-rocket mr-4 text-2xl"></i>
-                    ACESSAR MEU PROTOCOLO RESET
-                    <i className="fas fa-arrow-right ml-4 text-2xl"></i>
+                    <span className="leading-none">
+                      ACESSAR MEU PROTOCOLO RESET
+                    </span>
                   </button>
                 </div>
                 
                 {/* Pulsing indicator */}
-                <div className="mt-6">
-                  <div className="w-4 h-4 bg-success rounded-full mx-auto animate-pulse"></div>
+                <div className="mt-4 md:mt-6">
+                  <div className="w-3 h-3 md:w-4 md:h-4 bg-success rounded-full mx-auto animate-pulse"></div>
                 </div>
               </div>
             </div>
@@ -1107,31 +1105,31 @@ const QuizResetBarriga = () => {
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center">
                 {/* Loading Icon */}
-                <div className="mb-12">
+                <div className="mb-8 md:mb-12">
                   <div className="relative inline-block">
-                    <div className="w-24 h-24 rounded-full border-4 border-success/20 border-t-success animate-spin mx-auto mb-6"></div>
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-success/20 border-t-success animate-spin mx-auto mb-4 md:mb-6"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <i className="fas fa-cogs text-success text-2xl"></i>
+                      <i className="fas fa-cogs text-success text-xl md:text-2xl"></i>
                     </div>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                  <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 md:mb-4 px-2">
                     Preparando seu <span className="text-success">Protocolo Reset</span>
                   </h1>
-                  <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-4">
+                  <h2 className="text-lg md:text-2xl lg:text-3xl font-semibold text-gray-700 mb-3 md:mb-4 px-2">
                     personalizado...
                   </h2>
-                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto px-4">
                     Configurando os gatilhos metabólicos específicos para seu perfil único
                   </p>
                 </div>
 
                 {/* Protocol Steps */}
-                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 mb-8 max-w-3xl mx-auto">
-                  <div className="space-y-6">
+                <div className="bg-white rounded-2xl p-3 md:p-8 shadow-xl border border-gray-100 mb-6 md:mb-8 max-w-3xl mx-auto">
+                  <div className="space-y-3 md:space-y-6">
                     {protocolSteps.map((step, index) => (
-                      <div key={index} className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
-                        <div className="flex items-center flex-1">
-                          <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 transition-all duration-500 ${
+                      <div key={index} className="flex items-center p-2 md:p-4 bg-green-50 rounded-xl">
+                        <div className="flex items-center flex-1 min-w-0">
+                          <div className={`w-6 h-6 md:w-10 md:h-10 rounded-full flex items-center justify-center mr-2 md:mr-4 flex-shrink-0 transition-all duration-500 ${
                             step.completed 
                               ? 'bg-success text-white' 
                               : loadingProgress > (index * 25) 
@@ -1139,19 +1137,19 @@ const QuizResetBarriga = () => {
                                 : 'bg-gray-200 text-gray-400'
                           }`}>
                             {step.completed ? (
-                              <i className="fas fa-check text-sm"></i>
+                              <i className="fas fa-check text-xs"></i>
                             ) : (
-                              <i className="fas fa-cog animate-spin text-sm"></i>
+                              <i className="fas fa-cog animate-spin text-xs"></i>
                             )}
                           </div>
-                          <span className={`text-lg font-medium transition-colors duration-300 ${
+                          <span className={`text-xs md:text-lg font-medium transition-colors duration-300 leading-tight ${
                             step.completed ? 'text-gray-900' : 'text-gray-600'
                           }`}>
                             {step.text}
                           </span>
                         </div>
                         {step.completed && (
-                          <div className="text-success font-semibold text-sm">
+                          <div className="text-success font-semibold text-xs md:text-sm flex-shrink-0">
                             Concluído
                           </div>
                         )}
@@ -1209,14 +1207,14 @@ const QuizResetBarriga = () => {
         return (
           <div className="min-h-screen pt-[159px] pb-8">
             <div className="container mx-auto px-4 max-w-5xl">
-              <div className="text-center mb-12">
-                <div className="w-24 h-24 min-w-[96px] bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6 flex-shrink-0 aspect-square">
-                  <i className="fas fa-check-circle text-success text-4xl"></i>
+              <div className="text-center mb-8 md:mb-12">
+                <div className="w-20 h-20 md:w-24 md:h-24 min-w-[80px] md:min-w-[96px] bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 flex-shrink-0 aspect-square">
+                  <i className="fas fa-check-circle text-success text-3xl md:text-4xl"></i>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
                   Seu resultado está pronto!
                 </h2>
-                <p className="text-xl text-gray-600 mb-8">Identificamos exatamente o que está travando seu emagrecimento.</p>
+                <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8">Identificamos exatamente o que está travando seu emagrecimento.</p>
               </div>
 
               {/* Final Image */}
@@ -1229,23 +1227,23 @@ const QuizResetBarriga = () => {
               </div>
 
               {/* Personalized Summary */}
-              <div className="bg-gradient-to-r from-blue-50 to-primary/5 rounded-xl p-8 mb-12">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                  <i className="fas fa-user-check text-primary mr-3"></i>
+              <div className="bg-gradient-to-r from-blue-50 to-primary/5 rounded-xl p-4 md:p-8 mb-8 md:mb-12">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6 text-center">
+                  <i className="fas fa-user-check text-primary mr-2 md:mr-3"></i>
                   Seu Resumo Personalizado
                 </h3>
-                <div className="grid md:grid-cols-3 gap-6" data-testid="container-final-summary">
+                <div className="grid md:grid-cols-3 gap-3 md:gap-6" data-testid="container-final-summary">
                   {[
                     `Você tem perfil de ${quizState.finalResult?.userType.toLowerCase()}`,
                     'Sua compulsão por doces indica desequilíbrio hormonal',
                     'Após tantas tentativas, você precisa de um método que funcione DE VERDADE'
                   ].map((point, index) => (
-                    <div key={index} className="bg-white rounded-lg p-4 shadow-md">
+                    <div key={index} className="bg-white rounded-lg p-3 md:p-4 shadow-md">
                       <div className="flex items-center">
-                        <div className="w-8 h-8 min-w-[32px] bg-primary rounded-full flex items-center justify-center mr-3 flex-shrink-0 aspect-square">
-                          <i className="fas fa-check text-white text-sm"></i>
+                        <div className="w-6 h-6 md:w-8 md:h-8 min-w-[24px] md:min-w-[32px] bg-primary rounded-full flex items-center justify-center mr-2 md:mr-3 flex-shrink-0 aspect-square">
+                          <i className="fas fa-check text-white text-xs md:text-sm"></i>
                         </div>
-                        <p className="text-gray-700 text-sm" data-testid={`text-summary-${index}`}>{point}</p>
+                        <p className="text-gray-700 text-xs md:text-sm" data-testid={`text-summary-${index}`}>{point}</p>
                       </div>
                     </div>
                   ))}
@@ -1253,33 +1251,33 @@ const QuizResetBarriga = () => {
               </div>
 
               {/* Method Presentation */}
-              <div className="text-center mb-12">
-                <div className="bg-gradient-to-r from-primary to-success text-white rounded-xl p-8 mb-8">
-                  <h3 className="text-3xl font-bold mb-4">PROTOCOLO RESET DA BARRIGA</h3>
-                  <p className="text-xl">O único método que combina 3 gatilhos alimentares para reativar metabolismo lento em 7 dias</p>
+              <div className="text-center mb-8 md:mb-12">
+                <div className="bg-gradient-to-r from-primary to-success text-white rounded-xl p-4 md:p-8 mb-6 md:mb-8">
+                  <h3 className="text-xl md:text-3xl font-bold mb-3 md:mb-4">PROTOCOLO RESET DA BARRIGA</h3>
+                  <p className="text-base md:text-xl">O único método que combina 3 gatilhos alimentares para reativar metabolismo lento em 7 dias</p>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 mb-12">
-                  <div className="bg-white rounded-xl p-6 shadow-lg">
-                    <div className="w-16 h-16 min-w-[64px] bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0 aspect-square">
-                      <span className="text-red-600 font-bold text-xl">1-7</span>
+                <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
+                  <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
+                    <div className="w-12 h-12 md:w-16 md:h-16 min-w-[48px] md:min-w-[64px] bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 flex-shrink-0 aspect-square">
+                      <span className="text-red-600 font-bold text-lg md:text-xl">1-7</span>
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">DIAS 1-7</h4>
-                    <p className="text-gray-600">Reset metabólico que 'desperta' hormônios dormentes</p>
+                    <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">DIAS 1-7</h4>
+                    <p className="text-gray-600 text-xs md:text-base">Reset metabólico que 'desperta' hormônios dormentes</p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 shadow-lg">
-                    <div className="w-16 h-16 min-w-[64px] bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0 aspect-square">
-                      <span className="text-amber-600 font-bold text-xl">8-21</span>
+                  <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
+                    <div className="w-12 h-12 md:w-16 md:h-16 min-w-[48px] md:min-w-[64px] bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 flex-shrink-0 aspect-square">
+                      <span className="text-amber-600 font-bold text-lg md:text-xl">8-21</span>
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">DIAS 8-21</h4>
-                    <p className="text-gray-600">Ativação dos 3 gatilhos alimentares para queima contínua</p>
+                    <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">DIAS 8-21</h4>
+                    <p className="text-gray-600 text-xs md:text-base">Ativação dos 3 gatilhos alimentares para queima contínua</p>
                   </div>
-                  <div className="bg-white rounded-xl p-6 shadow-lg">
-                    <div className="w-16 h-16 min-w-[64px] bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0 aspect-square">
-                      <i className="fas fa-trophy text-green-600 text-2xl"></i>
+                  <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg">
+                    <div className="w-12 h-12 md:w-16 md:h-16 min-w-[48px] md:min-w-[64px] bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 flex-shrink-0 aspect-square">
+                      <i className="fas fa-trophy text-green-600 text-xl md:text-2xl"></i>
                     </div>
-                    <h4 className="font-bold text-gray-900 mb-2">RESULTADO</h4>
-                    <p className="text-gray-600">Até 5kg eliminados sem fome, sem cortar doce, sem academia</p>
+                    <h4 className="font-bold text-gray-900 mb-2 text-sm md:text-base">RESULTADO</h4>
+                    <p className="text-gray-600 text-xs md:text-base">Até 5kg eliminados sem fome, sem cortar doce, sem academia</p>
                   </div>
                 </div>
               </div>
@@ -1302,29 +1300,29 @@ const QuizResetBarriga = () => {
                     </div>
 
                     {/* Countdown Display */}
-                    <div className="mb-6">
-                      <div className="bg-black/30 rounded-xl p-6 mb-4 inline-block">
-                        <div className="text-6xl md:text-8xl font-black text-yellow-300 drop-shadow-2xl animate-pulse">
+                    <div className="mb-4 md:mb-6">
+                      <div className="bg-black/30 rounded-xl p-3 md:p-6 mb-3 md:mb-4 inline-block">
+                        <div className="text-4xl md:text-6xl lg:text-8xl font-black text-yellow-300 drop-shadow-2xl animate-pulse">
                           {formatTime(countdown)}
                         </div>
                       </div>
-                      <p className="text-xl md:text-2xl font-bold opacity-95">
+                      <p className="text-lg md:text-xl lg:text-2xl font-bold opacity-95">
                         MINUTOS : SEGUNDOS
                       </p>
                     </div>
 
                     {/* Urgency Message */}
-                    <div className="bg-black/20 rounded-xl p-6">
-                      <h4 className="text-xl md:text-2xl font-bold mb-3">
+                    <div className="bg-black/20 rounded-xl p-4 md:p-6">
+                      <h4 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-3">
                         🚨 ATENÇÃO: Esta é sua ÚNICA chance!
                       </h4>
-                      <p className="text-lg mb-2">
+                      <p className="text-sm md:text-lg mb-2">
                         Se você sair desta página ou esperar o tempo acabar,
                       </p>
-                      <p className="text-xl font-bold text-yellow-300">
+                      <p className="text-base md:text-xl font-bold text-yellow-300">
                         PERDERÁ esta oferta especial PARA SEMPRE!
                       </p>
-                      <p className="text-sm mt-3 opacity-90">
+                      <p className="text-xs md:text-sm mt-2 md:mt-3 opacity-90">
                         Não haverá segunda chance. Esta promoção nunca mais voltará.
                       </p>
                     </div>
@@ -1339,313 +1337,171 @@ const QuizResetBarriga = () => {
               </div>
 
               {/* Testimonials Carousel */}
-              <div className="mb-16">
-                <div className="text-center mb-8">
-                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <div className="mb-10 md:mb-16">
+                <div className="text-center mb-6 md:mb-8">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
                     Quem usa tem resultado 😉👇
                   </h3>
-                  <p className="text-gray-600 text-lg">Veja os resultados reais de quem já transformou sua vida</p>
+                  <p className="text-gray-600 text-base md:text-lg">Veja os resultados reais de quem já transformou sua vida</p>
                 </div>
 
                 <TestimonialsCarousel />
               </div>
 
               {/* Pricing Plans */}
-              <div className="grid md:grid-cols-2 gap-8 mb-12">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
                 {plans.map((plan) => (
-                  <div key={plan.id} className="relative group">
-                    {/* Background Glow Effect */}
-                    {plan.recommended && (
-                      <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-3xl blur-lg opacity-60 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                    )}
-                    
-                    <div 
-                      className={`relative ${
-                        plan.recommended 
-                          ? 'bg-gradient-to-br from-amber-50 via-white to-orange-50' 
-                          : 'bg-gradient-to-br from-gray-50 via-white to-blue-50'
-                      } rounded-3xl p-8 shadow-2xl transform transition-all duration-500 hover:scale-105 border-2 ${
-                        plan.recommended ? 'border-amber-200' : 'border-gray-200'
-                      }`}
-                    >
-                      {/* Recommended Badge */}
-                      {plan.recommended && (
-                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
-                          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-3 rounded-full text-sm font-black shadow-xl">
-                            <i className="fas fa-star mr-2"></i>
-                            MAIS POPULAR
-                          </div>
-                        </div>
-                      )}
-
-                      {/* Plan Header */}
-                      <div className="text-center mb-8">
-                        {/* Icon */}
-                        <div className={`relative w-20 h-20 mx-auto mb-6 ${
-                          plan.recommended 
-                            ? 'bg-gradient-to-br from-yellow-400 to-orange-500' 
-                            : 'bg-gradient-to-br from-blue-500 to-indigo-600'
-                        } rounded-2xl shadow-lg flex items-center justify-center transform rotate-3 group-hover:rotate-6 transition-transform duration-300`}>
-                          <i className={`${plan.icon} text-white text-3xl`}></i>
-                          {plan.recommended && (
-                            <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                              <i className="fas fa-fire text-white text-sm"></i>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Plan Name */}
-                        <h4 className={`text-3xl font-black mb-4 ${
-                          plan.recommended ? 'text-orange-800' : 'text-gray-800'
-                        }`}>
-                          {plan.name}
+                  <div key={plan.id} className="relative">
+                    <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                      {/* Header with green background */}
+                      <div className="bg-green-600 text-white text-center py-3 md:py-4 px-4 md:px-6">
+                        <h4 className="text-base md:text-lg font-bold">
+                          {plan.recommended ? 'Protocolo Completo' : 'Protocolo Básico'}
                         </h4>
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-4 md:p-6 text-center">
+                        {/* Plan Name */}
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 md:mb-6">
+                          {plan.name}
+                        </h3>
 
                         {/* Pricing */}
-                        <div className="mb-6">
+                        <div className="mb-6 md:mb-8">
                           {plan.originalPrice && (
-                            <div className="relative mb-2">
-                              <span className="text-2xl text-red-500 line-through font-bold">{plan.originalPrice}</span>
-                              <div className="absolute -top-1 -right-8 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold transform rotate-12">
-                                SAVE 96%
-                              </div>
+                            <div className="text-sm md:text-base text-gray-500 mb-2">
+                              de {plan.originalPrice} por
                             </div>
                           )}
-                          <div className={`text-5xl font-black ${
-                            plan.recommended 
-                              ? 'bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent' 
-                              : 'text-gray-900'
-                          } drop-shadow-lg`}>
+                          <div className="text-4xl md:text-5xl font-bold text-gray-900">
                             {plan.price}
                           </div>
-                          {plan.recommended && (
-                            <div className="mt-2 text-sm text-orange-600 font-bold">
-                              ⚡ Oferta limitada!
-                            </div>
-                          )}
+                        </div>
+
+                        {/* Features List */}
+                        <div className="text-left space-y-3 mb-6 md:mb-8">
+                          {plan.features.map((feature, index) => {
+                            // Convert markdown bold to HTML
+                            const formattedFeature = feature.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                            
+                            return (
+                              <div key={index} className="flex items-start text-sm md:text-base text-gray-700">
+                                <div className="flex-shrink-0 w-4 h-4 md:w-5 md:h-5 bg-green-100 rounded-full flex items-center justify-center mr-3 mt-1">
+                                  <i className="fas fa-check text-green-600 text-xs md:text-sm"></i>
+                                </div>
+                                <span dangerouslySetInnerHTML={{ __html: formattedFeature }} />
+                              </div>
+                            );
+                          })}
+                        </div>
+
+                        {/* CTA Button */}
+                        <button 
+                          onClick={() => selectPlan(plan.id)}
+                          data-testid={`button-plan-${plan.id}`}
+                          className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 md:py-5 px-6 md:px-8 rounded-xl transition-colors duration-200 mb-4 md:mb-6 text-base md:text-lg"
+                        >
+                          <i className="fas fa-lock mr-2"></i>
+                          COMPRAR AGORA
+                        </button>
+
+                        {/* Security Seal */}
+                        <div className="flex justify-center">
+                          <img 
+                            src="https://i.postimg.cc/8CdZXWV9/seguro-selo.png" 
+                            alt="Compra Segura" 
+                            className="h-10 md:h-12 opacity-80"
+                          />
                         </div>
                       </div>
-
-                      {/* Features List */}
-                      <div className="space-y-4 mb-8">
-                        {plan.features.map((feature, index) => (
-                          <div key={index} className={`flex items-start p-3 rounded-xl ${
-                            feature.includes('BÔNUS') 
-                              ? 'bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200' 
-                              : 'bg-gray-50'
-                          }`}>
-                            <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 ${
-                              feature.includes('BÔNUS') 
-                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500' 
-                                : 'bg-green-500'
-                            }`}>
-                              <i className={`fas ${
-                                feature.includes('BÔNUS') ? 'fa-gift' : 'fa-check'
-                              } text-white text-xs`}></i>
-                            </div>
-                            <span className={`text-sm leading-relaxed ${
-                              feature.includes('BÔNUS') ? 'font-bold text-orange-800' : 'text-gray-700'
-                            }`}>
-                              {feature}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* CTA Button */}
-                      <button 
-                        onClick={() => selectPlan(plan.id)}
-                        data-testid={`button-plan-${plan.id}`}
-                        className={`relative w-full py-5 px-8 rounded-2xl font-black text-lg transition-all duration-300 overflow-hidden group ${
-                          plan.recommended
-                            ? 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white shadow-2xl hover:shadow-orange-500/50 transform hover:scale-105'
-                            : 'bg-gradient-to-r from-gray-600 to-gray-700 text-white shadow-xl hover:shadow-gray-500/50 hover:from-gray-700 hover:to-gray-800'
-                        }`}
-                      >
-                        {/* Button Background Animation */}
-                        <div className={`absolute inset-0 ${
-                          plan.recommended ? 'bg-gradient-to-r from-yellow-400 to-orange-600' : 'bg-gradient-to-r from-blue-500 to-indigo-600'
-                        } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                        
-                        {/* Button Content */}
-                        <div className="relative flex items-center justify-center">
-                          {plan.recommended ? (
-                            <>
-                              <i className="fas fa-crown mr-3 text-yellow-300"></i>
-                              QUERO O COMPLETO
-                              <i className="fas fa-fire ml-3 animate-pulse"></i>
-                            </>
-                          ) : (
-                            <>
-                              <i className="fas fa-bolt mr-3"></i>
-                              ESCOLHER BÁSICO
-                            </>
-                          )}
-                        </div>
-
-                        {/* Shine Effect */}
-                        <div className="absolute inset-0 -top-1 -left-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform skew-x-12 group-hover:animate-shine"></div>
-                      </button>
-
-                      {/* Value Badge */}
-                      {plan.recommended && (
-                        <div className="mt-4 text-center">
-                          <div className="inline-flex items-center bg-green-100 border border-green-300 rounded-full px-4 py-2">
-                            <i className="fas fa-trophy text-green-600 mr-2"></i>
-                            <span className="text-green-800 font-bold text-sm">MELHOR CUSTO-BENEFÍCIO</span>
-                          </div>
-                        </div>
-                      )}
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Value Message */}
-              <div className="bg-amber-50 rounded-xl p-6 text-center mb-8">
-                <i className="fas fa-lightbulb text-amber-500 text-2xl mb-3"></i>
-                <p className="text-lg font-medium text-gray-800">
-                  Você pode levar só o protocolo por R$ 9,90... mas por apenas <span className="text-accent font-bold">+R$ 20</span> você recebe bônus que valem <span className="text-accent font-bold">R$ 595</span>. A escolha é óbvia!
+              <div className="bg-amber-50 rounded-xl p-4 md:p-6 text-center mb-6 md:mb-8">
+                <i className="fas fa-lightbulb text-amber-500 text-xl md:text-2xl mb-2 md:mb-3"></i>
+                <p className="text-sm md:text-lg font-medium text-gray-800">
+                  Você pode levar só o protocolo por R$ 9,90... mas por apenas <span className="text-accent font-bold">+R$ 20</span> você recebe bônus que valem <span className="text-accent font-bold">R$ 315</span>. A escolha é óbvia!
                 </p>
               </div>
 
               {/* Guarantees */}
-              <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                  <i className="fas fa-shield-alt text-success text-3xl mb-3"></i>
-                  <h4 className="font-bold text-gray-900 mb-2">7 Dias de Garantia</h4>
-                  <p className="text-gray-600">Incondicional e total</p>
+              <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+                <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center">
+                  <i className="fas fa-shield-alt text-success text-2xl md:text-3xl mb-2 md:mb-3"></i>
+                  <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">7 Dias de Garantia</h4>
+                  <p className="text-gray-600 text-xs md:text-base">Incondicional e total</p>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                  <i className="fas fa-weight text-primary text-3xl mb-3"></i>
-                  <h4 className="font-bold text-gray-900 mb-2">Garantia de Resultado</h4>
-                  <p className="text-gray-600">Se não perder 2kg, devolvemos seu dinheiro</p>
+                <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center">
+                  <i className="fas fa-weight text-primary text-2xl md:text-3xl mb-2 md:mb-3"></i>
+                  <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Garantia de Resultado</h4>
+                  <p className="text-gray-600 text-xs md:text-base">Se não perder 2kg, devolvemos seu dinheiro</p>
                 </div>
-                <div className="bg-white rounded-xl p-6 shadow-lg text-center">
-                  <i className="fas fa-infinity text-accent text-3xl mb-3"></i>
-                  <h4 className="font-bold text-gray-900 mb-2">Acesso Vitalício</h4>
-                  <p className="text-gray-600">Imediato e para sempre</p>
+                <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center">
+                  <i className="fas fa-infinity text-accent text-2xl md:text-3xl mb-2 md:mb-3"></i>
+                  <h4 className="font-bold text-gray-900 mb-1 md:mb-2 text-sm md:text-base">Acesso Vitalício</h4>
+                  <p className="text-gray-600 text-xs md:text-base">Imediato e para sempre</p>
                 </div>
               </div>
 
               {/* FAQ - Dúvidas Frequentes */}
-              <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 mb-8 border border-blue-100 shadow-xl">
+              <div className="bg-white rounded-lg p-6 md:p-8 mb-8 border border-gray-200">
                 <div className="text-center mb-8">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i className="fas fa-question-circle text-white text-3xl"></i>
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-900 mb-2">FAQ - Dúvidas Frequentes</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Dúvidas Frequentes</h3>
                   <p className="text-gray-600">Suas principais dúvidas esclarecidas</p>
                 </div>
 
                 <div className="space-y-6">
                   {/* FAQ Item 1 */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-500">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                        <span className="text-white font-bold text-sm">❓</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-gray-900 mb-3">"E se não funcionar comigo?"</h4>
-                        <div className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <span className="text-white font-bold text-xs">✅</span>
-                          </div>
-                          <p className="text-gray-700 leading-relaxed">
-                            Você tem <strong>7 dias de garantia total</strong>. Se não perder pelo menos 1kg na primeira semana, 
-                            devolvemos 100% do seu dinheiro. Simples assim.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="border-b border-gray-200 pb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">E se não funcionar comigo?</h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      Você tem <strong>7 dias de garantia total</strong>. Se não perder pelo menos 1kg na primeira semana, 
+                      devolvemos 100% do seu dinheiro. Simples assim.
+                    </p>
                   </div>
 
                   {/* FAQ Item 2 */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-purple-500">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                        <span className="text-white font-bold text-sm">❓</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-gray-900 mb-3">"Já tentei tantas coisas... por que isso seria diferente?"</h4>
-                        <div className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <span className="text-white font-bold text-xs">✅</span>
-                          </div>
-                          <p className="text-gray-700 leading-relaxed">
-                            A maioria das dietas <strong>desacelera seu metabolismo</strong>. 
-                            O Reset da Barriga faz o oposto: ele reativa naturalmente, usando apenas 3 gatilhos alimentares simples. 
-                            É por isso que tantas pessoas que já tinham desistido finalmente conseguiram resultados.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="border-b border-gray-200 pb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">Já tentei tantas coisas... por que isso seria diferente?</h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      A maioria das dietas <strong>desacelera seu metabolismo</strong>. 
+                      O Reset da Barriga faz o oposto: ele reativa naturalmente, usando apenas 3 gatilhos alimentares simples. 
+                      É por isso que tantas pessoas que já tinham desistido finalmente conseguiram resultados.
+                    </p>
                   </div>
 
                   {/* FAQ Item 3 */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-orange-500">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                        <span className="text-white font-bold text-sm">❓</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-gray-900 mb-3">"E se for muito difícil de seguir?"</h4>
-                        <div className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <span className="text-white font-bold text-xs">✅</span>
-                          </div>
-                          <p className="text-gray-700 leading-relaxed">
-                            Nada de contar calorias ou cortar alimentos que você ama. 
-                            O protocolo é <strong>passo a passo</strong>, com orientações rápidas e práticas. 
-                            Qualquer pessoa consegue aplicar, mesmo sem tempo e sem experiência.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="border-b border-gray-200 pb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">E se for muito difícil de seguir?</h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      Nada de contar calorias ou cortar alimentos que você ama. 
+                      O protocolo é <strong>passo a passo</strong>, com orientações rápidas e práticas. 
+                      Qualquer pessoa consegue aplicar, mesmo sem tempo e sem experiência.
+                    </p>
                   </div>
 
                   {/* FAQ Item 4 */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-red-500">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                        <span className="text-white font-bold text-sm">❓</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-gray-900 mb-3">"E se eu não conseguir parar de comer doces?"</h4>
-                        <div className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <span className="text-white font-bold text-xs">✅</span>
-                          </div>
-                          <p className="text-gray-700 leading-relaxed">
-                            O Reset foi criado <strong>justamente para isso</strong>. 
-                            Ele reduz a compulsão de forma natural, equilibrando os hormônios que controlam a fome. 
-                            Você não precisa de força de vontade absurda, porque o método faz o corpo trabalhar a seu favor.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <div className="border-b border-gray-200 pb-6">
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">E se eu não conseguir parar de comer doces?</h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      O Reset foi criado <strong>justamente para isso</strong>. 
+                      Ele reduz a compulsão de forma natural, equilibrando os hormônios que controlam a fome. 
+                      Você não precisa de força de vontade absurda, porque o método faz o corpo trabalhar a seu favor.
+                    </p>
                   </div>
 
                   {/* FAQ Item 5 */}
-                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-500">
-                    <div className="flex items-start">
-                      <div className="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1">
-                        <span className="text-white font-bold text-sm">❓</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-bold text-gray-900 mb-3">"E se for caro demais?"</h4>
-                        <div className="flex items-start">
-                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
-                            <span className="text-white font-bold text-xs">✅</span>
-                          </div>
-                          <p className="text-gray-700 leading-relaxed">
-                            O investimento é de apenas <strong>R$ 29,90</strong> – menos do que um único dia de delivery. 
-                            E ainda vem com 5 bônus que somam mais de <strong>R$ 595 em valor real</strong>. 
-                            O que você gasta hoje com comida que te engorda, pode finalmente investir na sua transformação.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-3">E se for caro demais?</h4>
+                    <p className="text-gray-700 leading-relaxed">
+                      O investimento é de apenas <strong>R$ 29,90</strong> – menos do que um único dia de delivery. 
+                      E ainda vem com 5 bônus que somam mais de <strong>R$ 315 em valor real</strong>. 
+                      O que você gasta hoje com comida que te engorda, pode finalmente investir na sua transformação.
+                    </p>
                   </div>
                 </div>
               </div>
