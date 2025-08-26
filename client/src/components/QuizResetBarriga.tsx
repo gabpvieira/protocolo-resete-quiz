@@ -1,6 +1,97 @@
 import { useState, useEffect } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { QuizState, UserResponse, QuizResult, LoadingStep, Plan } from '../types/quiz.types';
 import { generateQuizResult } from '../utils/scoring.utils';
+
+const TestimonialsCarousel = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'center',
+    containScroll: 'trimSnaps'
+  });
+
+  const testimonialImages = [
+    'https://i.postimg.cc/15ZZf03V/01.jpg',
+    'https://i.postimg.cc/NjsqxgTg/02.jpg',
+    'https://i.postimg.cc/bvr7K33W/03.jpg',
+    'https://i.postimg.cc/s2Lky7LX/04.jpg',
+    'https://i.postimg.cc/Mp9kPhb1/05.jpg',
+    'https://i.postimg.cc/1tNLz4xK/06.jpg'
+  ];
+
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+
+  useEffect(() => {
+    if (emblaApi) {
+      const autoplay = setInterval(() => {
+        emblaApi.scrollNext();
+      }, 4000);
+
+      return () => clearInterval(autoplay);
+    }
+  }, [emblaApi]);
+
+  return (
+    <div className="relative max-w-5xl mx-auto">
+      {/* Navigation Buttons */}
+      <button
+        onClick={scrollPrev}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+      >
+        <i className="fas fa-chevron-left text-gray-700 text-lg"></i>
+      </button>
+      
+      <button
+        onClick={scrollNext}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+      >
+        <i className="fas fa-chevron-right text-gray-700 text-lg"></i>
+      </button>
+
+      {/* Carousel */}
+      <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+        <div className="flex">
+          {testimonialImages.map((image, index) => (
+            <div key={index} className="flex-[0_0_90%] md:flex-[0_0_45%] lg:flex-[0_0_33.333%] pl-4 first:pl-0">
+              <div className="relative group">
+                <img
+                  src={image}
+                  alt={`Depoimento ${index + 1}`}
+                  className="w-full h-auto rounded-xl shadow-lg transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl"
+                />
+                {/* Overlay with verified badge */}
+                <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center">
+                  <i className="fas fa-check-circle mr-1"></i>
+                  Verificado
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Indicators */}
+      <div className="flex justify-center space-x-2 mt-6">
+        {testimonialImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => emblaApi && emblaApi.scrollTo(index)}
+            className="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors duration-300"
+          ></button>
+        ))}
+      </div>
+
+      {/* Trust Indicators */}
+      <div className="text-center mt-8">
+        <div className="inline-flex items-center bg-green-50 border border-green-200 rounded-full px-6 py-3">
+          <i className="fas fa-shield-check text-green-600 mr-3 text-xl"></i>
+          <span className="text-green-800 font-bold">Resultados 100% Reais e Verificados</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const QuizResetBarriga = () => {
   const [quizState, setQuizState] = useState<QuizState>({
@@ -1245,6 +1336,18 @@ const QuizResetBarriga = () => {
                     <div className="absolute bottom-4 right-8 w-5 h-5 bg-white/30 rounded-full animate-ping"></div>
                   </div>
                 </div>
+              </div>
+
+              {/* Testimonials Carousel */}
+              <div className="mb-16">
+                <div className="text-center mb-8">
+                  <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Quem usa tem resultado 😉👇
+                  </h3>
+                  <p className="text-gray-600 text-lg">Veja os resultados reais de quem já transformou sua vida</p>
+                </div>
+
+                <TestimonialsCarousel />
               </div>
 
               {/* Pricing Plans */}
