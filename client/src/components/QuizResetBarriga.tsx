@@ -181,8 +181,8 @@ const QuizResetBarriga = () => {
     
     // Define checkout URLs for each plan
     const checkoutUrls = {
-      essencial: `/checkout/essencial${currentParams}${planParam}`,
-      premium: `/checkout/premium${currentParams}${planParam}`
+      essencial: `https://nucleosaudavel.pay.yampi.com.br/r/6HMTLIPPIY${currentParams}${planParam}`,
+      premium: `https://nucleosaudavel.pay.yampi.com.br/r/2V6GCSC3LK${currentParams}${planParam}`
     };
     
     // Redirect to the appropriate checkout page
@@ -192,7 +192,7 @@ const QuizResetBarriga = () => {
   const plans: Plan[] = [
     {
       id: 'essencial',
-      name: 'PLANO ESSENCIAL',
+      name: 'PLANO BÁSICO',
       price: 'R$ 9,90',
       features: [
         'Protocolo Reset da Barriga completo',
@@ -204,11 +204,11 @@ const QuizResetBarriga = () => {
     },
     {
       id: 'premium',
-      name: 'PLANO PREMIUM',
+      name: 'PLANO COMPLETO',
       price: 'R$ 29,90',
       originalPrice: 'R$ 692',
       features: [
-        'Tudo do Plano Essencial +',
+        'Tudo do Plano Básico +',
         'BÔNUS 1: Lista das Substituições Inteligentes (R$ 97)',
         'BÔNUS 2: Cardápio Anti-Compulsão de 21 Dias (R$ 127)',
         'BÔNUS 3: Reset Hormonal da Queima (R$ 147)',
@@ -1219,10 +1219,10 @@ const QuizResetBarriga = () => {
                       {plan.recommended ? (
                         <>
                           <i className="fas fa-crown mr-2"></i>
-                          QUERO O PREMIUM
+                          QUERO O COMPLETO
                         </>
                       ) : (
-                        'Escolher Essencial'
+                        'Escolher Básico'
                       )}
                     </button>
                   </div>
@@ -1321,14 +1321,14 @@ const QuizResetBarriga = () => {
                   className="w-full max-w-md bg-gradient-to-r from-accent to-orange-500 text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 >
                   <i className="fas fa-crown mr-3"></i>
-                  SIM! Quero o PLANO PREMIUM por R$ 29,90
+                  SIM! Quero o PLANO COMPLETO por R$ 29,90
                 </button>
                 <button 
                   onClick={() => selectPlan('essencial')}
                   data-testid="button-essencial-final"
                   className="w-full max-w-md bg-gray-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-700 transition-colors"
                 >
-                  Prefiro apenas o Essencial por R$ 9,90
+                  Prefiro apenas o Básico por R$ 9,90
                 </button>
               </div>
             </div>
