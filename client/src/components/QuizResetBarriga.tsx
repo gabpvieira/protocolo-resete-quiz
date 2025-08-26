@@ -1425,80 +1425,126 @@ const QuizResetBarriga = () => {
                 </div>
               </div>
 
-              {/* Objection Handling */}
-              <div className="bg-gray-50 rounded-xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Quebra de Objeções</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    {[
-                      { q: '"E se não funcionar comigo?"', a: '→ 7 dias de garantia total' },
-                      { q: '"Já tentei tantas coisas..."', a: '→ Este método é diferente: reativa o metabolismo ao invés de desacelerar' },
-                      { q: '"E se for muito difícil?"', a: '→ São apenas 3 gatilhos simples, sem dieta maluca' }
-                    ].map((objection, index) => (
-                      <div key={index} className="flex items-start">
-                        <i className="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
-                        <div>
-                          <p className="font-bold text-gray-900">{objection.q}</p>
-                          <p className="text-gray-600">{objection.a}</p>
+              {/* FAQ - Dúvidas Frequentes */}
+              <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-2xl p-8 mb-8 border border-blue-100 shadow-xl">
+                <div className="text-center mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i className="fas fa-question-circle text-white text-3xl"></i>
+                  </div>
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">FAQ - Dúvidas Frequentes</h3>
+                  <p className="text-gray-600">Suas principais dúvidas esclarecidas</p>
+                </div>
+
+                <div className="space-y-6">
+                  {/* FAQ Item 1 */}
+                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-blue-500">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <span className="text-white font-bold text-sm">❓</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-gray-900 mb-3">"E se não funcionar comigo?"</h4>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                            <span className="text-white font-bold text-xs">✅</span>
+                          </div>
+                          <p className="text-gray-700 leading-relaxed">
+                            Você tem <strong>7 dias de garantia total</strong>. Se não perder pelo menos 1kg na primeira semana, 
+                            devolvemos 100% do seu dinheiro. Simples assim.
+                          </p>
                         </div>
                       </div>
-                    ))}
+                    </div>
                   </div>
-                  <div className="space-y-4">
-                    {[
-                      { q: '"E se eu não conseguir parar os doces?"', a: '→ O protocolo reduz naturalmente a compulsão' },
-                      { q: '"E se for caro demais?"', a: '→ R$ 29,90 é menos que um dia de delivery' }
-                    ].map((objection, index) => (
-                      <div key={index} className="flex items-start">
-                        <i className="fas fa-question-circle text-red-500 mr-3 mt-1"></i>
-                        <div>
-                          <p className="font-bold text-gray-900">{objection.q}</p>
-                          <p className="text-gray-600">{objection.a}</p>
+
+                  {/* FAQ Item 2 */}
+                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-purple-500">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <span className="text-white font-bold text-sm">❓</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-gray-900 mb-3">"Já tentei tantas coisas... por que isso seria diferente?"</h4>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                            <span className="text-white font-bold text-xs">✅</span>
+                          </div>
+                          <p className="text-gray-700 leading-relaxed">
+                            A maioria das dietas <strong>desacelera seu metabolismo</strong>. 
+                            O Reset da Barriga faz o oposto: ele reativa naturalmente, usando apenas 3 gatilhos alimentares simples. 
+                            É por isso que tantas pessoas que já tinham desistido finalmente conseguiram resultados.
+                          </p>
                         </div>
                       </div>
-                    ))}
+                    </div>
+                  </div>
+
+                  {/* FAQ Item 3 */}
+                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-orange-500">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <span className="text-white font-bold text-sm">❓</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-gray-900 mb-3">"E se for muito difícil de seguir?"</h4>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                            <span className="text-white font-bold text-xs">✅</span>
+                          </div>
+                          <p className="text-gray-700 leading-relaxed">
+                            Nada de contar calorias ou cortar alimentos que você ama. 
+                            O protocolo é <strong>passo a passo</strong>, com orientações rápidas e práticas. 
+                            Qualquer pessoa consegue aplicar, mesmo sem tempo e sem experiência.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* FAQ Item 4 */}
+                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-red-500">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <span className="text-white font-bold text-sm">❓</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-gray-900 mb-3">"E se eu não conseguir parar de comer doces?"</h4>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                            <span className="text-white font-bold text-xs">✅</span>
+                          </div>
+                          <p className="text-gray-700 leading-relaxed">
+                            O Reset foi criado <strong>justamente para isso</strong>. 
+                            Ele reduz a compulsão de forma natural, equilibrando os hormônios que controlam a fome. 
+                            Você não precisa de força de vontade absurda, porque o método faz o corpo trabalhar a seu favor.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* FAQ Item 5 */}
+                  <div className="bg-white rounded-xl p-6 shadow-lg border-l-4 border-green-500">
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-4 mt-1">
+                        <span className="text-white font-bold text-sm">❓</span>
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-lg font-bold text-gray-900 mb-3">"E se for caro demais?"</h4>
+                        <div className="flex items-start">
+                          <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mr-3 mt-1">
+                            <span className="text-white font-bold text-xs">✅</span>
+                          </div>
+                          <p className="text-gray-700 leading-relaxed">
+                            O investimento é de apenas <strong>R$ 29,90</strong> – menos do que um único dia de delivery. 
+                            E ainda vem com 5 bônus que somam mais de <strong>R$ 595 em valor real</strong>. 
+                            O que você gasta hoje com comida que te engorda, pode finalmente investir na sua transformação.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Urgency and Scarcity */}
-              <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
-                <div className="flex items-center">
-                  <i className="fas fa-exclamation-triangle text-red-500 text-2xl mr-4"></i>
-                  <div>
-                    <p className="font-bold text-red-800">Oferta especial válida apenas hoje</p>
-                    <p className="text-red-700">Amanhã volta ao preço normal de R$ 97</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-orange-50 border-l-4 border-orange-500 p-6 mb-8">
-                <div className="flex items-center">
-                  <i className="fas fa-users text-orange-500 text-2xl mr-4"></i>
-                  <div>
-                    <p className="font-bold text-orange-800">Vagas limitadas</p>
-                    <p className="text-orange-700">Para acompanhamento personalizado</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Final CTAs */}
-              <div className="text-center space-y-4">
-                <button 
-                  onClick={() => selectPlan('premium')}
-                  data-testid="button-premium-final"
-                  className="w-full max-w-md bg-gradient-to-r from-accent to-orange-500 text-white font-bold py-4 px-8 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-                >
-                  <i className="fas fa-crown mr-3"></i>
-                  SIM! Quero o PLANO COMPLETO por R$ 29,90
-                </button>
-                <button 
-                  onClick={() => selectPlan('essencial')}
-                  data-testid="button-essencial-final"
-                  className="w-full max-w-md bg-gray-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-700 transition-colors"
-                >
-                  Prefiro apenas o Básico por R$ 9,90
-                </button>
               </div>
             </div>
           </div>
