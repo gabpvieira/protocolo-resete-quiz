@@ -145,7 +145,9 @@ const QuizResetBarriga = () => {
 
     const steps = [
       'Configurando os 3 gatilhos metabólicos ideais para você...',
-      'Personalizando estratégias para seu perfil...'
+      'Personalizando estratégias para seu perfil específico...',
+      'Calibrando protocolo Reset da Barriga...',
+      'Finalizando seu plano personalizado...'
     ];
 
     let step = 0;
@@ -163,7 +165,7 @@ const QuizResetBarriga = () => {
           currentPage: 14
         }));
       }
-    }, 1500);
+    }, 1750);
   };
 
 
@@ -939,38 +941,110 @@ const QuizResetBarriga = () => {
         );
 
       case 13:
+        const protocolSteps = [
+          { text: 'Configurando os 3 gatilhos metabólicos ideais para você...', completed: loadingProgress >= 25 },
+          { text: 'Personalizando estratégias para seu perfil específico...', completed: loadingProgress >= 50 },
+          { text: 'Calibrando protocolo Reset da Barriga...', completed: loadingProgress >= 75 },
+          { text: 'Finalizando seu plano personalizado...', completed: loadingProgress >= 100 }
+        ];
+
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
-            <div className="container mx-auto px-4 max-w-3xl">
+          <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-success/5 pt-[159px] pb-8">
+            <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center">
-                <div className="mb-8">
-                  <i className="fas fa-cogs text-primary text-6xl mb-6 spin-animation"></i>
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                    Preparando seu Protocolo Reset personalizado...
+                {/* Loading Icon */}
+                <div className="mb-12">
+                  <div className="relative inline-block">
+                    <div className="w-24 h-24 rounded-full border-4 border-success/20 border-t-success animate-spin mx-auto mb-6"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <i className="fas fa-cogs text-success text-2xl"></i>
+                    </div>
+                  </div>
+                  <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Preparando seu <span className="text-success">Protocolo Reset</span>
+                  </h1>
+                  <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 mb-4">
+                    personalizado...
                   </h2>
+                  <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Configurando os gatilhos metabólicos específicos para seu perfil único
+                  </p>
                 </div>
 
-                <div className="bg-white rounded-xl p-8 shadow-lg mb-8">
+                {/* Protocol Steps */}
+                <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 mb-8 max-w-3xl mx-auto">
                   <div className="space-y-6">
-                    {[
-                      'Configurando os 3 gatilhos metabólicos ideais para você...',
-                      'Personalizando estratégias para seu perfil...'
-                    ].map((step, index) => (
-                      <div key={index} className="flex items-center justify-between">
-                        <span className="text-gray-700">{step}</span>
-                        <div className="w-8 h-8">
-                          <i className="fas fa-check-circle text-success"></i>
+                    {protocolSteps.map((step, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 bg-green-50 rounded-xl">
+                        <div className="flex items-center flex-1">
+                          <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 transition-all duration-500 ${
+                            step.completed 
+                              ? 'bg-success text-white' 
+                              : loadingProgress > (index * 25) 
+                                ? 'bg-success/20 text-success animate-pulse'
+                                : 'bg-gray-200 text-gray-400'
+                          }`}>
+                            {step.completed ? (
+                              <i className="fas fa-check text-sm"></i>
+                            ) : (
+                              <i className="fas fa-cog animate-spin text-sm"></i>
+                            )}
+                          </div>
+                          <span className={`text-lg font-medium transition-colors duration-300 ${
+                            step.completed ? 'text-gray-900' : 'text-gray-600'
+                          }`}>
+                            {step.text}
+                          </span>
                         </div>
+                        {step.completed && (
+                          <div className="text-success font-semibold text-sm">
+                            Concluído
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div 
-                    className="bg-gradient-to-r from-primary to-success h-3 rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${loadingProgress}%` }}
-                  ></div>
+                {/* Progress Bar */}
+                <div className="mb-8">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-sm font-medium text-gray-600">Configuração do Protocolo</span>
+                    <span className="text-sm font-bold text-success">{Math.round(loadingProgress)}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+                    <div 
+                      className="bg-gradient-to-r from-success via-green-400 to-green-600 h-4 rounded-full transition-all duration-1000 ease-out shadow-lg"
+                      style={{ width: `${loadingProgress}%` }}
+                    ></div>
+                  </div>
+                </div>
+
+                {/* Protocol Features */}
+                <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                  <div className="bg-gradient-to-br from-success/10 to-success/5 rounded-xl p-4 border border-success/20">
+                    <div className="w-12 h-12 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i className="fas fa-bullseye text-success text-xl"></i>
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-sm mb-2">3 Gatilhos Metabólicos</h3>
+                    <p className="text-gray-600 text-xs">Calibrados para seu biotipo específico</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-green-500/10 to-green-500/5 rounded-xl p-4 border border-green-500/20">
+                    <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i className="fas fa-rocket text-green-500 text-xl"></i>
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-sm mb-2">Reset em 21 Dias</h3>
+                    <p className="text-gray-600 text-xs">Protocolo acelerado de resultados</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 rounded-xl p-4 border border-emerald-500/20">
+                    <div className="w-12 h-12 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <i className="fas fa-medal text-emerald-500 text-xl"></i>
+                    </div>
+                    <h3 className="font-bold text-gray-900 text-sm mb-2">100% Personalizado</h3>
+                    <p className="text-gray-600 text-xs">Baseado nas suas respostas únicas</p>
+                  </div>
                 </div>
               </div>
             </div>
