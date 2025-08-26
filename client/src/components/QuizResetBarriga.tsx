@@ -1250,62 +1250,150 @@ const QuizResetBarriga = () => {
               {/* Pricing Plans */}
               <div className="grid md:grid-cols-2 gap-8 mb-12">
                 {plans.map((plan) => (
-                  <div 
-                    key={plan.id}
-                    className={`bg-white rounded-xl p-8 shadow-lg ${
-                      plan.recommended 
-                        ? 'border-4 border-accent relative' 
-                        : 'border-2 border-gray-200'
-                    }`}
-                  >
+                  <div key={plan.id} className="relative group">
+                    {/* Background Glow Effect */}
                     {plan.recommended && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span className="bg-accent text-white px-4 py-2 rounded-full text-sm font-bold">RECOMENDADO</span>
-                      </div>
+                      <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 rounded-3xl blur-lg opacity-60 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
                     )}
                     
-                    <div className="text-center mb-6">
-                      <div className={`w-16 h-16 min-w-[64px] ${plan.recommended ? 'bg-accent/10' : 'bg-gray-100'} rounded-full flex items-center justify-center mx-auto mb-4 flex-shrink-0 aspect-square`}>
-                        <i className={`${plan.icon} ${plan.recommended ? 'text-accent' : 'text-gray-600'} text-2xl`}></i>
-                      </div>
-                      <h4 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h4>
-                      {plan.originalPrice && (
-                        <div className="mb-2">
-                          <span className="text-2xl text-gray-500 line-through">{plan.originalPrice}</span>
-                        </div>
-                      )}
-                      <div className={`${plan.recommended ? 'text-4xl font-bold text-accent' : 'text-3xl font-bold text-gray-900'}`}>
-                        {plan.price}
-                      </div>
-                    </div>
-                    
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, index) => (
-                        <li key={index} className="flex items-center">
-                          <i className={`fas ${feature.includes('BÔNUS') ? 'fa-gift text-accent' : 'fa-check text-success'} mr-3`}></i>
-                          <span className={feature.includes('BÔNUS') ? 'font-medium' : ''}>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    <button 
-                      onClick={() => selectPlan(plan.id)}
-                      data-testid={`button-plan-${plan.id}`}
-                      className={`w-full font-bold py-4 px-6 rounded-full transition-all duration-300 ${
-                        plan.recommended
-                          ? 'bg-gradient-to-r from-accent to-orange-500 text-white hover:shadow-xl transform hover:scale-105'
-                          : 'bg-gray-600 text-white hover:bg-gray-700'
+                    <div 
+                      className={`relative ${
+                        plan.recommended 
+                          ? 'bg-gradient-to-br from-amber-50 via-white to-orange-50' 
+                          : 'bg-gradient-to-br from-gray-50 via-white to-blue-50'
+                      } rounded-3xl p-8 shadow-2xl transform transition-all duration-500 hover:scale-105 border-2 ${
+                        plan.recommended ? 'border-amber-200' : 'border-gray-200'
                       }`}
                     >
-                      {plan.recommended ? (
-                        <>
-                          <i className="fas fa-crown mr-2"></i>
-                          QUERO O COMPLETO
-                        </>
-                      ) : (
-                        'Escolher Básico'
+                      {/* Recommended Badge */}
+                      {plan.recommended && (
+                        <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-10">
+                          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-6 py-3 rounded-full text-sm font-black shadow-xl">
+                            <i className="fas fa-star mr-2"></i>
+                            MAIS POPULAR
+                          </div>
+                        </div>
                       )}
-                    </button>
+
+                      {/* Plan Header */}
+                      <div className="text-center mb-8">
+                        {/* Icon */}
+                        <div className={`relative w-20 h-20 mx-auto mb-6 ${
+                          plan.recommended 
+                            ? 'bg-gradient-to-br from-yellow-400 to-orange-500' 
+                            : 'bg-gradient-to-br from-blue-500 to-indigo-600'
+                        } rounded-2xl shadow-lg flex items-center justify-center transform rotate-3 group-hover:rotate-6 transition-transform duration-300`}>
+                          <i className={`${plan.icon} text-white text-3xl`}></i>
+                          {plan.recommended && (
+                            <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                              <i className="fas fa-fire text-white text-sm"></i>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Plan Name */}
+                        <h4 className={`text-3xl font-black mb-4 ${
+                          plan.recommended ? 'text-orange-800' : 'text-gray-800'
+                        }`}>
+                          {plan.name}
+                        </h4>
+
+                        {/* Pricing */}
+                        <div className="mb-6">
+                          {plan.originalPrice && (
+                            <div className="relative mb-2">
+                              <span className="text-2xl text-red-500 line-through font-bold">{plan.originalPrice}</span>
+                              <div className="absolute -top-1 -right-8 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold transform rotate-12">
+                                SAVE 96%
+                              </div>
+                            </div>
+                          )}
+                          <div className={`text-5xl font-black ${
+                            plan.recommended 
+                              ? 'bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent' 
+                              : 'text-gray-900'
+                          } drop-shadow-lg`}>
+                            {plan.price}
+                          </div>
+                          {plan.recommended && (
+                            <div className="mt-2 text-sm text-orange-600 font-bold">
+                              ⚡ Oferta limitada!
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Features List */}
+                      <div className="space-y-4 mb-8">
+                        {plan.features.map((feature, index) => (
+                          <div key={index} className={`flex items-start p-3 rounded-xl ${
+                            feature.includes('BÔNUS') 
+                              ? 'bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200' 
+                              : 'bg-gray-50'
+                          }`}>
+                            <div className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-0.5 ${
+                              feature.includes('BÔNUS') 
+                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500' 
+                                : 'bg-green-500'
+                            }`}>
+                              <i className={`fas ${
+                                feature.includes('BÔNUS') ? 'fa-gift' : 'fa-check'
+                              } text-white text-xs`}></i>
+                            </div>
+                            <span className={`text-sm leading-relaxed ${
+                              feature.includes('BÔNUS') ? 'font-bold text-orange-800' : 'text-gray-700'
+                            }`}>
+                              {feature}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* CTA Button */}
+                      <button 
+                        onClick={() => selectPlan(plan.id)}
+                        data-testid={`button-plan-${plan.id}`}
+                        className={`relative w-full py-5 px-8 rounded-2xl font-black text-lg transition-all duration-300 overflow-hidden group ${
+                          plan.recommended
+                            ? 'bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white shadow-2xl hover:shadow-orange-500/50 transform hover:scale-105'
+                            : 'bg-gradient-to-r from-gray-600 to-gray-700 text-white shadow-xl hover:shadow-gray-500/50 hover:from-gray-700 hover:to-gray-800'
+                        }`}
+                      >
+                        {/* Button Background Animation */}
+                        <div className={`absolute inset-0 ${
+                          plan.recommended ? 'bg-gradient-to-r from-yellow-400 to-orange-600' : 'bg-gradient-to-r from-blue-500 to-indigo-600'
+                        } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+                        
+                        {/* Button Content */}
+                        <div className="relative flex items-center justify-center">
+                          {plan.recommended ? (
+                            <>
+                              <i className="fas fa-crown mr-3 text-yellow-300"></i>
+                              QUERO O COMPLETO
+                              <i className="fas fa-fire ml-3 animate-pulse"></i>
+                            </>
+                          ) : (
+                            <>
+                              <i className="fas fa-bolt mr-3"></i>
+                              ESCOLHER BÁSICO
+                            </>
+                          )}
+                        </div>
+
+                        {/* Shine Effect */}
+                        <div className="absolute inset-0 -top-1 -left-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform skew-x-12 group-hover:animate-shine"></div>
+                      </button>
+
+                      {/* Value Badge */}
+                      {plan.recommended && (
+                        <div className="mt-4 text-center">
+                          <div className="inline-flex items-center bg-green-100 border border-green-300 rounded-full px-4 py-2">
+                            <i className="fas fa-trophy text-green-600 mr-2"></i>
+                            <span className="text-green-800 font-bold text-sm">MELHOR CUSTO-BENEFÍCIO</span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
