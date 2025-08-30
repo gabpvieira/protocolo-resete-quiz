@@ -290,8 +290,8 @@ const QuizResetBarriga = () => {
     
     // Define checkout URLs for each plan
     const checkoutUrls = {
-      essencial: `https://nucleosaudavel.pay.yampi.com.br/r/6HMTLIPPIY${currentParams}${planParam}`,
-      premium: `https://nucleosaudavel.pay.yampi.com.br/r/2V6GCSC3LK${currentParams}${planParam}`
+      essencial: `https://pay.cakto.com.br/fusz8sy${currentParams}${planParam}`,
+      premium: `https://pay.cakto.com.br/rdv8k67_549644${currentParams}${planParam}`
     };
     
     // Redirect to the appropriate checkout page
