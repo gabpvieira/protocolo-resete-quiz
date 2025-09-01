@@ -1348,6 +1348,15 @@ const QuizResetBarriga = () => {
                 <TestimonialsCarousel />
               </div>
 
+              {/* Mockup Geral do App */}
+              <div className="mb-10 md:mb-16">
+                <img 
+                  src="https://i.postimg.cc/g0rQLw0n/MOCKUP-GERAL.png" 
+                  alt="Mockup Geral do Protocolo Reset da Barriga - Acesso ao App" 
+                  className="w-full h-auto"
+                />
+              </div>
+
               {/* Pricing Plans */}
               <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-12">
                 {plans.map((plan) => (
