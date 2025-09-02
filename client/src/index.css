@@ -131,11 +131,11 @@
   }
 }
 
-/* Quiz specific animations */
+/* Quiz specific animations - Otimizadas para performance */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -159,7 +159,7 @@
 }
 
 .fade-in-up {
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.3s ease-out forwards;
 }
 
 .spin-animation {
@@ -178,16 +178,18 @@
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  animation: shimmer 0.6s;
+  animation: shimmer 0.4s;
 }
 
-/* Efeito de relevo na borda inferior para opções de seleção */
+/* Efeito de relevo otimizado para opções de seleção */
 .quiz-option {
   box-shadow: 
     0 2px 4px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(0, 0, 0, 0.05),
     0 3px 0 0 rgba(0, 0, 0, 0.1);
   border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, box-shadow;
 }
 
 .quiz-option:hover {
@@ -197,4 +199,9 @@
     0 4px 0 0 rgba(0, 0, 0, 0.15);
   border-bottom: 4px solid rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
+}
+
+.quiz-option:active {
+  transform: translateY(0px);
+  transition: all 0.05s cubic-bezier(0.4, 0, 0.2, 1);
 }

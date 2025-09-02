@@ -37,14 +37,14 @@ const TestimonialsCarousel = () => {
       {/* Navigation Buttons */}
       <button
         onClick={scrollPrev}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-150 hover:scale-110"
       >
         <i className="fas fa-chevron-left text-gray-700 text-lg"></i>
       </button>
       
       <button
         onClick={scrollNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 w-12 h-12 bg-white/90 hover:bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-150 hover:scale-110"
       >
         <i className="fas fa-chevron-right text-gray-700 text-lg"></i>
       </button>
@@ -58,7 +58,7 @@ const TestimonialsCarousel = () => {
                 <img
                   src={image}
                   alt={`Depoimento ${index + 1}`}
-                  className="w-full h-auto rounded-xl shadow-lg transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl"
+                  className="w-full h-auto rounded-xl shadow-lg transform transition-all duration-200 group-hover:scale-105 group-hover:shadow-2xl"
                 />
                 {/* Overlay with verified badge */}
                 <div className="absolute top-3 right-3 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center">
@@ -156,9 +156,8 @@ const QuizResetBarriga = () => {
       responses: newResponses
     }));
 
-    setTimeout(() => {
-      nextPage();
-    }, 800);
+    // Navegação imediata para páginas simples - sem delay
+    nextPage();
   };
 
   const toggleMultipleAnswer = (questionId: string, answer: string) => {
@@ -197,6 +196,7 @@ const QuizResetBarriga = () => {
         ...prev,
         responses: newResponses
       }));
+      // Navegação imediata para páginas múltipla escolha - sem delay
       nextPage();
     } else {
       alert('Selecione pelo menos uma opção para continuar.');
@@ -333,7 +333,7 @@ const QuizResetBarriga = () => {
     switch (quizState.currentPage) {
       case 1:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center mb-6 md:mb-8">
                 <h1 className="text-2xl md:text-4xl lg:text-6xl font-bold text-gray-900 mb-4 md:mb-6 leading-tight px-2 max-w-4xl mx-auto">
@@ -391,10 +391,10 @@ const QuizResetBarriga = () => {
                 <button 
                   onClick={nextPage}
                   data-testid="button-start-quiz"
-                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full max-w-sm md:max-w-none md:w-auto"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-150 w-full max-w-sm md:max-w-none md:w-auto"
                 >
                   <i className="fas fa-play mr-2 md:mr-3 text-sm md:text-base"></i>
-                  INICIAR MEU PROTOCOLO
+                  INICIAR PROTOCOLO
                 </button>
               </div>
             </div>
@@ -403,7 +403,7 @@ const QuizResetBarriga = () => {
 
       case 2:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center mb-8 md:mb-12">
                 <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-3 md:mb-4">+12.000</div>
@@ -471,7 +471,7 @@ const QuizResetBarriga = () => {
                 <button 
                   onClick={nextPage}
                   data-testid="button-continue"
-                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full max-w-sm md:max-w-none md:w-auto"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-150 w-full max-w-sm md:max-w-none md:w-auto"
                 >
                   Continuar <i className="fas fa-arrow-right ml-2 text-sm md:text-base"></i>
                 </button>
@@ -482,7 +482,7 @@ const QuizResetBarriga = () => {
 
       case 3:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
@@ -502,7 +502,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('main_struggle', option.id)}
                     data-testid={`button-option-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -527,7 +527,7 @@ const QuizResetBarriga = () => {
 
       case 4:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
@@ -547,7 +547,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('struggle_time', option.id)}
                     data-testid={`button-time-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -569,7 +569,7 @@ const QuizResetBarriga = () => {
 
       case 5:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
@@ -589,7 +589,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('main_obstacle', option.id)}
                     data-testid={`button-obstacle-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -611,7 +611,7 @@ const QuizResetBarriga = () => {
 
       case 6:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
@@ -631,7 +631,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('attempts_failed', option.id)}
                     data-testid={`button-attempts-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -656,7 +656,7 @@ const QuizResetBarriga = () => {
 
       case 7:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
@@ -676,7 +676,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('emotional_feeling', option.id)}
                     data-testid={`button-feeling-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -698,7 +698,7 @@ const QuizResetBarriga = () => {
 
       case 8:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-8 md:mb-12">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 md:mb-6 px-2">
@@ -718,7 +718,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('social_impact', option.id)}
                     data-testid={`button-social-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -741,7 +741,7 @@ const QuizResetBarriga = () => {
       case 9:
         const selectedSymptoms = quizState.multipleAnswers['symptoms'] || [];
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-6 md:mb-8">
                 <div className="bg-blue-50 rounded-xl p-4 md:p-6 mb-6 md:mb-8">
@@ -772,7 +772,7 @@ const QuizResetBarriga = () => {
                       key={option.id}
                       onClick={() => toggleMultipleAnswer('symptoms', option.id)}
                       data-testid={`button-symptom-${option.id}`}
-                      className={`w-full bg-white rounded-xl p-4 md:p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border-2 ${
+                      className={`w-full bg-white rounded-xl p-4 md:p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-150 border-2 ${
                         isSelected ? 'border-primary bg-primary/5' : 'border-transparent hover:border-primary'
                       }`}
                     >
@@ -800,7 +800,7 @@ const QuizResetBarriga = () => {
                 <button 
                   onClick={nextPageMultiple}
                   data-testid="button-continue-symptoms"
-                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 w-full max-w-xs md:w-auto"
+                  className="bg-gradient-to-r from-primary to-success text-white font-bold py-3 md:py-4 px-6 md:px-8 rounded-full text-lg md:text-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-150 w-full max-w-xs md:w-auto"
                 >
                   Continuar <i className="fas fa-arrow-right ml-2"></i>
                 </button>
@@ -811,7 +811,7 @@ const QuizResetBarriga = () => {
 
       case 10:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-3xl">
               <div className="text-center mb-6 md:mb-8">
                 <div className="bg-primary/10 rounded-xl p-4 md:p-6 mb-6 md:mb-8">
@@ -835,7 +835,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('magic_question', option.id)}
                     data-testid={`button-magic-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
                   >
                     <div className="flex items-center">
                       <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
@@ -862,7 +862,7 @@ const QuizResetBarriga = () => {
         ];
 
         return (
-          <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary/5 pt-[159px] pb-8">
+          <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-primary/5 pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center">
                 {/* Loading Icon */}
@@ -887,7 +887,7 @@ const QuizResetBarriga = () => {
                     {analysisSteps.map((step, index) => (
                       <div key={index} className="flex items-center justify-between p-3 md:p-4 bg-gray-50 rounded-xl">
                         <div className="flex items-center flex-1 min-w-0">
-                          <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 transition-all duration-500 ${
+                          <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 transition-all duration-200 ${
                             step.completed 
                               ? 'bg-success text-white' 
                               : loadingProgress > (index * 25) 
@@ -966,13 +966,13 @@ const QuizResetBarriga = () => {
         if (!result) return null;
 
         return (
-          <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-success/10 pt-[159px] pb-8">
+          <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-success/10 pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-5xl">
               
               {/* Header Section with Animation */}
               <div className="text-center mb-8 md:mb-12">
                 <div className="relative inline-block mb-6 md:mb-8">
-                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-r from-success to-green-400 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-r from-success to-green-400 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 shadow-2xl transform hover:scale-105 transition-all duration-150">
                     <i className="fas fa-check-circle text-white text-3xl md:text-5xl"></i>
                   </div>
                   {/* Animated rings */}
@@ -993,14 +993,14 @@ const QuizResetBarriga = () => {
                 <img 
                   src="https://i.postimg.cc/h4b5ZLpn/analise1.jpg" 
                   alt="Análise Personalizada Completa" 
-                  className="rounded-2xl shadow-2xl max-w-full mx-auto transform hover:scale-105 transition-all duration-300"
+                  className="rounded-2xl shadow-2xl max-w-full mx-auto transform hover:scale-105 transition-all duration-150"
                 />
               </div>
 
               {/* Success Rate Container - Enhanced */}
               <div className="relative mb-8 md:mb-12">
                 <div className="absolute inset-0 bg-gradient-to-r from-success to-green-400 rounded-2xl blur-xl opacity-30 transform scale-105"></div>
-                <div className="relative bg-gradient-to-r from-success via-green-500 to-emerald-500 rounded-2xl p-6 md:p-10 text-white text-center shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <div className="relative bg-gradient-to-r from-success via-green-500 to-emerald-500 rounded-2xl p-6 md:p-10 text-white text-center shadow-2xl transform hover:scale-105 transition-all duration-150">
                   <div className="mb-3 md:mb-4">
                     <div className="text-5xl md:text-7xl lg:text-8xl font-black mb-3 md:mb-4 drop-shadow-lg" data-testid="text-success-rate">
                       {result.successChance}%
@@ -1018,7 +1018,7 @@ const QuizResetBarriga = () => {
 
               {/* Enhanced Info Cards */}
               <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-8 md:mb-12">
-                <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-150">
                   <div className="flex items-center mb-4 md:mb-6">
                     <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-primary to-blue-500 rounded-full flex items-center justify-center mr-3 md:mr-6 shadow-lg flex-shrink-0">
                       <i className="fas fa-user-circle text-white text-lg md:text-2xl"></i>
@@ -1028,7 +1028,7 @@ const QuizResetBarriga = () => {
                   <p className="text-gray-700 text-sm md:text-lg leading-relaxed" data-testid="text-user-type">{result.userType}</p>
                 </div>
 
-                <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white rounded-2xl p-4 md:p-8 shadow-xl border border-gray-100 transform hover:scale-105 transition-all duration-150">
                   <div className="flex items-center mb-4 md:mb-6">
                     <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-accent to-orange-500 rounded-full flex items-center justify-center mr-3 md:mr-6 shadow-lg flex-shrink-0">
                       <i className="fas fa-clock text-white text-lg md:text-2xl"></i>
@@ -1058,7 +1058,7 @@ const QuizResetBarriga = () => {
                 </h3>
                 <div className="space-y-4 md:space-y-6" data-testid="container-insights">
                   {result.personalizedInsights.map((insight, index) => (
-                    <div key={index} className="flex items-start p-3 md:p-6 bg-gradient-to-r from-primary/5 to-success/5 rounded-xl border-l-4 border-primary shadow-md transform hover:scale-105 transition-all duration-300">
+                    <div key={index} className="flex items-start p-3 md:p-6 bg-gradient-to-r from-primary/5 to-success/5 rounded-xl border-l-4 border-primary shadow-md transform hover:scale-105 transition-all duration-150">
                       <div className="w-8 h-8 md:w-12 md:h-12 bg-gradient-to-r from-primary to-success rounded-full flex items-center justify-center mr-3 md:mr-6 flex-shrink-0 shadow-lg">
                         <span className="text-white font-bold text-sm md:text-lg">{index + 1}</span>
                       </div>
@@ -1075,7 +1075,7 @@ const QuizResetBarriga = () => {
                   <button 
                     onClick={nextPage}
                     data-testid="button-view-protocol"
-                    className="relative bg-gradient-to-r from-primary via-success to-emerald-500 text-white font-bold py-3 md:py-4 px-6 md:px-10 rounded-full text-base md:text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20 w-full max-w-md md:w-auto"
+                    className="relative bg-gradient-to-r from-primary via-success to-emerald-500 text-white font-bold py-3 md:py-4 px-6 md:px-10 rounded-full text-base md:text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-150 border-2 border-white/20 w-full max-w-md md:w-auto"
                   >
                     <span className="leading-none">
                       ACESSAR MEU PROTOCOLO RESET
@@ -1101,7 +1101,7 @@ const QuizResetBarriga = () => {
         ];
 
         return (
-          <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-success/5 pt-[159px] pb-8">
+          <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-success/5 pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-4xl">
               <div className="text-center">
                 {/* Loading Icon */}
@@ -1129,7 +1129,7 @@ const QuizResetBarriga = () => {
                     {protocolSteps.map((step, index) => (
                       <div key={index} className="flex items-center p-2 md:p-4 bg-green-50 rounded-xl">
                         <div className="flex items-center flex-1 min-w-0">
-                          <div className={`w-6 h-6 md:w-10 md:h-10 rounded-full flex items-center justify-center mr-2 md:mr-4 flex-shrink-0 transition-all duration-500 ${
+                          <div className={`w-6 h-6 md:w-10 md:h-10 rounded-full flex items-center justify-center mr-2 md:mr-4 flex-shrink-0 transition-all duration-200 ${
                             step.completed 
                               ? 'bg-success text-white' 
                               : loadingProgress > (index * 25) 
@@ -1205,7 +1205,7 @@ const QuizResetBarriga = () => {
 
       case 14:
         return (
-          <div className="min-h-screen pt-[159px] pb-8">
+          <div className="min-h-screen pt-[120px] md:pt-[130px] pb-8">
             <div className="container mx-auto px-4 max-w-5xl">
               <div className="text-center mb-8 md:mb-12">
                 <div className="w-20 h-20 md:w-24 md:h-24 min-w-[80px] md:min-w-[96px] bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 flex-shrink-0 aspect-square">
@@ -1222,7 +1222,7 @@ const QuizResetBarriga = () => {
                 <img 
                   src="https://i.postimg.cc/VNKqpFdS/FINALIMAGE.jpg" 
                   alt="Protocolo Reset da Barriga - Resultado Final" 
-                  className="rounded-2xl shadow-2xl max-w-full mx-auto transform hover:scale-105 transition-all duration-300"
+                  className="rounded-2xl shadow-2xl max-w-full mx-auto transform hover:scale-105 transition-all duration-150"
                 />
               </div>
 
@@ -1255,6 +1255,15 @@ const QuizResetBarriga = () => {
                 <div className="bg-gradient-to-r from-primary to-success text-white rounded-xl p-4 md:p-8 mb-6 md:mb-8">
                   <h3 className="text-xl md:text-3xl font-bold mb-3 md:mb-4">PROTOCOLO RESET DA BARRIGA</h3>
                   <p className="text-base md:text-xl">O único método que combina 3 gatilhos alimentares para reativar metabolismo lento em 7 dias</p>
+                </div>
+
+                {/* Imagem Ilustrativa do Protocolo */}
+                <div className="mb-8 md:mb-12">
+                  <img 
+                    src="https://i.postimg.cc/DyXksDfd/ILUSTRA-O-FUNCIONA.png" 
+                    alt="Ilustração - Como Funciona o Protocolo Reset da Barriga" 
+                    className="w-full max-w-4xl mx-auto rounded-2xl transition-all duration-300 transform hover:scale-[1.02]"
+                  />
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-12">
@@ -1528,20 +1537,20 @@ const QuizResetBarriga = () => {
       {/* Progress Bar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-sm">
         {/* Logo */}
-        <div className="text-center py-4">
+        <div className="text-center py-2 md:py-3">
           <img 
             src="https://i.postimg.cc/6QhfB0SL/LOGO-RESET-DA-BARRIGA.png" 
             alt="Logo Reset da Barriga" 
-            className="h-[70px] mx-auto"
+            className="h-[50px] md:h-[60px] mx-auto"
           />
         </div>
         
         {/* Progress Bar */}
-        <div className="px-6 pb-4">
-          <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+        <div className="px-4 md:px-6 pb-2 md:pb-3">
+          <div className="h-2 md:h-3 bg-gray-200 rounded-full overflow-hidden">
             <div 
               id="progress-bar" 
-              className="h-full bg-gradient-to-r from-primary to-success transition-all duration-500 ease-out rounded-full" 
+              className="h-full bg-gradient-to-r from-primary to-success transition-all duration-200 ease-out rounded-full" 
               style={{ width: `${(quizState.currentPage / 14) * 100}%` }}
             ></div>
           </div>
