@@ -502,7 +502,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('main_struggle', option.id)}
                     data-testid={`button-option-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transition-all duration-150 border-2 border-transparent active:border-primary active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -547,7 +547,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('struggle_time', option.id)}
                     data-testid={`button-time-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transition-all duration-150 border-2 border-transparent active:border-primary active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -589,7 +589,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('main_obstacle', option.id)}
                     data-testid={`button-obstacle-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transition-all duration-150 border-2 border-transparent active:border-primary active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -631,7 +631,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('attempts_failed', option.id)}
                     data-testid={`button-attempts-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transition-all duration-150 border-2 border-transparent active:border-primary active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -676,7 +676,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('emotional_feeling', option.id)}
                     data-testid={`button-feeling-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transition-all duration-150 border-2 border-transparent active:border-primary active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -718,7 +718,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('social_impact', option.id)}
                     data-testid={`button-social-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transition-all duration-150 border-2 border-transparent active:border-primary active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <div className="flex items-center justify-between">
                       <div className="flex items-center">
@@ -772,8 +772,8 @@ const QuizResetBarriga = () => {
                       key={option.id}
                       onClick={() => toggleMultipleAnswer('symptoms', option.id)}
                       data-testid={`button-symptom-${option.id}`}
-                      className={`w-full bg-white rounded-xl p-4 md:p-6 text-left shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-150 border-2 ${
-                        isSelected ? 'border-primary bg-primary/5' : 'border-transparent hover:border-primary'
+                      className={`w-full bg-white rounded-xl p-4 md:p-6 text-left shadow-lg transition-all duration-150 border-2 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+                        isSelected ? 'border-primary bg-primary/5' : 'border-transparent'
                       }`}
                     >
                       <div className="flex items-center">
@@ -835,7 +835,7 @@ const QuizResetBarriga = () => {
                     key={option.id}
                     onClick={() => selectAnswer('magic_question', option.id)}
                     data-testid={`button-magic-${option.id}`}
-                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transform hover:scale-105 transition-all duration-150 border-2 border-transparent hover:border-primary"
+                    className="quiz-option w-full bg-white rounded-xl p-4 md:p-6 text-left transition-all duration-150 border-2 border-transparent active:border-primary active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary/20"
                   >
                     <div className="flex items-center">
                       <div className={`w-10 h-10 md:w-12 md:h-12 min-w-[40px] md:min-w-[48px] bg-${option.color}-100 rounded-full flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 aspect-square`}>
